@@ -39,7 +39,7 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAPLE_TERRACE }}'
-          projectId: maple-terrace
+          projectId: maple-terrace-6f38d
           target: dev-maple-terrace
           channelId: ${{ steps.current_branch.outputs.branch }}
         env:
