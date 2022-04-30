@@ -20,7 +20,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   useEffect(()=> {
     const sections = gsap.utils.toArray(".panel");
 
-    gsap.utils.toArray(".panel").forEach((panel: any, i) => {
+   sections.forEach((panel: any, i) => {
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
