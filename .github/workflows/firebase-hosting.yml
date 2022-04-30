@@ -28,7 +28,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAPLE_TERRACE_6F38D }}'
           channelId: live
           projectId: maple-terrace-6f38d
-          target: ${{ fromJSON('["maple-terrace", "dev-maple-terrace"]')[github.ref != 'refs/heads/master'] }}
+          target: ${{ fromJSON('["maple-terrace-6f38d", "dev-maple-terrace-6f38d"]')[github.ref != 'refs/heads/master'] }}
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
 

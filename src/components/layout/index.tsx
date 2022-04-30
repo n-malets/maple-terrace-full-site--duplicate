@@ -32,7 +32,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
     ScrollTrigger.create({
       snap: {
         snapTo: 1 / (sections.length -1),
-        duration: 1.5
+        duration: 2
       }
     });
 
