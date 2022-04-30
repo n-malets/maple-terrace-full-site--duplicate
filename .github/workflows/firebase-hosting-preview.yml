@@ -39,8 +39,8 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAPLE_TERRACE }}'
-          projectId: maple-terrace-full-site
-          target: dev-maple-terrace-full-site
+          projectId: maple-terrace
+          target: dev-maple-terrace
           channelId: ${{ steps.current_branch.outputs.branch }}
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels

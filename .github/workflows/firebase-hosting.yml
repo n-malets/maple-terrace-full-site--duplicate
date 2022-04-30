@@ -25,10 +25,10 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_RITZ_POMPANO }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAPLE_TERRACE }}'
           channelId: live
-          projectId: maple-terrace-full-site
-          target: ${{ fromJSON('["maple-terrace-full-site", "dev-maple-terrace-full-site"]')[github.ref != 'refs/heads/master'] }}
+          projectId: maple-terrace
+          target: ${{ fromJSON('["maple-terrace", "dev-maple-terrace"]')[github.ref != 'refs/heads/master'] }}
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
 

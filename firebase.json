@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "site": "maple-terrace-full-site",
+      "site": "maple-terrace",
       "public": "public",
       "ignore": [
         "firebase.json",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "site": "dev-maple-terrace-full-site",
+      "site": "dev-maple-terrace",
       "public": "public",
       "ignore": [
         "firebase.json",
