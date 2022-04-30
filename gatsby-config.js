@@ -55,5 +55,13 @@ module.exports = {
         component: require.resolve(`./src/components/layout/index.tsx`),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/assets/images/`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
   ]
 };
