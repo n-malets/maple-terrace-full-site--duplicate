@@ -16,7 +16,7 @@ const Header:FC<IHeader> = ({location}) => {
         <Link activeStyle={{opacity:1}} to={'/neighborhood'}>NEIGHBORHOOD</Link>
         <Link activeStyle={{opacity:1}} to={'/amenities'}>AMENITIES</Link>
       </Nav>
-      <Logo src={main_logo} alt={'Maple Terrace Uptown Dallas'} id={'headerLogo'}/>
+      {/*<Logo src={main_logo} alt={'Maple Terrace Uptown Dallas'} id={'headerLogo'}/>*/}
       <Nav className={'sec'}>
         <Link activeStyle={{opacity:1}} to={'/team'}>TEAM</Link>
         <Link activeStyle={{opacity:1}} to={'/contact'}>CONTACT</Link>

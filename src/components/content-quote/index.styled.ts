@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
   img {
     margin-bottom: 36px;
   }
@@ -23,4 +24,10 @@ export const Wrapper = styled.div`
       background-color: #fff;
     }
   }
+`;
+export const QuoteHeadings = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;

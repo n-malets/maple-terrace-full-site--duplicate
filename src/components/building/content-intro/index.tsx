@@ -14,7 +14,6 @@ const ContentIntro = () => {
       start: "bottom center",
       end: "bottom top",
       scrub: 0.1,
-      markers: true,
       animation: gsap
         .timeline()
         .fromTo(

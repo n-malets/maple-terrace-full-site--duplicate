@@ -447,7 +447,7 @@ ul li {
 .h2 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 48px;
   line-height: 57px;
 }
@@ -496,14 +496,14 @@ ul li {
 .caption_t1 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 12px;
-  line-height: 24px;
+  line-height: 15px;
 }
 .caption_t2 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 12px;
   line-height: 24px;
 }

@@ -3,10 +3,15 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
+  padding-left: 10.3%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-left: 10.3%;
+  .trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 export const Info = styled.div`
   width: 43.2%;
@@ -18,7 +23,7 @@ export const Img = styled.div`
   img {
     display: block;
   }
-  img:first-child {
+  .img-l {
     width: 46.3%;
     position: absolute;
     left: 0;
@@ -26,12 +31,15 @@ export const Img = styled.div`
     transform: translateY(-40%);
     z-index: 1;
   }
-  img:last-child {
+  .img-r {
     width: 67.3%;
-    padding-bottom: 6vh;
     position: absolute;
     right: 0;
     top: 60%;
     transform: translateY(-30%);
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
   }
 `;

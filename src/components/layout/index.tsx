@@ -24,7 +24,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
-        scrub: true,
+        scrub: 2,
       });
     });
 
@@ -32,7 +32,8 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
     ScrollTrigger.create({
       snap: {
         snapTo: 1 / (sections.length -1),
-        duration: 2
+        duration: 2.5,
+        ease: 'easeInOut'
       }
     });
 

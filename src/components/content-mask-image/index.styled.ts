@@ -32,4 +32,5 @@ export const Mask = styled.section`
   position: absolute;
   top: 50%;
   z-index: 100;
+  opacity: 0;
 `;

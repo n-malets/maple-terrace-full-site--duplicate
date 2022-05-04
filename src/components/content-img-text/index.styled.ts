@@ -7,7 +7,6 @@ export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: ${props => props.withPadding ? "9% 10.2% 3% 10.2%" : 0};
   flex-direction: ${props => props.reversed ? "row-reverse" : 'row'};
@@ -25,10 +24,11 @@ export const Info = styled.div<IStyleProps>`
   }
 `;
 export const Img = styled.div<IStyleProps>`
+  overflow: hidden;
   width: ${props => props.withPadding ? "52.5%" : "57.2%"};
   position: relative;
   .gatsby-image-wrapper {
-    height: 100%;
+    max-height: 100vh;
     object-fit: cover;
     object-position: top;
   }
