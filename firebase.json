@@ -120,9 +120,5 @@
         "function": "contactForm"
       } ]
     }
-  ],
-  "functions": {
-    "predeploy": [
-    ]
-  }
+  ]
 }

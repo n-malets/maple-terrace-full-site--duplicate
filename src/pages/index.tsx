@@ -58,15 +58,7 @@ const IndexPage = () => {
       <section>
         <ContentCertifications />
       </section>
-      <section className="panel">
-        <ContentGem />
-      </section>
-
       <ContentFloorPlans />
-
-      <section className="panel">
-        <ContentGem />
-      </section>
       <section className="panel">
         <ContentNextSection data={nextData.building}/>
       </section>

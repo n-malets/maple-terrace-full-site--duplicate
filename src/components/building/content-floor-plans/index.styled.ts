@@ -4,6 +4,7 @@ export const FPWrapper = styled.div`
   width: 100%;
   height: 300vh;
   padding: 0 1.8% 5% 2.6%;
+  margin-top: 8%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -28,7 +29,8 @@ export const FloorPlanImg = styled.div`
     position: absolute;
     img {
       position: absolute;
-      width: 84%;
+      max-width: 84%;
+      max-height: 55vh;
     }
     .fp_image_thumb {
       opacity: 0;
@@ -73,7 +75,7 @@ export const FloorPlanImg = styled.div`
     .download_All {
       position: absolute;
       bottom: -15%;
-      right: -8%;
+      right: -0%;
       transform: translateX(-50%);
       border: 1px solid #fff;
       padding: 8px 26px 6px;

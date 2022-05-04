@@ -52,18 +52,18 @@ const ContentWhy:FC = () => {
       })
       .to(
         headingsRef.current || "",
-        { opacity: 0, y: -50},
+        { opacity: 0, y: -75},
         '0'
       )
       .to(
         ".line1",
-        { opacity: 0, y: -100 },
-        '-=2'
+        { opacity: 0, y: -150 },
+        '-=1'
       )
       .to(
         ".line2",
-        { opacity: 0, y: -150 },
-        '-=3'
+        { opacity: 0, y: -225 },
+        '-=2'
       )
 
   }, [])

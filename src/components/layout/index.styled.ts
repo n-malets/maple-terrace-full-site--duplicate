@@ -507,6 +507,15 @@ ul li {
   font-size: 12px;
   line-height: 24px;
 }
+.label {
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.1em;
+  font-feature-settings: 'liga' off;
+}
 .relative {
   position: relative;
 }

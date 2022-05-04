@@ -102,7 +102,7 @@ const ContentMaskImage:FC<IContentIntro> = ({imgName, mask}) => {
     <Wrapper ref={ContentWrapRef}>
       <Img  className="panel">
         <Image imageName={imgName} />
-        <div className={'bg'} ref={bgRef}></div>
+        <div className={'bg'} ref={bgRef} />
       </Img>
       <Mask ref={maskRef} className="panel">
         <Image imageName={mask} />

@@ -19,7 +19,7 @@ const ContentCertifications:FC = () => {
       .timeline({
         scrollTrigger: {
           trigger: itemsRef.current || '',
-          start: "top bottom-10%",
+          start: "top bottom-=10%",
           end: "top top+=10%",
           scrub: 3,
           toggleActions: "play none none reverse",
@@ -112,8 +112,8 @@ const ContentCertifications:FC = () => {
         </Heading>
         <TimeLine ref={timelineRef}>
           <div className="tl-line"/>
-          {Certifications.timeLine.map(item => (
-            <div className="tl-item">
+          {Certifications.timeLine.map((item, i) => (
+            <div className="tl-item" key={`id-${i}`}>
               <h6>{item.title}</h6>
               <p>{item.desc}</p>
             </div>
