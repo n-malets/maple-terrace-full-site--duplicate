@@ -38,9 +38,9 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAPLE_TERRACE_6F38D }}'
-          projectId: maple-terrace-6f38d
-          target: maple-terrace-6f38d
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAPLE_TERRACE_FULL_SITE }}'
+          projectId: maple-terrace-full-site
+          target: maple-terrace-full-site
           channelId: ${{ steps.current_branch.outputs.branch }}
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels

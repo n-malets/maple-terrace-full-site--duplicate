@@ -46,7 +46,7 @@ const ContentCertifications:FC = () => {
           trigger: milestoneRef.current || '',
           start: "top bottom",
           end: "center-=25% top+=25%",
-          markers: true,
+          // markers: true,
           id: "cert",
           toggleActions: "play none none reverse",
           scrub: 4,
