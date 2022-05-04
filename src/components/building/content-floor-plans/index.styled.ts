@@ -19,7 +19,8 @@ export const FloorPlan = styled.div`
 `;
 export const FloorPlanImg = styled.div`
   position: sticky;
-  top: 8%;
+  top: 0;
+  padding-top: 8%;
   .fp_images_wrapper {
     width: 100%;
     display: flex;
@@ -30,7 +31,7 @@ export const FloorPlanImg = styled.div`
     img {
       position: absolute;
       max-width: 84%;
-      max-height: 55vh;
+      //max-height: 55vh;
     }
     .fp_image_thumb {
       opacity: 0;

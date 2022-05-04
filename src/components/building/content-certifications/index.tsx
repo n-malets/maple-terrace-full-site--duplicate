@@ -22,6 +22,7 @@ const ContentCertifications:FC = () => {
           start: "top bottom-=10%",
           end: "top top+=10%",
           scrub: 3,
+          markers: true,
           toggleActions: "play none none reverse",
         },
         defaults: { duration: 3 },

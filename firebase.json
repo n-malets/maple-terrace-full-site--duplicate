@@ -54,11 +54,7 @@
             }
           ]
         }
-      ],
-      "rewrites": [ {
-        "source": "/contact-form",
-        "function": "contactForm"
-      } ]
+      ]
     },
     {
       "site": "dev-maple-terrace-full-site",
@@ -114,11 +110,7 @@
             }
           ]
         }
-      ],
-      "rewrites": [ {
-        "source": "/contact-form",
-        "function": "contactForm"
-      } ]
+      ]
     }
   ]
 }

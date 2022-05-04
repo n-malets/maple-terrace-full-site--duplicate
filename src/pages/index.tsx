@@ -58,7 +58,7 @@ const IndexPage = () => {
       <section>
         <ContentCertifications />
       </section>
-      <ContentFloorPlans />
+      {/*<ContentFloorPlans />*/}
       <section className="panel">
         <ContentNextSection data={nextData.building}/>
       </section>
