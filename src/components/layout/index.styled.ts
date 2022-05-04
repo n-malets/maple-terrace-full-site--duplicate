@@ -515,6 +515,16 @@ ul li {
   width: 100%;
   height: 100%;
 }
+.topContrast {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(196, 196, 196, 0) 100%);
+  mix-blend-mode: multiply;
+}
 `;
 
 export const LayoutWrapper = styled.div`

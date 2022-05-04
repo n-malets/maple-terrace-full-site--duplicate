@@ -10,7 +10,7 @@ interface IContentIntro {
 
 const ContentIntro:FC<IContentIntro> = ({imgName}) => {
   const ContentWrapRef = useRef(null);
-  const ImgRef = useRef(null);
+  const introImgRef = useRef(null);
 
   useEffect(() => {
     ScrollTrigger.create({
@@ -22,7 +22,7 @@ const ContentIntro:FC<IContentIntro> = ({imgName}) => {
       animation: gsap
         .timeline()
         .fromTo(
-          ".intro-img",
+          introImgRef.current || "",
           { height: "100%", overflow: "hidden" },
           { height: "0", overflow: "hidden" },
         ),
@@ -30,7 +30,7 @@ const ContentIntro:FC<IContentIntro> = ({imgName}) => {
   }, []);
   return (
     <Wrapper ref={ContentWrapRef}>
-        <div className="intro-img">
+        <div className="intro-img" ref={introImgRef}>
           <div className="img">
             <Image imageName={imgName} />
           </div>

@@ -15,5 +15,14 @@ export const headText = {
       "21-Story Residence with 345 Ultra Luxury Rental Residences",
       "Hines Developed and Managed",
     ]
+  },
+  amenities1: {
+    heading: {
+      line1: 'Once you arrive,',
+      line2: 'the day is yours—uptown and easy.'
+    },
+    text: [
+      "The Maple Terrace is planned to get you into life quickly—with valet parking, an ideal location, and extensive pedestrian landscaping. Enjoy 300 walkable amenities.",
+    ]
   }
 };
