@@ -1,15 +1,32 @@
 import styled, { createGlobalStyle } from "styled-components"
 import { mediaMax, mediaMaxTablet } from "../../helpers/MediaQueries"
 
-import TTNormsRegularotf from "../../assets/fonts/TTNorms-Regular.otf"
-import TTNormsRegularwoff from "../../assets/fonts/TTNorms-Regular.woff"
-import TTNormsRegularwoff2 from "../../assets/fonts/TTNorms-Regular.woff2"
+import TTNormsRegTTF from "../../assets/fonts/TTNorms-Regular.ttf"
+import TTNormsRegWOFF from "../../assets/fonts/TTNorms-Regular.woff"
+import TTNormsRegWOFF2 from "../../assets/fonts/TTNorms-Regular.woff2"
+import TTNormsRegEOT from "../../assets/fonts/TTNorms-Regular.eot"
+import TTNormsRegOTF from "../../assets/fonts/TTNorms-Regular.otf"
 
-import TTNormsLightwoff from "../../assets/fonts/TTNorms-Light.woff"
-import TTNormsLightwoff2 from "../../assets/fonts/TTNorms-Light.woff2"
+import TTNormsMedEOT from "../../assets/fonts/TTNorms-Medium.eot"
+import TTNormsMedWOFF2 from "../../assets/fonts/TTNorms-Medium.woff2"
+import TTNormsMedWOFF from "../../assets/fonts/TTNorms-Medium.woff"
+import TTNormsMedTTF from "../../assets/fonts/TTNorms-Medium.ttf"
 
-import TTNormsThinwoff from "../../assets/fonts/TTNorms-Thin.woff"
-import TTNormsThinwoff2 from "../../assets/fonts/TTNorms-Thin.woff2"
+import TTNormsLightEOT from "../../assets/fonts/TTNorms-Light.eot"
+import TTNormsLightWOFF2 from "../../assets/fonts/TTNorms-Light.woff2"
+import TTNormsLightWOFF from "../../assets/fonts/TTNorms-Light.woff"
+import TTNormsLightTTF from "../../assets/fonts/TTNorms-Light.ttf"
+
+import TTNormsBoldEOT from "../../assets/fonts/TTNorms-Bold.eot"
+import TTNormsBoldWOFF2 from "../../assets/fonts/TTNorms-Bold.woff2"
+import TTNormsBoldWOFF from "../../assets/fonts/TTNorms-Bold.woff"
+import TTNormsBoldTTF from "../../assets/fonts/TTNorms-Bold.ttf"
+
+import TTNormsThinEOT from "../../assets/fonts/TTNorms-Thin.eot"
+import TTNormsThinWOFF2 from "../../assets/fonts/TTNorms-Thin.woff2"
+import TTNormsThinWOFF from "../../assets/fonts/TTNorms-Thin.woff"
+import TTNormsThinTTF from "../../assets/fonts/TTNorms-Thin.ttf"
+
 
 import ACaslonProRegularttf from "../../assets/fonts/ACaslonPro-Regular.ttf"
 import ACaslonProRegularotf from "../../assets/fonts/ACaslonPro-Regular.otf"
@@ -17,25 +34,64 @@ import ACaslonProItalicttf from "../../assets/fonts/ACaslonPro-Italic.ttf"
 import ACaslonProItalicotf from "../../assets/fonts/ACaslonPro-Italic.otf"
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'TT Norms';
+    src: url(${TTNormsBoldEOT});
+    src: local('TT Norms Bold'), local('TTNorms-Bold'),
+    url(${TTNormsBoldEOT}) format('embedded-opentype'),
+    url(${TTNormsBoldWOFF2}) format('woff2'),
+    url(${TTNormsBoldWOFF}) format('woff'),
+    url(${TTNormsBoldTTF}) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
 
-    @font-face {
-  font-family: "TT-Norms-Pro";
-  src: url(${TTNormsRegularwoff}) format('woff'),
-       url(${TTNormsRegularwoff2}) format('woff2'),
-       url(${TTNormsRegularotf}) format('otf'),
-  }
-  
   @font-face {
-    font-family: "TT-Norms-Light";
-    src: url(${TTNormsLightwoff}) format('woff');
-    src: url(${TTNormsLightwoff2}) format('woff2');
+    font-family: 'TT Norms';
+    src: url(${TTNormsThinEOT});
+    src: local('TT Norms Thin'), local('TTNorms-Thin'),
+    url(${TTNormsThinEOT}) format('embedded-opentype'),
+    url(${TTNormsThinWOFF2}) format('woff2'),
+    url(${TTNormsThinWOFF}) format('woff'),
+    url(${TTNormsThinTTF}) format('truetype');
+    font-weight: 100;
+    font-style: normal;
   }
-  
   @font-face {
-    font-family: "TT-Norms-Thin";
-    src: url(${TTNormsThinwoff}) format('woff');
-    src: url(${TTNormsThinwoff2}) format('woff2');
+    font-family: 'TT Norms';
+    src: url(${TTNormsLightEOT});
+    src: local('TT Norms Light'), local('TTNorms-Light'),
+    url(${TTNormsLightEOT}) format('embedded-opentype'),
+    url(${TTNormsLightWOFF2}) format('woff2'),
+    url(${TTNormsLightWOFF}) format('woff'),
+    url(${TTNormsLightTTF}) format('truetype');
+    font-weight: 300;
+    font-style: normal;
   }
+  @font-face {
+    font-family: 'TT Norms';
+    src: url(${TTNormsMedEOT});
+    src: local('TT Norms Medium'), local('TTNorms-Medium'),
+    url(${TTNormsMedEOT}) format('embedded-opentype'),
+    url(${TTNormsMedWOFF2}) format('woff2'),
+    url(${TTNormsMedWOFF}) format('woff'),
+    url(${TTNormsMedTTF}) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'TT Norms';
+    src: url(${TTNormsRegEOT});
+    src: local('TT Norms Regular'), local('TTNorms-Regular'),
+    url(${TTNormsRegOTF}) format('otf'),
+    url(${TTNormsRegEOT}) format('embedded-opentype'),
+    url(${TTNormsRegWOFF2}) format('woff2'),
+    url(${TTNormsRegWOFF}) format('woff'),
+    url(${TTNormsRegTTF}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   
   @font-face {
     font-family: "Adobe-Caslon-Pro";
@@ -52,15 +108,13 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    //background: #292929;
-    background: ${(props: { lightTheme: boolean }) =>
-      props.lightTheme ? "#fff" : "#292929"};
+    background-color: var(--color-dark);
+    color: var(--color-white);
   }
-
+  
   *::-webkit-scrollbar {
     width: 5px;
   }
-
   *::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   }
@@ -69,7 +123,21 @@ export const GlobalStyle = createGlobalStyle`
     background-color: darkgrey;
     outline: 1px solid slategrey;
   }
-  
+  :root {
+    /* Colors: */
+    --color-dark: #151515;
+    --color-darken: #292929;
+    --color-white: #FFFFFF;
+  }
+  .caption_1 {
+    font-family: "TT-Norms", serif;
+    font-weight: 500;
+  }
+  .caption_2 {
+    font-family: "TT-Norms", serif;
+    font-weight: 300;
+  }
+
 
 
 article,
@@ -197,6 +265,7 @@ html {
 
 * {
   box-sizing: inherit;
+  color: var(--color-white);
 }
 
 *:before {
@@ -347,7 +416,7 @@ ul li {
 .pb-10 {
   padding-bottom: 1.25vh;
 }
-  .pb-20 {
+.pb-20 {
   padding-bottom: 2.5vh;
 }
 .pb-40 {
@@ -359,28 +428,104 @@ ul li {
 .pb-80 {
   padding-bottom: 10vh;
 }
-`
-export const HeaderLogo = styled.div`
-  position: fixed;
-  top: 37px;
-  left: 28px;
-  width: 99px;
-  z-index: 3;
-  cursor: pointer;
-  opacity: 0;
-  ${mediaMax.tablet`
-    top: 32px;
-    display: none;
-  `}
-  ${mediaMaxTablet.tabletLandscape`
-    top: 32px;
-  `}
-  ${mediaMax.phoneLarge`
-    width: 64px;
-  `}
-  img {
-    width: 100%;
-  }
-`
+.h1 {
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 71px;
+  font-feature-settings: 'liga' off;
+}
+.h1i {
+  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 86px;
+  display: flex;
+}
+.h2 {
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 57px;
+}
+.h2i {
+  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+}
+.h3 {
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+}
+.h3i {
+  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+}
+.h4 {
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+.copy_t1 {
+  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+.copy_t2 {
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+}
+.caption_t1 {
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+}
+.caption_t2 {
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+}
+.relative {
+  position: relative;
+}
+.panel {
+  will-change: transform;
+  width: 100%;
+  height: 100%;
+}
+.topContrast {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(196, 196, 196, 0) 100%);
+  mix-blend-mode: multiply;
+}
+`;
 
-export const LayoutWrapper = styled.div``
+export const LayoutWrapper = styled.div`
+`;
