@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   padding-left: 10.3%;
   display: flex;
   align-items: center;
-  .trigger {
+  .gem-wrap {
     width: 100%;
     display: flex;
     align-items: center;
@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
 `;
 export const Info = styled.div`
   width: 43.2%;
+  opacity: 0;
 `;
 export const Img = styled.div`
   width: 54.6%;

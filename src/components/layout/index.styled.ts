@@ -479,10 +479,17 @@ ul li {
   font-size: 18px;
   line-height: 24px;
 }
+.h4i {
+  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+}
 .copy_t1 {
   font-family: 'Adobe Caslon Pro', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   font-size: 18px;
   line-height: 24px;
 }

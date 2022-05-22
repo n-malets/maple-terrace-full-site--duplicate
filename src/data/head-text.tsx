@@ -24,5 +24,23 @@ export const headText = {
     text: [
       "The Maple Terrace is planned to get you into life quickly—with valet parking, an ideal location, and extensive pedestrian landscaping. Enjoy 300 walkable amenities.",
     ]
+  },
+  amenities2: {
+    heading: {
+      line1: 'A Modern Workplace with,',
+      line2: 'Easy Access to your Home.'
+    },
+    text: [
+      "Catch a quick de-brief or brainstorm for a five-year plan. Maple Terrace is set up to provide privacy and tranquility, whatever your goal. If you need a task handled as you work, a 24-hour concierge is at the ready.",
+    ]
+  },
+  amenities3: {
+    heading: {
+      line1: 'See Dallas from',
+      line2: 'a whole new perspective.'
+    },
+    text: [
+      "The Terrace amenity deck and lounge includes all the benefits of Maple Terrace with a vast roof terrace both indoors and out.",
+    ]
   }
 };

@@ -9,11 +9,12 @@ export const HeaderWrap = styled.header`
   display: flex;
   justify-content: space-between;
   z-index: 1;
-  a {
+  a, span {
     padding: 0 18px;
     opacity: .25;
     transition: .4s ease-out;
     letter-spacing: 0.1em;
+    cursor: pointer;
     &:hover {
       opacity: .75;
     }

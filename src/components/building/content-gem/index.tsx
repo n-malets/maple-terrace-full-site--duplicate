@@ -14,11 +14,11 @@ const ContentGem:FC = () => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: ".trigger",
-          start: "top bottom",
-          end: "center top+=52%",
+          trigger: wrapperRef.current || '',
+          start: "center bottom",
+          end: "center center+=1%",
           scrub: 4,
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none reverse"
         },
         defaults: { duration: 3 },
       })
@@ -27,7 +27,7 @@ const ContentGem:FC = () => {
         3,
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0 },
-        '+=1'
+        '0'
       )
       .fromTo(
         ".img-l",
@@ -44,11 +44,11 @@ const ContentGem:FC = () => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: ".trigger",
-          start: "top-=150% center",
-          end: "bottom-=30% top",
+          trigger: wrapperRef.current || '',
+          start: "center center-=1%",
+          end: "center top+=5%",
           toggleActions: "play none none reverse",
-          scrub: 4,
+          scrub: 4
         },
         defaults: { duration: 3 },
       })
@@ -57,25 +57,25 @@ const ContentGem:FC = () => {
         2,
         { opacity: 1, y: 0 },
         { opacity: 0, y: 0 },
-        "2"
+        "0"
       )
       .fromTo(
         ".img-l",
         { opacity: 1, y: 0 },
         { opacity: 0, y: 0 },
-        "2"
+        "0"
       )
       .fromTo(
         ".img-r",
         { maxHeight: "600px" },
         { maxHeight: "0" },
-        "2"
+        "0"
       )
 
   }, [])
   return (
     <Wrapper>
-      <div className="trigger" ref={wrapperRef}>
+      <div className={'gem-wrap'} ref={wrapperRef}>
         <Info ref={infoRef}>
           <h3 className="h2">A 1925 architectural gem reimagined</h3>
           <h3 className="h2i">as a 21st century workplace.</h3>

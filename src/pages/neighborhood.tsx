@@ -2,6 +2,12 @@ import * as React from "react"
 import {quoteData} from "../data/intro";
 import ContentQuote from "../components/content-quote";
 import ContentIntro from "../components/content-intro";
+import ContentNextSection from "../components/content-next";
+import {nextData} from "../data/next";
+import ContentImgText from "../components/content-img-text";
+import {ImgTextData} from "../data/img-text";
+import ContentSpaces from "../components/amenities/content-spaces";
+import {spacesData} from "../data/spaces";
 
 const NeighborhoodPage = () => {
   return (
@@ -11,6 +17,18 @@ const NeighborhoodPage = () => {
       </section>
       <section className="panel">
         <ContentQuote quote={quoteData.neighborhood1}/>
+      </section>
+      <section className={'panel'}>
+        <ContentImgText data={ImgTextData.neighborhood1}/>
+      </section>
+      <section className="panel">
+        <ContentSpaces spaces={spacesData.neighborhood1}/>
+      </section>
+      <section className="panel">
+        <ContentIntro imgName={'neighborhood_5.jpg'} />
+      </section>
+      <section className="panel">
+        <ContentNextSection data={nextData.neighborhood}/>
       </section>
 
     </>

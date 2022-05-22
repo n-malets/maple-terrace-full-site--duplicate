@@ -5,5 +5,10 @@ export const nextData = {
     num: '02',
     title: "The Neighborhood",
     next: "/neighborhood"
+  },
+  neighborhood: {
+    num: '03',
+    title: "The Amenities",
+    next: "/amenities"
   }
 };

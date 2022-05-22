@@ -7,9 +7,13 @@ interface IContentImgText {
   data: {
     img: string;
     title: string | React.ReactElement;
-    text: string;
+    title2: string | React.ReactElement;
+    text: string | React.ReactElement;
     withPadding?: boolean | undefined;
     reversed?: boolean | undefined;
+    bigHeading?: boolean | undefined;
+    infoWidth?: string | undefined;
+    infoPadding?: boolean | undefined;
   }
 }
 
@@ -78,8 +82,9 @@ const ContentImgText:FC<IContentImgText> = ({data}) => {
       <Img withPadding={data.withPadding} ref={imgWrapperRef}>
         <Image imageName={data.img}/>
       </Img>
-      <Info reversed={data.reversed} ref={infoWrapperRef}>
-        <h4 className="h4">{data.title}</h4>
+      <Info reversed={data.reversed} ref={infoWrapperRef} infoWidth={data.infoWidth} infoPadding={data.infoPadding}>
+        <h4 className={data.bigHeading? "h3" : "h4"}>{data.title}</h4>
+        {data.title2 && <h4 className={data.bigHeading? "h3i" : "h4i"}>{data.title2}</h4>}
         <p className="copy_t1">{data.text}</p>
       </Info>
     </Wrapper>

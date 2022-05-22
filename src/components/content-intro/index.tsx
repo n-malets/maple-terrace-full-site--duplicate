@@ -16,7 +16,7 @@ const ContentIntro:FC<IContentIntro> = ({imgName}) => {
     ScrollTrigger.create({
       trigger: ContentWrapRef?.current || "",
       toggleActions: "play none none reverse",
-      start: "top+=5% top",
+      start: "top top",
       end: 'bottom top',
       scrub: 3,
       animation: gsap
@@ -25,11 +25,11 @@ const ContentIntro:FC<IContentIntro> = ({imgName}) => {
           introImgRef.current || "",
           { height: "100%", overflow: "hidden" },
           { height: "0", overflow: "hidden" },
-        ),
+        )
     });
   }, []);
   return (
-    <Wrapper ref={ContentWrapRef}>
+    <Wrapper ref={ContentWrapRef} >
         <div className="intro-img" ref={introImgRef}>
           <div className="img">
             <Image imageName={imgName} />

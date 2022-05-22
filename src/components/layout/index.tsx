@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from "react"
+import {Context} from "../../context/context";
 import { GlobalStyle, LayoutWrapper } from "./index.styled"
 import Header from "../header";
+import ContactModal from "../contact";
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -16,6 +18,8 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, location }) => {
+  const [openContact, setOpenContact] = useState(false);
+  const [openLegal, setOpenLegal] = useState(false);
 
   useEffect(()=> {
     const sections = gsap.utils.toArray(".panel");
@@ -33,7 +37,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       snap: {
         snapTo: 1 / (sections.length -1),
         duration: 2.5,
-        ease: 'easeIn'
+        ease: 'easeOut'
       }
     });
 
@@ -105,11 +109,12 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   }, [])
 
   return (
-    <>
+    <Context.Provider value={{openContact,setOpenContact,openLegal,setOpenLegal}}>
       <GlobalStyle />
+      {openContact && <ContactModal/>}
       <Header location={location} />
       <LayoutWrapper className={'container'}>{children}</LayoutWrapper>
-    </>
+    </Context.Provider>
   )
 }
 export default Layout
