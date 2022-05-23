@@ -7,7 +7,7 @@ interface IContentImgText {
   data: {
     img: string;
     title: string | React.ReactElement;
-    title2: string | React.ReactElement;
+    title2?: string | React.ReactElement;
     text: string | React.ReactElement;
     withPadding?: boolean | undefined;
     reversed?: boolean | undefined;

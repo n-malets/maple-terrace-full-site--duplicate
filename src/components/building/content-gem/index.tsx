@@ -15,7 +15,7 @@ const ContentGem:FC = () => {
       .timeline({
         scrollTrigger: {
           trigger: wrapperRef.current || '',
-          start: "center bottom",
+          start: "top bottom+=10%",
           end: "center center+=1%",
           scrub: 4,
           toggleActions: "play none none reverse"
@@ -45,8 +45,8 @@ const ContentGem:FC = () => {
       .timeline({
         scrollTrigger: {
           trigger: wrapperRef.current || '',
-          start: "center center-=1%",
-          end: "center top+=5%",
+          start: "bottom top+=15%",
+          end: "center bottom-=5%",
           toggleActions: "play none none reverse",
           scrub: 4
         },

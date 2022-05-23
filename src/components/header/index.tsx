@@ -11,7 +11,7 @@ interface IHeader {
 }
 
 const Header:FC<IHeader> = ({location}) => {
-  const { setOpenContact } = useContext(Context);
+  const { setOpenContact, setOpenTeam } = useContext(Context);
   return (
     <HeaderWrap>
       <Nav className={'prim'}>
@@ -21,7 +21,8 @@ const Header:FC<IHeader> = ({location}) => {
       </Nav>
       {/*<Logo src={main_logo} alt={'Maple Terrace Uptown Dallas'} id={'headerLogo'}/>*/}
       <Nav className={'sec'}>
-        <Link to={'/team'}>TEAM</Link>
+        {/*<Link to={'/team'}>TEAM</Link>*/}
+        <span onClick={() => setOpenTeam(true)}>TEAM</span>
         <span onClick={() => setOpenContact(true)}>CONTACT</span>
       </Nav>
     </HeaderWrap>

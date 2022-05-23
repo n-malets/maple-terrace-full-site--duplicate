@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useState } from "react"
+import React, {FC, useEffect, useRef, useState} from "react"
 import {Context} from "../../context/context";
 import { GlobalStyle, LayoutWrapper } from "./index.styled"
-import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import Header from "../header";
 import ContactModal from "../contact";
+import Team from "../../pages/team";
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -20,24 +20,20 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, location }) => {
+  const layoutWrapRef = useRef(null);
   const [openContact, setOpenContact] = useState(false);
   const [openLegal, setOpenLegal] = useState(false);
+  const [openTeam, setOpenTeam] = useState(false);
+
   useEffect(()=> {
-    if (openContact || openLegal) {
-      // @ts-ignore
-      disableBodyScroll('body');
-    }else {
-      clearAllBodyScrollLocks()
-    }
-  },[openLegal, openContact])
+    ScrollTrigger.getById("v-scroll")?.refresh();
+  },[openLegal, openContact, openTeam])
   useEffect(()=> {
     ScrollTrigger.getById("h-scroll")?.disable();
     ScrollTrigger.getById("v-scroll")?.refresh();
+    const vSections = gsap.utils.toArray(".panel");
 
-    if(location.pathname !== '/team') {
-      const vSections = gsap.utils.toArray(".panel");
-
-      vSections.forEach((panel: any, i) => {
+    vSections.forEach((panel: any, i) => {
         ScrollTrigger.create({
           trigger: panel,
           start: "top top",
@@ -52,38 +48,16 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
           ease: 'easeOut'
         }
       });
-    }else {
-      ScrollTrigger.getById("v-scroll")?.disable();
-      ScrollTrigger.getById("h-scroll")?.refresh();
-      const hSections = gsap.utils.toArray(".hor-panel");
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          id: 'h-scroll',
-          trigger: ".hor-container",
-          pin: true,
-          scrub: 1,
-          snap: 1 / (hSections.length - 1),
-          start: "top top",
-          end: "+=5000"
-        }
-      });
-
-      tl.to(hSections, {
-        xPercent: -100 * (hSections.length - 1),
-        duration: 2.5,
-        ease: 'none'
-      });
-    }
-
-  }, [location.pathname])
+  }, [])
 
   return (
-    <Context.Provider value={{openContact,setOpenContact,openLegal,setOpenLegal}}>
+    <Context.Provider value={{openContact,setOpenContact,openLegal,setOpenLegal, openTeam, setOpenTeam}}>
       <GlobalStyle />
       {openContact && <ContactModal/>}
       {openLegal && <LegalModal/>}
+      {openTeam && <Team/>}
       {location.pathname !== '/team' && <Header location={location} />}
-      <LayoutWrapper className={'container'}>{children}</LayoutWrapper>
+      <LayoutWrapper className={'container'} ref={layoutWrapRef}>{children}</LayoutWrapper>
     </Context.Provider>
   )
 }

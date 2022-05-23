@@ -532,7 +532,7 @@ ul li {
   height: 100%;
 }
 .hor-container {
-  width: 600%;
+  width: 700%;
   height: 100%;
   display: flex;
   flex-wrap: nowrap;
@@ -541,6 +541,10 @@ ul li {
   will-change: transform;
   width: 100vw;
   height: 100%;
+  overflow-x: scroll!important;
+}
+.lock {
+  overflow-y: hidden!important;
 }
 .topContrast {
   position: absolute;
