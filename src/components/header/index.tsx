@@ -21,7 +21,7 @@ const Header:FC<IHeader> = ({location}) => {
       </Nav>
       {/*<Logo src={main_logo} alt={'Maple Terrace Uptown Dallas'} id={'headerLogo'}/>*/}
       <Nav className={'sec'}>
-        <span>TEAM</span>
+        <Link to={'/team'}>TEAM</Link>
         <span onClick={() => setOpenContact(true)}>CONTACT</span>
       </Nav>
     </HeaderWrap>

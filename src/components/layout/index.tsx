@@ -1,12 +1,14 @@
 import React, { FC, useEffect, useState } from "react"
 import {Context} from "../../context/context";
 import { GlobalStyle, LayoutWrapper } from "./index.styled"
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import Header from "../header";
 import ContactModal from "../contact";
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { CSSPlugin } from "gsap/CSSPlugin"
+import LegalModal from "../legal";
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, CSSPlugin)
 gsap.config({
   nullTargetWarn: false,
@@ -20,99 +22,67 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children, location }) => {
   const [openContact, setOpenContact] = useState(false);
   const [openLegal, setOpenLegal] = useState(false);
-
   useEffect(()=> {
-    const sections = gsap.utils.toArray(".panel");
+    if (openContact || openLegal) {
+      // @ts-ignore
+      disableBodyScroll('body');
+    }else {
+      clearAllBodyScrollLocks()
+    }
+  },[openLegal, openContact])
+  useEffect(()=> {
+    ScrollTrigger.getById("h-scroll")?.disable();
+    ScrollTrigger.getById("v-scroll")?.refresh();
 
-   sections.forEach((panel: any, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top",
-        scrub: 3,
+    if(location.pathname !== '/team') {
+      const vSections = gsap.utils.toArray(".panel");
+
+      vSections.forEach((panel: any, i) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top top",
+          scrub: 3,
+        });
       });
-    });
+      ScrollTrigger.create({
+        id: 'v-scroll',
+        snap: {
+          snapTo: 1 / (vSections.length - 1),
+          duration: 2.5,
+          ease: 'easeOut'
+        }
+      });
+    }else {
+      ScrollTrigger.getById("v-scroll")?.disable();
+      ScrollTrigger.getById("h-scroll")?.refresh();
+      const hSections = gsap.utils.toArray(".hor-panel");
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          id: 'h-scroll',
+          trigger: ".hor-container",
+          pin: true,
+          scrub: 1,
+          snap: 1 / (hSections.length - 1),
+          start: "top top",
+          end: "+=5000"
+        }
+      });
 
-
-    ScrollTrigger.create({
-      snap: {
-        snapTo: 1 / (sections.length -1),
+      tl.to(hSections, {
+        xPercent: -100 * (hSections.length - 1),
         duration: 2.5,
-        ease: 'easeOut'
-      }
-    });
+        ease: 'none'
+      });
+    }
 
-  //   const sections1 = gsap.utils.toArray(".panel");
-  //   const  tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: ".container",
-  //         pin: true,
-  //         // pinSpacing: false,
-  //         pinType: "fixed",
-  //         scrub: 1,
-  //         snap: 1 / (sections1.length - 1),
-  //         start: "top top",
-  //       }
-  //     });
-  //
-  //   tl.to(sections1, {
-  //     yPercent: -100 * (sections1.length - 1),
-  //     duration: 1,
-  //     ease: "none"
-  //   });
-
-
-    // let settingUp = true;
-    //
-    // gsap.registerPlugin(ScrollTrigger);
-    //
-    // function goToSection(i: number, anim?: { restart: () => void; } | undefined) {
-    //   gsap.to(window, {
-    //     scrollTo: {y: i*innerHeight, autoKill: false},
-    //     ease: 'easeInOut',
-    //     duration: 2
-    //   });
-    //   if(anim) {
-    //     anim.restart();
-    //   }
-    // }
-    //
-    // const instances = []
-    // const sections = gsap.utils.toArray(".panel2");
-    //
-    // sections.forEach((panel:any, i) => {
-    //   console.log(panel, i)
-    //   instances.push(
-    //     ScrollTrigger.create({
-    //       trigger: panel,
-    //       onEnter: () => {
-    //         if(!settingUp){
-    //           goToSection(i)
-    //         }
-    //       }
-    //     })
-    //   );
-    //
-    //   instances.push(
-    //     ScrollTrigger.create({
-    //       trigger: panel,
-    //       onEnterBack: () => {
-    //         if(!settingUp){
-    //           goToSection(i)
-    //         }
-    //       }
-    //     })
-    //   );
-    // });
-    //
-    // settingUp = false;
-
-  }, [])
+  }, [location.pathname])
 
   return (
     <Context.Provider value={{openContact,setOpenContact,openLegal,setOpenLegal}}>
       <GlobalStyle />
       {openContact && <ContactModal/>}
-      <Header location={location} />
+      {openLegal && <LegalModal/>}
+      {location.pathname !== '/team' && <Header location={location} />}
       <LayoutWrapper className={'container'}>{children}</LayoutWrapper>
     </Context.Provider>
   )

@@ -1,0 +1,83 @@
+import styled from "styled-components";
+
+interface IStyleProps {
+  img1Top?: string;
+  img1Width?: string;
+  img2Top?: string;
+  img2Width?: string;
+  imgsWidth?: string;
+  copiesWidth?: string;
+  img1OnTop?: boolean | undefined;
+  img1MaxWidth?: string | undefined;
+}
+
+export const Wrapper = styled.div<IStyleProps>`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 13vh 9% 5vh 6.6%;
+`;
+
+
+export const TeamHeader = styled.div`
+  position: fixed;
+  top: 38px;
+  left: 48px;
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 100;
+  a {
+    cursor: pointer;
+  }
+`;
+export const TeamImgs = styled.div<IStyleProps>`
+  width: ${props => props.imgsWidth};
+  position: relative;
+  .img-tl {
+    position: absolute;
+    top: ${props => props.img1Top};
+    left: 0;
+    width: ${props => props.img1Width};
+    max-width: ${props => props.img1MaxWidth};
+    z-index: ${props => props.img1OnTop ? 1 : 0};
+  }
+  .img-tr {
+    position: absolute;
+    top: ${props => props.img2Top};
+    right: 0;
+    width: ${props => props.img2Width};
+  }
+`;
+
+export const TeamInfo = styled.div`
+  width: 36.5%;
+  align-self: center;
+  p {
+    line-height: 22px;
+  }
+  h2 {
+    padding: 24px 0;
+  }
+`;
+export const TeamQuotation = styled.div`
+  padding-top: 13%;
+  h4 {
+    font-weight: 300;
+  }
+  p {
+    font-style: italic;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 24px 0;
+  }
+  span {
+    font-family: "TT Norms", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+  }
+`;

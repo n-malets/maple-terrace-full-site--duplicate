@@ -531,6 +531,17 @@ ul li {
   width: 100%;
   height: 100%;
 }
+.hor-container {
+  width: 600%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.hor-panel {
+  will-change: transform;
+  width: 100vw;
+  height: 100%;
+}
 .topContrast {
   position: absolute;
   width: 100%;
@@ -541,7 +552,17 @@ ul li {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(196, 196, 196, 0) 100%);
   mix-blend-mode: multiply;
 }
+.fade {
+  animation: fade 1s ease-out;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 `;
 
-export const LayoutWrapper = styled.div`
-`;
+export const LayoutWrapper = styled.div``;

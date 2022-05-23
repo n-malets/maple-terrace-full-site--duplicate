@@ -26,4 +26,43 @@ export const FooterLogo = styled.div`
     margin-right: 36px;
   }
 `;
-export const ContactInfo = styled.div``;
+export const ContactInfo = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+export const ContactTitle = styled.div`
+  margin-right: 18.5%;
+  h2 {
+    color: #0467AE;
+  }
+`;
+export const ContactItems = styled.div`
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 36px;
+    h4 {
+      color: #000;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+    }
+    a, span {
+      font-family: 'Adobe Caslon Pro',sans-serif;
+      color: #000;
+      transition: .25s ease-out;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    a:hover, span:hover{
+      opacity: .75;
+    }
+    .tt-link {
+      font-family: 'TT Norms', sans-serif;
+      padding-bottom: 36px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+  }
+`;
