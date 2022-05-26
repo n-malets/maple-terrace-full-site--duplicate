@@ -24,6 +24,7 @@ export const Logo = styled.img`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  top: 4.5vh;
 `;
 
 export const Nav = styled.nav`

@@ -8,6 +8,7 @@ import ContentImgText from "../components/content-img-text";
 import {ImgTextData} from "../data/img-text";
 import ContentSpaces from "../components/amenities/content-spaces";
 import {spacesData} from "../data/spaces";
+import Footer from "../components/footer";
 
 const NeighborhoodPage = () => {
   return (
@@ -27,8 +28,9 @@ const NeighborhoodPage = () => {
       <section className="panel">
         <ContentIntro imgName={'neighborhood_5.jpg'} />
       </section>
-      <section className="panel">
+      <section className={'relative'}>
         <ContentNextSection data={nextData.neighborhood}/>
+        <Footer />
       </section>
 
     </>

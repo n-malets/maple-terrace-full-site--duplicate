@@ -15,6 +15,7 @@ const ContentPreload = () => {
       start: "bottom bottom",
       end: "bottom center+=20%",
       scrub: 3,
+      id: 'introScroll',
       animation: gsap
         .timeline()
         .fromTo(

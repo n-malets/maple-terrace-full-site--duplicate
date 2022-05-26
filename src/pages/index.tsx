@@ -14,6 +14,7 @@ import ContentWhy from "../components/building/content-why";
 import ContentCertifications from "../components/building/content-certifications";
 import ContentFloorPlans from "../components/building/content-floor-plans";
 import ContentNextSection from "../components/content-next";
+import Footer from "../components/footer";
 
 
 const IndexPage = () => {
@@ -63,8 +64,9 @@ const IndexPage = () => {
         <ContentCertifications />
       </section>
       {/*<ContentFloorPlans />*/}
-      <section className="panel">
+      <section className={'relative'}>
         <ContentNextSection data={nextData.building}/>
+        <Footer />
       </section>
     </div>
   )

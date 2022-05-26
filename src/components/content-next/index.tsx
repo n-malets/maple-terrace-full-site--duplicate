@@ -46,9 +46,26 @@ const ContentNextSection:FC<IContentNextSection>= ({data}) => {
         { opacity: 1, y: 0 },
         '0'
       )
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: wrapperRef.current || '',
+          start: "bottom center",
+          end: "bottom top",
+          scrub: 4,
+          toggleActions: "play none none reverse"
+        },
+        defaults: { duration: 3 },
+      })
+      .to(
+        wrapperRef.current || '',
+        { y: -55 },
+        '0'
+      )
   }, [])
   return (
-    <Wrapper ref={wrapperRef}>
+    <Wrapper ref={wrapperRef} className={'panel'}>
       <Headings>
         <p ref={headingTRef} className={'h3'}>{data.num}</p>
         <h2 ref={headingBRef} className={'h1i'}>{data.title}</h2>

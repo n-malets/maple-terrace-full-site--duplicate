@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 20px 2%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 export const Headings = styled.div`
   position: relative;

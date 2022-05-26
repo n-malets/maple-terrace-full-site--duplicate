@@ -13,22 +13,26 @@ interface IHeader {
 const Header:FC<IHeader> = ({location}) => {
   const { setOpenContact, setOpenTeam, setOpenLegal } = useContext(Context);
   useEffect(()=>{
-    ScrollTrigger.create({
-      trigger: "#preload-wrap",
-      toggleActions: 'play none none reverse',
-      start: "bottom bottom",
-      end: "bottom top",
-      scrub: 3,
-      // markers: true,
-      animation: gsap
-        .timeline()
-        .fromTo(
-        '#headerLogo',
-        {top: "50vh", transform: "translate(-50%, -50%) scale(3)", ease: "ease-out"},
-        {top: "4.5vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
-      )
-    });
-  }, [])
+    ScrollTrigger.getById("introScroll")?.refresh();
+    ScrollTrigger.getById("headerScroll")?.refresh();
+    if (location.pathname === "/") {
+      ScrollTrigger.create({
+        trigger: "#preload-wrap",
+        toggleActions: 'play none none reverse',
+        start: "bottom bottom",
+        end: "bottom top",
+        scrub: 3,
+        id: "headerScroll",
+        animation: gsap
+          .timeline()
+          .fromTo(
+            '#headerLogo',
+            {top: "50vh", transform: "translate(-50%, -50%) scale(3)", ease: "ease-out"},
+            {top: "4.5vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
+          )
+      });
+    }
+  }, [location])
 
   return (
     <HeaderWrap>

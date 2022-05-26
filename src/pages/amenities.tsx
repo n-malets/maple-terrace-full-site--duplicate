@@ -13,6 +13,7 @@ import {nextData} from "../data/next";
 import ContentImageZoomed from "../components/content-image-zoomed";
 import ContentSpaces from "../components/amenities/content-spaces";
 import ContentImgText from "../components/content-img-text";
+import Footer from "../components/footer";
 
 const AmenitiesPage = () => {
   return (
@@ -72,6 +73,10 @@ const AmenitiesPage = () => {
         </section>
         <section className="panel">
           <ContentQuote quote={quoteData.amenities3}/>
+        </section>
+        <section className={'relative'}>
+          <ContentNextSection data={nextData.building}/>
+          <Footer />
         </section>
       </div>
     </>
