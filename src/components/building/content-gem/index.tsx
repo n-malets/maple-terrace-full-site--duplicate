@@ -15,7 +15,29 @@ const ContentGem:FC = () => {
       .timeline({
         scrollTrigger: {
           trigger: wrapperRef.current || '',
-          start: "top bottom+=10%",
+          start: "top bottom-=5%",
+          end: "top center+=15%",
+          scrub: 3,
+          toggleActions: "play none none reverse"
+        },
+        defaults: { duration: 3 },
+      })
+      .to(
+        '#headerLogo',
+        {top: "-15vh", ease: "ease-out"},
+        0
+      )
+      .to(
+        '#hFooter',
+        {right: "-15%", ease: "ease-out"},
+        0
+      )
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: wrapperRef.current || '',
+          start: "top bottom+=19%",
           end: "center center+=1%",
           scrub: 4,
           toggleActions: "play none none reverse"
@@ -74,8 +96,8 @@ const ContentGem:FC = () => {
 
   }, [])
   return (
-    <Wrapper>
-      <div className={'gem-wrap'} ref={wrapperRef}>
+    <Wrapper ref={wrapperRef}>
+      <div className={'gem-wrap'} >
         <Info ref={infoRef}>
           <h3 className="h2">A 1925 architectural gem reimagined</h3>
           <h3 className="h2i">as a 21st century workplace.</h3>

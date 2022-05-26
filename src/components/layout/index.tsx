@@ -9,6 +9,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { CSSPlugin } from "gsap/CSSPlugin"
 import LegalModal from "../legal";
+import VideoPreload from "../video-preload";
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, CSSPlugin)
 gsap.config({
   nullTargetWarn: false,
@@ -24,6 +25,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   const [openContact, setOpenContact] = useState(false);
   const [openLegal, setOpenLegal] = useState(false);
   const [openTeam, setOpenTeam] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(()=> {
     ScrollTrigger.getById("v-scroll")?.refresh();
@@ -53,6 +55,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   return (
     <Context.Provider value={{openContact,setOpenContact,openLegal,setOpenLegal, openTeam, setOpenTeam}}>
       <GlobalStyle />
+      {(isFirstLoad && location.pathname === '/' ) && <VideoPreload setIsFirstLoad={setIsFirstLoad}/>}
       {openContact && <ContactModal/>}
       {openLegal && <LegalModal/>}
       {openTeam && <Team/>}

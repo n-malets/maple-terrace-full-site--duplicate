@@ -36,3 +36,25 @@ export const Nav = styled.nav`
     font-weight: 500;
   }
 `;
+
+export const FooterNav = styled.nav`
+  position: absolute;
+  top: 93vh;
+  right: 36px;
+  font-family: 'TT Norms', sans-serif;
+  font-style: normal;
+  h5 {
+    padding-bottom: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.19em;
+    cursor: pointer;
+  }
+  p {
+    font-weight: 300;
+    font-size: 8px;
+    line-height: 9px;
+    text-transform: capitalize;
+  }
+`;

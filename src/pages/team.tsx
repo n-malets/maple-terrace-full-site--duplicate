@@ -23,14 +23,18 @@ const Team = () => {
   useEffect(()=> {
     ScrollTrigger.getById("h-scroll")?.refresh();
     const hSections = gsap.utils.toArray(".h-panel");
-    const sectionIncrement = 2.5 / (hSections.length - 1);
     const tl = gsap.timeline({
       scrollTrigger: {
         id: 'h-scroll',
         trigger: ".hor-container",
         pin: true,
-        scrub: 1,
-        snap: 1 / (hSections.length - 1),
+        scrub: 0.2,
+        snap: {
+          snapTo: 1 / (hSections.length - 1),
+          duration: { min: 0.22, max: 0.7 },
+          delay: 1,
+          ease: "power1.inOut"
+        },
         start: "top top",
         end: "+=5000"
       }
@@ -38,7 +42,7 @@ const Team = () => {
 
     tl.to(hSections, {
       xPercent: -100 * (hSections.length - 1),
-      duration: 1.5,
+      duration: .04,
       ease: 'none'
     });
 
