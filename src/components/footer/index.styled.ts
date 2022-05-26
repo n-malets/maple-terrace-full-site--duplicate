@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   position: relative;
   height: 100vh;
+  z-index: 11;
+  pointer-events: none;
 `;
 export const FooterContent = styled.div`
   width: 100%;
@@ -14,6 +16,7 @@ export const FooterContent = styled.div`
   left: 0;
   display: flex;
   justify-content: space-between;
+  pointer-events: all;
   .col {
     width: 33.33%;
     display: flex;
@@ -26,11 +29,16 @@ export const FooterContent = styled.div`
       font-family: "TT Norms", sans-serif;
       font-weight: 400;
     }
+    a {
+      padding-right: 8px;
+    }
     span {
       font-weight: 500;
     }
     .footerLogos {
-      img {
+      a {
+        display: inline-block;
+        padding: 0;
         margin-right: 24px;
         &:first-child {
           width: 80px;
@@ -51,6 +59,7 @@ export const FooterContent = styled.div`
       margin-left: auto;
       img {
         margin-left: 26px;
+        cursor: pointer;
       }
     }
     .legalBtn {
