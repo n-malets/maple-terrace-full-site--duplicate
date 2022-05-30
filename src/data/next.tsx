@@ -10,5 +10,10 @@ export const nextData = {
     num: '03',
     title: "The Amenities",
     next: "/amenities"
+  },
+  amenities: {
+    num: '',
+    title: "",
+    next: "/"
   }
 };

@@ -7,41 +7,19 @@ import gsap from "gsap";
 interface IContentIntro {
   imgName: string;
   mask: string;
+  shifted?: boolean | undefined;
 }
 
-const ContentMaskImage:FC<IContentIntro> = ({imgName, mask}) => {
-  const ContentWrapRef = useRef<HTMLDivElement>(null);
+const ContentMaskImage:FC<IContentIntro> = ({imgName, mask, shifted}) => {
+  const contentWrapRef = useRef<HTMLDivElement>(null);
   const maskRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   ScrollTrigger.create({
-  //     trigger: maskRef?.current || "",
-  //     toggleActions: "play none none reverse",
-  //     start: "top+=25% bottom",
-  //     end: "top+=25% top+=50%",
-  //     // markers: true,
-  //     animation: gsap
-  //       .timeline()
-  //       .fromTo(
-  //         bgRef?.current || null,
-  //         { opacity: 0 },
-  //         { opacity: 1},
-  //         "-=1"
-  //       )
-  //       .fromTo(
-  //         maskRef?.current || null,
-  //         { opacity: 0, y: 0 },
-  //         { opacity: 1, y: 0},
-  //         "-=2"
-  //       ),
-  //   });
-  // }, [])
   useEffect(()=>{
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: ContentWrapRef.current || '',
+          trigger: contentWrapRef.current || '',
           start: "center top+=70%",
           end: "center top",
           scrub: true,
@@ -59,7 +37,7 @@ const ContentMaskImage:FC<IContentIntro> = ({imgName, mask}) => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: ContentWrapRef.current || '',
+          trigger: contentWrapRef.current || '',
           start: "center top+=10%",
           end: "center top",
           scrub: true,
@@ -74,32 +52,35 @@ const ContentMaskImage:FC<IContentIntro> = ({imgName, mask}) => {
         { opacity: 1},
         '+=1'
       )
-    // gsap
-    //   .timeline({
-    //     scrollTrigger: {
-    //       trigger: ContentWrapRef.current || '',
-    //       start: "center+=5% top",
-    //       end: "center top-=5%",
-    //       scrub: 4,
-    //       toggleActions: "play none none play",
-    //       markers: true
-    //     },
-    //     defaults: { duration: 1 },
-    //   })
-    //   .to(
-    //     bgRef.current || "",
-    //     { opacity: 0},
-    //     '0'
-    //   )
-    //   .to(
-    //     maskRef.current || '',
-    //     { opacity: 0},
-    //     '0'
-    //   )
+
+    if (shifted) {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: contentWrapRef.current || '',
+            start: "bottom bottom",
+            end: "bottom top",
+            toggleActions: "play none none reverse",
+            scrub: true,
+          },
+          defaults: { duration: 2.5, ease: "easeIn" },
+        })
+
+        .to(
+          contentWrapRef.current || '',
+          { overflow: "visible", y: "30vh"},
+          '0'
+        )
+        .to(
+          contentWrapRef.current || "",
+          { overflow: "visible" },
+          '0'
+        )
+    }
 
   }, [])
   return (
-    <Wrapper ref={ContentWrapRef}>
+    <Wrapper ref={contentWrapRef}>
       <Img  className="panel">
         <Image imageName={imgName} />
         <div className={'bg'} ref={bgRef} />

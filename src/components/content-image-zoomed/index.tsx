@@ -54,7 +54,7 @@ const ContentImageZoomed:FC<IContentImageZoomed> = ({imageName}) => {
       })
 
       .fromTo(
-        ".img-zoomed",
+        imgZoomedRef.current || '',
         { overflow: "hidden", y: 0 },
         { overflow: "visible", y: "50vh" },
         '0'

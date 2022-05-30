@@ -46,8 +46,8 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         id: 'v-scroll',
         snap: {
           snapTo: 1 / (vSections.length - 1),
-          duration: 2.5,
-          ease: 'easeOut'
+          duration: 2,
+          ease: "easeIn"
         }
       });
   }, [])

@@ -37,7 +37,7 @@ const IndexPage = () => {
         <ContentImgText data={ImgTextData.building1} />
       </section>
 
-      <ContentMaskImage imgName={'building_5.jpg'} mask={'building_5_mask.png'} />
+      <ContentMaskImage imgName={'building_5.jpg'} mask={'building_5_mask.png'} shifted={true}/>
 
       <section className="panel">
         <ContentHeadingText heading={headText.building.heading} text={headText.building.text} />

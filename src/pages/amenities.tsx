@@ -14,6 +14,7 @@ import ContentImageZoomed from "../components/content-image-zoomed";
 import ContentSpaces from "../components/amenities/content-spaces";
 import ContentImgText from "../components/content-img-text";
 import Footer from "../components/footer";
+import ContentAmNext from "../components/amenities/content-amenities-next";
 
 const AmenitiesPage = () => {
   return (
@@ -71,11 +72,9 @@ const AmenitiesPage = () => {
         <section className="panel">
           <ContentHeadingText heading={headText.amenities3.heading} text={headText.amenities2.text} />
         </section>
-        <section className="panel">
-          <ContentQuote quote={quoteData.amenities3}/>
-        </section>
         <section className={'relative'}>
-          <ContentNextSection data={nextData.building}/>
+          <ContentAmNext quote={quoteData.amenities3}/>
+          {/*<ContentNextSection data={nextData.amenities}/>*/}
           <Footer />
         </section>
       </div>
