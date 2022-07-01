@@ -12,28 +12,22 @@ interface IStyleProps {
 }
 
 export const Wrapper = styled.div<IStyleProps>`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+`;
+
+export const FixedWrapper = styled.div<IStyleProps>`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
-  position: relative;
   padding: 13vh 9% 5vh 6.6%;
 `;
 
 
-export const TeamHeader = styled.div`
-  position: fixed;
-  top: 38px;
-  left: 48px;
-  width: 93%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  z-index: 100;
-  a {
-    cursor: pointer;
-  }
-`;
 export const TeamImgs = styled.div<IStyleProps>`
   width: ${props => props.imgsWidth};
   position: relative;
