@@ -9,7 +9,7 @@ export const ModalWrapper = styled.div`
   height: 100vh;
   background-color: #fff;
   z-index: 100;
-  overflow: auto;\
+  overflow: auto;
   scroll-behavior: smooth;
 `;
 
