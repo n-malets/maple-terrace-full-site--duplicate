@@ -3,7 +3,7 @@ import { teamData } from '../../data/team';
 import TeamHeaderContent from "./team-header";
 import TeamSection from "./team-section";
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import gsap,{ Linear } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from "styled-components";
 
@@ -25,6 +25,7 @@ export const TeamSectionsContainer = styled.div`
 export const TeamSectionWrapper = styled.section`
   width: 100%;
   height: 100vh;
+  pointer-events: none;
 `;
 
 const Team = () => {
@@ -32,28 +33,27 @@ const Team = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const pages = useRef<HTMLElement[]>([]);
     const goToPage = (section: HTMLElement) => {
-        pages.current.forEach((page: any) => {
-            page!.style!.pointerEvents = 'none';
-        });
-        // section.style.pointerEvents = 'auto';
         gsap.timeline().to(wrapperRef.current, {
             scrollTo: {y: section},
-            duration: 1.5,
-            ease: 'power1.easeInOut',
+            duration: 2,
+            ease: Linear.easeNone,
         });
-
     };
 
     useEffect(() => {
+        document.body.style.overflow = "hidden";
         pages.current.forEach((page: HTMLElement) => {
             ScrollTrigger.create({
                 trigger: page,
                 scroller: wrapperRef.current,
                 onEnter: () => goToPage(page),
                 onEnterBack: () => goToPage(page),
+                preventOverlaps: true
             });
         });
-
+        return ()=>{
+            document.body.style.overflow = "auto";
+        }
     }, []);
 
     const addPageToRefs = (el: HTMLElement) => {

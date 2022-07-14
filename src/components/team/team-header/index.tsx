@@ -6,7 +6,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import styled from "styled-components";
 
 export const TeamHeader = styled.div`
-  position: fixed;
+  position: sticky;
   top: 38px;
   left: 48px;
   width: 93%;
@@ -14,7 +14,7 @@ export const TeamHeader = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   z-index: 100;
-  a {
+  a, img {
     cursor: pointer;
   }
 `;
