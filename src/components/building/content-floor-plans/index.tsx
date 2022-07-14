@@ -107,7 +107,6 @@ const ContentFloorPlans = () => {
           start: "bottom bottom",
           end: "bottom bottom-=5%",
           scrub: 3,
-          markers: true,
           onEnter: ()=> {
             levelLabelsRef.current!.childNodes.forEach(el => el.classList.remove('active'))
             levelLabelsRef.current!.children[2].classList.add('active')
