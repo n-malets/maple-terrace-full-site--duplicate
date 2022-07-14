@@ -63,7 +63,9 @@ const IndexPage = () => {
       <section>
         <ContentCertifications />
       </section>
-      {/*<ContentFloorPlans />*/}
+      <section>
+        <ContentFloorPlans />
+      </section>
       <section className={'relative'}>
         <ContentNextSection data={nextData.building}/>
         <Footer />

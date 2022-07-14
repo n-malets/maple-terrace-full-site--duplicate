@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import {mediaMax} from "../../../helpers/MediaQueries";
 
 export const FPWrapper = styled.div`
   width: 100%;
   height: 300vh;
-  padding: 0 1.8% 5% 2.6%;
-  margin-top: 8%;
+  padding: 12vh 1.8% 5% 2.6%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -15,12 +15,15 @@ export const FloorPlan = styled.div`
   align-items: center;
   flex-direction: column;
   width: 63%;
+  min-height: 100vh;
   margin: 0 auto;
+  padding-bottom: 14vh;
 `;
 export const FloorPlanImg = styled.div`
   position: sticky;
-  top: 0;
-  padding-top: 8%;
+  top: 12vh;
+  padding-top: 0;
+  z-index: 1;
   .fp_images_wrapper {
     width: 100%;
     display: flex;
@@ -30,8 +33,11 @@ export const FloorPlanImg = styled.div`
     position: absolute;
     img {
       position: absolute;
-      max-width: 84%;
-      //max-height: 55vh;
+      max-width: 60%;
+      transition: 1s ease-out;
+      ${mediaMax.desktop`
+        max-width: 84%;    
+      `}
     }
     .fp_image_thumb {
       opacity: 0;
@@ -41,10 +47,10 @@ export const FloorPlanImg = styled.div`
       opacity: 1;
     }
     .fp_image_2 {
-      opacity: 1;
+      opacity: 0;
     }
     .fp_image_3 {
-      opacity: 1;
+      opacity: 0;
     }
     .label_top {
       position: absolute;
@@ -55,8 +61,11 @@ export const FloorPlanImg = styled.div`
     .label_right {
       position: absolute;
       top: 50%;
-      right: 1%;
+      right: 13.5%;
       transform: translateY(-50%) rotate(90deg);
+      ${mediaMax.desktop`
+        right: 1%;
+      `}
     }
     .label_bottom {
       position: absolute;
@@ -75,7 +84,7 @@ export const FloorPlanImg = styled.div`
     }
     .download_All {
       position: absolute;
-      bottom: -15%;
+      bottom: -15vh;
       right: -0%;
       transform: translateX(-50%);
       border: 1px solid #fff;
@@ -87,7 +96,7 @@ export const FloorPlanImg = styled.div`
     .level_labels {
       position: absolute;
       left: 0;
-      bottom: -30%;
+      bottom: -24vh;
       display: flex;
       flex-direction: column;
       font-family: 'TT Norms', sans-serif;
@@ -97,6 +106,9 @@ export const FloorPlanImg = styled.div`
       line-height: 28px;
       font-feature-settings: 'liga' off;
       color: #FFFFFF;
+      ${mediaMax.desktop`    
+        bottom: -150px;
+      `}
       a {
         padding: 6px 0;
         opacity: 0.25;
