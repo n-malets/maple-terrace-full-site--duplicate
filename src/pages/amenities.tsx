@@ -74,7 +74,6 @@ const AmenitiesPage = () => {
         </section>
         <section className={'relative'}>
           <ContentAmNext quote={quoteData.amenities3}/>
-          {/*<ContentNextSection data={nextData.amenities}/>*/}
           <Footer />
         </section>
       </div>
