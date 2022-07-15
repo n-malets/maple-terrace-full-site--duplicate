@@ -5,14 +5,13 @@ import {ImgTextData} from "../data/img-text";
 import {headText} from "../data/head-text";
 import ContentQuote from "../components/content-quote";
 import ContentIntro from "../components/content-intro";
-import ContentIntro2 from "../components/building/content-preload"
+import ContentPreload from "../components/building/content-preload"
 import ContentGem from "../components/building/content-gem";
 import ContentImgText from "../components/content-img-text";
 import ContentMaskImage from "../components/content-mask-image";
 import ContentHeadingText from "../components/content-heading-text";
 import ContentWhy from "../components/building/content-why";
 import ContentCertifications from "../components/building/content-certifications";
-import ContentFloorPlans from "../components/building/content-floor-plans";
 import ContentNextSection from "../components/content-next";
 import Footer from "../components/footer";
 
@@ -22,7 +21,7 @@ const IndexPage = () => {
   return (
     <div className={'relative'}>
       <section className="panel">
-        <ContentIntro2 />
+        <ContentPreload />
       </section>
       <section className="panel">
         <ContentIntro imgName={'building_1.jpg'} />
