@@ -14,6 +14,7 @@ import ContentWhy from "../components/building/content-why";
 import ContentCertifications from "../components/building/content-certifications";
 import ContentNextSection from "../components/content-next";
 import Footer from "../components/footer";
+import ContentFloorPlans from "../components/building/content-floor-plans";
 
 
 const IndexPage = () => {
