@@ -8,21 +8,18 @@ export const Wrapper = styled.div`
   .content {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
 `;
 export const Headings = styled.div`
-  margin-right: 5%;
-  max-width: 50%;
+  max-width: 45%;
   opacity: 0;
 
   h3 {
-    padding: 0 10px;
   }
 `;
 export const Text = styled.div`
-  margin-left: 5%;
-  width: 50%;
+  width: 45%;
   opacity: 0;
   p {
     line-height: 36px;

@@ -17,12 +17,12 @@ interface IContentImgText {
   }
 }
 
-const ContentImgText:FC<IContentImgText> = ({data}) => {
+const ContentImgText: FC<IContentImgText> = ({data}) => {
   const wrapperRef = useRef(null);
   const imgWrapperRef = useRef(null);
   const infoWrapperRef = useRef(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     gsap
       .timeline({
         scrollTrigger: {
@@ -33,18 +33,18 @@ const ContentImgText:FC<IContentImgText> = ({data}) => {
           toggleActions: "play none none reverse",
           id: 'in',
         },
-        defaults: { duration: 3 },
+        defaults: {duration: 3},
       })
       .fromTo(
         imgWrapperRef.current || "",
-        { y: 750,  opacity: 0 },
-        { y: 0, opacity: 1},
+        {y: 750, opacity: 0},
+        {y: 0, opacity: 1},
         '+=.5'
       )
       .fromTo(
         infoWrapperRef.current || '',
-        { opacity: 0, y: 100 },
-        { opacity: 1, y: 0 },
+        {opacity: 0, y: 100},
+        {opacity: 1, y: 0},
 
         '0'
       )
@@ -58,20 +58,20 @@ const ContentImgText:FC<IContentImgText> = ({data}) => {
           scrub: 4,
           id: 'out',
         },
-        defaults: { duration: 3 },
+        defaults: {duration: 3},
       })
       .fromTo(
         infoWrapperRef.current || "",
         2,
-        { opacity: 1, y: 0 },
-        { opacity: 0, y: 0 },
+        {opacity: 1, y: 0},
+        {opacity: 0, y: 0},
         "0"
       )
 
       .fromTo(
         imgWrapperRef.current || '',
-        { opacity: 1, maxHeight: "100vh" },
-        { opacity: 0, maxHeight: 0 },
+        {opacity: 1, maxHeight: "100vh"},
+        {opacity: 0, maxHeight: 0},
         "0"
       )
 
@@ -83,8 +83,8 @@ const ContentImgText:FC<IContentImgText> = ({data}) => {
         <Image imageName={data.img}/>
       </Img>
       <Info reversed={data.reversed} ref={infoWrapperRef} infoWidth={data.infoWidth} infoPadding={data.infoPadding}>
-        <h4 className={data.bigHeading? "h3" : "h4"}>{data.title}</h4>
-        {data.title2 && <h4 className={data.bigHeading? "h3i" : "h4i"}>{data.title2}</h4>}
+        <h4 className={data.bigHeading ? "h3" : "h4"}>{data.title}</h4>
+        {data.title2 && <h4 className={data.bigHeading ? "h3i" : "h4i"}>{data.title2}</h4>}
         <p className="copy_t1">{data.text}</p>
       </Info>
     </Wrapper>

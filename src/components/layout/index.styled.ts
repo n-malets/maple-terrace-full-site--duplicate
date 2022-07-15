@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components"
-import { mediaMax, mediaMaxTablet } from "../../helpers/MediaQueries"
 
 import TTNormsRegTTF from "../../assets/fonts/TTNorms-Regular.ttf"
 import TTNormsRegWOFF from "../../assets/fonts/TTNorms-Regular.woff"
@@ -437,7 +436,7 @@ ul li {
   font-feature-settings: 'liga' off;
 }
 .h1i {
-  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-family: 'Adobe-Caslon-Pro', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 72px;
@@ -452,7 +451,7 @@ ul li {
   line-height: 57px;
 }
 .h2i {
-  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-family: 'Adobe-Caslon-Pro', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 48px;
@@ -466,7 +465,7 @@ ul li {
   line-height: 42px;
 }
 .h3i {
-  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-family: 'Adobe-Caslon-Pro', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 36px;
@@ -480,14 +479,14 @@ ul li {
   line-height: 24px;
 }
 .h4i {
-  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-family: 'Adobe-Caslon-Pro', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 24px;
   line-height: 24px;
 }
 .copy_t1 {
-  font-family: 'Adobe Caslon Pro', sans-serif;
+  font-family: 'Adobe-Caslon-Pro', sans-serif;
   font-style: normal;
   font-weight: 100;
   font-size: 18px;
