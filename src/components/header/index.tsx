@@ -38,20 +38,22 @@ const Header: FC<IHeader> = ({location}) => {
           trigger: ".hide-logo",
           start: "bottom top+=40%",
           end: "bottom top",
+          preventOverlaps: true,
           toggleActions: "restart none none reverse",
           scrub: 1,
         }
       });
-      tl2.to(
+      tl2.fromTo(
         headerLogo.current,
+        {top: "4.5vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
         {top: "-15vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
       )
     }
-    if (location.pathname === "/neighborhood") {
-      gsap.to(".dark-color", {color: "black", duration: 1})
-    } else {
-      gsap.to(".dark-color", {color: "white", duration: 1})
-    }
+    // if (location.pathname === "/neighborhood") {
+    //   gsap.to(".dark-color", {color: "black", duration: 1})
+    // } else {
+    //   gsap.to(".dark-color", {color: "white", duration: 1})
+    // }
     return () => {
       tl1?.kill()
     }
