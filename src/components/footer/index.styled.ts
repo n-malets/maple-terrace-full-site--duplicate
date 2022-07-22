@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   position: relative;
   height: 100vh;
   z-index: 11;
   pointer-events: none;
-`;
+`
 export const FooterContent = styled.div`
   width: 100%;
   height: 20vh;
@@ -22,7 +22,9 @@ export const FooterContent = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    a, p, span {
+    a,
+    p,
+    span {
       color: #292929;
       font-size: 12px;
       line-height: 18px;
@@ -68,4 +70,4 @@ export const FooterContent = styled.div`
       cursor: pointer;
     }
   }
-`;
+`

@@ -1,19 +1,19 @@
-import React from "react";
+import React from "react"
 
 export const nextData = {
   building: {
-    num: '02',
+    num: "02",
     title: "The Neighborhood",
-    next: "/neighborhood"
+    next: "/neighborhood",
   },
   neighborhood: {
-    num: '03',
+    num: "03",
     title: "The Amenities",
-    next: "/amenities"
+    next: "/amenities",
   },
   amenities: {
-    num: '',
+    num: "",
     title: "",
-    next: "/"
-  }
-};
+    next: "/",
+  },
+}

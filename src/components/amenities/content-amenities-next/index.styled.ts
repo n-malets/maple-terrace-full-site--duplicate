@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {Link} from "gatsby";
+import styled from "styled-components"
+import { Link } from "gatsby"
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     position: relative;
     text-align: center;
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -36px;
       left: 50%;
@@ -28,8 +28,7 @@ export const Wrapper = styled.div`
       background-color: #fff;
     }
   }
-
-`;
+`
 
 export const QuoteHeadings = styled.div`
   display: flex;
@@ -44,26 +43,26 @@ export const QuoteHeadings = styled.div`
     transform: translateX(-50%);
     opacity: 0;
   }
-`;
+`
 
 export const PrevButton = styled(Link)`
   position: absolute;
   bottom: 12vh;
   left: 36px;
-  font-family: 'TT Norms', sans-serif;
+  font-family: "TT Norms", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   opacity: 0;
   svg {
     margin-right: 9px;
   }
-  span { 
+  span {
     font-weight: 700;
   }
-`;
+`

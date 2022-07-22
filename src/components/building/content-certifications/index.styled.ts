@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
-`;
+`
 export const Items = styled.div`
   width: 100%;
   height: 100vh;
@@ -53,7 +53,7 @@ export const Items = styled.div`
       min-width: 160px;
     }
   }
-`;
+`
 export const Milestones = styled.div`
   width: 100%;
   height: 100vh;
@@ -62,10 +62,10 @@ export const Milestones = styled.div`
   justify-content: center;
   flex-direction: column;
   overflow-x: hidden;
-`;
+`
 export const Heading = styled.div`
   padding-bottom: 30px;
-`;
+`
 export const TimeLine = styled.div`
   width: 100%;
   display: flex;
@@ -73,21 +73,21 @@ export const TimeLine = styled.div`
   .tl-item {
     position: relative;
     text-align: center;
-    font-family: 'TT Norms', sans-serif;
+    font-family: "TT Norms", sans-serif;
     font-style: normal;
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     &:after {
-      content: '';
+      content: "";
       background-color: #fff;
       width: 24px;
       height: 24px;
       border-radius: 50%;
       position: absolute;
       left: 50%;
-      top: calc( 50% - 21px );
+      top: calc(50% - 21px);
       transform: translateX(-50%);
     }
     h6 {
@@ -107,7 +107,7 @@ export const TimeLine = styled.div`
     height: 1px;
     background-color: #fff;
     position: absolute;
-    top: calc( 50% - 9px );
+    top: calc(50% - 9px);
     left: 0;
   }
-`;
+`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
     position: relative;
     text-align: center;
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -36px;
       left: 50%;
@@ -24,10 +24,13 @@ export const Wrapper = styled.div`
       background-color: #fff;
     }
   }
-`;
+`
 export const QuoteHeadings = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+  h2 {
+    font-weight: 300;
+  }
+`

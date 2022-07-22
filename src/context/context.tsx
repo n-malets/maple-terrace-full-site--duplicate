@@ -1,12 +1,12 @@
-import React, {Dispatch, SetStateAction} from "react";
+import React, { Dispatch, SetStateAction } from "react"
 
 interface IContextProps {
-  openContact: boolean;
-  setOpenContact: Dispatch<SetStateAction<boolean>>;
-  openLegal: boolean;
-  setOpenLegal: Dispatch<SetStateAction<boolean>>;
-  openTeam: boolean;
-  setOpenTeam: Dispatch<SetStateAction<boolean>>;
+  openContact: boolean
+  setOpenContact: Dispatch<SetStateAction<boolean>>
+  openLegal: boolean
+  setOpenLegal: Dispatch<SetStateAction<boolean>>
+  openTeam: boolean
+  setOpenTeam: Dispatch<SetStateAction<boolean>>
 }
 
 export const Context = React.createContext<IContextProps>({
@@ -22,4 +22,4 @@ export const Context = React.createContext<IContextProps>({
   setOpenTeam(value: ((prevState: boolean) => boolean) | boolean): void {
     /* **/
   },
-});
+})

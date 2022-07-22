@@ -1,17 +1,17 @@
-import styled from "styled-components";
+import styled from "styled-components"
 interface IStyleProps {
-  img1Top?: string;
-  img1Width?: string;
-  img2Top?: string;
-  img2Width?: string;
-  reversed?: boolean;
-  imgsWidth?: string;
-  copiesWidth?: string;
+  img1Top?: string
+  img1Width?: string
+  img2Top?: string
+  img2Width?: string
+  reversed?: boolean
+  imgsWidth?: string
+  copiesWidth?: string
 }
 export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
   height: 100vh;
-  padding-left: ${props => props.reversed ? "6.5%" : "10.3%"};
+  padding-left: ${props => (props.reversed ? "6.5%" : "10.3%")};
   display: flex;
   align-items: center;
   .gem-wrap {
@@ -20,12 +20,12 @@ export const Wrapper = styled.div<IStyleProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: ${props => props.reversed ? "row-reverse" : "row"};
+    flex-direction: ${props => (props.reversed ? "row-reverse" : "row")};
   }
-`;
+`
 export const Info = styled.div<IStyleProps>`
   width: ${props => props.copiesWidth};
-  padding-left: ${props => props.reversed ? "8%" : 0};
+  padding-left: ${props => (props.reversed ? "8%" : 0)};
   &.smallHeadings {
     text-align: center;
     padding-left: 0;
@@ -52,8 +52,7 @@ export const Info = styled.div<IStyleProps>`
     display: block;
     margin: 0 auto;
   }
-  
-`;
+`
 export const Img = styled.div<IStyleProps>`
   width: ${props => props.imgsWidth};
   position: relative;
@@ -66,18 +65,18 @@ export const Img = styled.div<IStyleProps>`
     position: absolute;
     left: 0;
     top: ${props => props.img1Top};
-    z-index: ${props => props.reversed ? -1 : 1};
+    z-index: ${props => (props.reversed ? -1 : 1)};
     transform: translateY(-40%);
   }
   .img-r {
     width: ${props => props.img2Width};
     position: absolute;
     right: 0;
-    top: ${(props) => props.img2Top};
+    top: ${props => props.img2Top};
     transform: translateY(-30%);
     overflow: hidden;
     img {
       height: 100%;
     }
   }
-`;
+`

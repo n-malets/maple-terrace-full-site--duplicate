@@ -1,8 +1,8 @@
-import React, {FC, useContext} from 'react';
+import React, { FC, useContext } from "react"
 import MTLogo from "../../../assets/images/main_logo_1.svg"
 import close from "../../../assets/images/button_close_w.svg"
-import {Context} from "../../../context/context";
-import styled from "styled-components";
+import { Context } from "../../../context/context"
+import styled from "styled-components"
 
 export const TeamHeader = styled.div`
   position: sticky;
@@ -13,21 +13,26 @@ export const TeamHeader = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   z-index: 100;
-  a, img {
+  a,
+  img {
     cursor: pointer;
   }
-`;
+`
 
-const TeamHeaderContent:FC = () => {
-  const {setOpenTeam} = useContext(Context)
+const TeamHeaderContent: FC = () => {
+  const { setOpenTeam } = useContext(Context)
   return (
     <TeamHeader>
-      <img src={MTLogo} alt="Maple Terrace Uptown Dallas"/>
-      <img src={close} alt="Close Btn" onClick={() => {
-        setOpenTeam(false);
-      }}/>
+      <img src={MTLogo} alt="Maple Terrace Uptown Dallas" />
+      <img
+        src={close}
+        alt="Close Btn"
+        onClick={() => {
+          setOpenTeam(false)
+        }}
+      />
     </TeamHeader>
-  );
-};
+  )
+}
 
-export default TeamHeaderContent;
+export default TeamHeaderContent

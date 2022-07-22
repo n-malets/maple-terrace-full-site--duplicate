@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ModalWrapper = styled.div`
   padding: 36px 36px 48px 48px;
@@ -11,7 +11,7 @@ export const ModalWrapper = styled.div`
   z-index: 100;
   overflow: auto;
   scroll-behavior: smooth;
-`;
+`
 
 export const HeaderLogo = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const HeaderLogo = styled.div`
   img:last-child {
     cursor: pointer;
   }
-`;
+`
 export const LegalContent = styled.div`
   display: flex;
   aside {
@@ -31,7 +31,7 @@ export const LegalContent = styled.div`
     padding-right: 14px;
     padding-top: 9.25vh;
     a {
-      font-family: 'TT Norms', sans-serif;
+      font-family: "TT Norms", sans-serif;
       font-style: normal;
       font-weight: 500;
       font-size: 18px;
@@ -40,10 +40,10 @@ export const LegalContent = styled.div`
       text-transform: uppercase;
       color: #000000;
       opacity: 0.25;
-      transition: .25s ease-out;
+      transition: 0.25s ease-out;
       padding-bottom: 36px;
       &:hover {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }
@@ -51,11 +51,12 @@ export const LegalContent = styled.div`
     color: #292929;
     width: 66%;
     margin-left: 25%;
-    a, p {
+    a,
+    p {
       color: #292929;
     }
     p {
       padding-top: 10vh;
     }
   }
-`;
+`

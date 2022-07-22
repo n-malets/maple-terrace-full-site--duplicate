@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Link from "gatsby-link";
+import styled from "styled-components"
+import Link from "gatsby-link"
 export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -10,25 +10,25 @@ export const Wrapper = styled.div`
   position: sticky;
   top: 0;
   z-index: 10;
-`;
+`
 export const Headings = styled.div`
   position: relative;
   text-align: center;
   padding-bottom: 36px;
   margin-bottom: 48px;
   &:after {
-    content: '';
+    content: "";
     width: 72px;
     height: 1px;
     background-color: #fff;
     position: absolute;
     bottom: 0;
-    left: calc( 50% - 36px );
+    left: calc(50% - 36px);
   }
   p {
     padding-bottom: 16px;
   }
-`;
+`
 export const NextBtn = styled(Link)`
   font-weight: 700;
   display: flex;
@@ -36,4 +36,4 @@ export const NextBtn = styled(Link)`
   svg {
     margin-left: 6px;
   }
-`;
+`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -8,11 +8,10 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   padding: 14.15vh 6% 0;
-
-`;
+`
 export const Heading = styled.div`
   padding-bottom: 6vh;
-`;
+`
 export const Items = styled.div`
   width: 100%;
   div {
@@ -34,4 +33,4 @@ export const Items = styled.div`
       padding-bottom: 20px;
     }
   }
-`;
+`

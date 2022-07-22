@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 
 export const headText = {
   building: {
     heading: {
-      line1: 'A local landmark is undergoing',
-      line2: 'a dramatic transformation.'
+      line1: "A local landmark is undergoing",
+      line2: "a dramatic transformation.",
     },
     text: [
       "3.4 acre site in the heart of Uptown Dallas",
@@ -14,33 +14,33 @@ export const headText = {
       "3.0/1,000 Parking Ratio",
       "21-Story Residence with 345 Ultra Luxury Rental Residences",
       "Hines Developed and Managed",
-    ]
+    ],
   },
   amenities1: {
     heading: {
-      line1: 'Once you arrive,',
-      line2: 'the day is yours—uptown and easy.'
+      line1: "Once you arrive,",
+      line2: "the day is yours—uptown and easy.",
     },
     text: [
       "The Maple Terrace is planned to get you into life quickly—with valet parking, an ideal location, and extensive pedestrian landscaping. Enjoy 300 walkable amenities.",
-    ]
+    ],
   },
   amenities2: {
     heading: {
-      line1: 'A Modern Workplace with,',
-      line2: 'Easy Access to your Home.'
+      line1: "A Modern Workplace with,",
+      line2: "Easy Access to your Home.",
     },
     text: [
       "Catch a quick de-brief or brainstorm for a five-year plan. Maple Terrace is set up to provide privacy and tranquility, whatever your goal. If you need a task handled as you work, a 24-hour concierge is at the ready.",
-    ]
+    ],
   },
   amenities3: {
     heading: {
-      line1: 'See Dallas from',
-      line2: 'a whole new perspective.'
+      line1: "See Dallas from",
+      line2: "a whole new perspective.",
     },
     text: [
       "The Terrace amenity deck and lounge includes all the benefits of Maple Terrace with a vast roof terrace both indoors and out.",
-    ]
-  }
-};
+    ],
+  },
+}

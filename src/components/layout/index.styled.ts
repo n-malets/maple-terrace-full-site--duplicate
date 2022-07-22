@@ -26,11 +26,16 @@ import TTNormsThinWOFF2 from "../../assets/fonts/TTNorms-Thin.woff2"
 import TTNormsThinWOFF from "../../assets/fonts/TTNorms-Thin.woff"
 import TTNormsThinTTF from "../../assets/fonts/TTNorms-Thin.ttf"
 
-
 import ACaslonProRegularttf from "../../assets/fonts/ACaslonPro-Regular.ttf"
 import ACaslonProRegularotf from "../../assets/fonts/ACaslonPro-Regular.otf"
+import ACaslonProRegularwoff from "../../assets/fonts/ACaslonPro-Regular.woff"
+import ACaslonProRegularwoff2 from "../../assets/fonts/ACaslonPro-Regular.woff2"
+import ACaslonProRegulareot from "../../assets/fonts/ACaslonPro-Regular.eot"
 import ACaslonProItalicttf from "../../assets/fonts/ACaslonPro-Italic.ttf"
 import ACaslonProItalicotf from "../../assets/fonts/ACaslonPro-Italic.otf"
+import ACaslonProItaliceot from "../../assets/fonts/ACaslonPro-Italic.eot"
+import ACaslonProItalicwoff from "../../assets/fonts/ACaslonPro-Italic.woff"
+import ACaslonProItalicwoff2 from "../../assets/fonts/ACaslonPro-Italic.woff2"
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -97,12 +102,18 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     src: url(${ACaslonProRegularttf}) format('truetype');
     src: url(${ACaslonProRegularotf}) format('opentype');
+    src: url(${ACaslonProRegularwoff}) format('woff');
+    src: url(${ACaslonProRegularwoff2}) format('woff2');
+    src: url(${ACaslonProRegulareot}) format('embedded-opentype');
   }
   @font-face {
     font-family: "Adobe-Caslon-Pro";
     font-style: italic;
     src: url(${ACaslonProItalicttf}) format('truetype');
     src: url(${ACaslonProItalicotf}) format('opentype');
+    src: url(${ACaslonProItaliceot}) format('embedded-opentype');
+    src: url(${ACaslonProItalicwoff}) format('woff');
+    src: url(${ACaslonProItalicwoff2}) format('woff2');
   }
 
   body {
@@ -551,6 +562,6 @@ ul li {
     opacity: 1;
   }
 }
-`;
+`
 
-export const LayoutWrapper = styled.div``;
+export const LayoutWrapper = styled.div``

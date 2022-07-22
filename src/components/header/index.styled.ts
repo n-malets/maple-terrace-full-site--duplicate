@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const HeaderWrap = styled.header`
   position: fixed;
@@ -9,23 +9,24 @@ export const HeaderWrap = styled.header`
   display: flex;
   justify-content: space-between;
   z-index: 1;
-  a, span {
+  a,
+  span {
     padding: 0 18px;
-    opacity: .25;
-    transition: .4s ease-out;
+    opacity: 0.25;
+    transition: 0.4s ease-out;
     letter-spacing: 0.1em;
     cursor: pointer;
     &:hover {
-      opacity: .75;
+      opacity: 0.75;
     }
   }
-`;
+`
 export const Logo = styled.img`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 4.5vh;
-`;
+`
 
 export const Nav = styled.nav`
   font-size: 14px;
@@ -34,15 +35,18 @@ export const Nav = styled.nav`
     font-weight: 700;
   }
   &.sec {
-    font-weight: 500;
+    font-weight: 400;
+    span {
+      opacity: 1;
+    }
   }
-`;
+`
 
 export const FooterNav = styled.nav`
   position: absolute;
   top: 93vh;
   right: 36px;
-  font-family: 'TT Norms', sans-serif;
+  font-family: "TT Norms", sans-serif;
   font-style: normal;
   h5 {
     padding-bottom: 4px;
@@ -58,4 +62,4 @@ export const FooterNav = styled.nav`
     line-height: 9px;
     text-transform: capitalize;
   }
-`;
+`

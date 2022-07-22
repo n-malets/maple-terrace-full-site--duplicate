@@ -1,25 +1,25 @@
-import React, {FC, useRef, useEffect} from 'react';
-import Image from "../image";
-import {Wrapper, Img,  Mask} from "./index.styled";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import gsap from "gsap";
+import React, { FC, useRef, useEffect } from "react"
+import Image from "../image"
+import { Wrapper, Img, Mask } from "./index.styled"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import gsap from "gsap"
 
 interface IContentIntro {
-  imgName: string;
-  mask: string;
-  shifted?: boolean | undefined;
+  imgName: string
+  mask: string
+  shifted?: boolean | undefined
 }
 
-const ContentMaskImage:FC<IContentIntro> = ({imgName, mask, shifted}) => {
-  const contentWrapRef = useRef<HTMLDivElement>(null);
-  const maskRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
+const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted }) => {
+  const contentWrapRef = useRef<HTMLDivElement>(null)
+  const maskRef = useRef<HTMLDivElement>(null)
+  const bgRef = useRef<HTMLDivElement>(null)
 
-  useEffect(()=>{
+  useEffect(() => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: contentWrapRef.current || '',
+          trigger: contentWrapRef.current || "",
           start: "center top+=70%",
           end: "center top",
           scrub: true,
@@ -28,16 +28,11 @@ const ContentMaskImage:FC<IContentIntro> = ({imgName, mask, shifted}) => {
         },
         defaults: { duration: 2 },
       })
-      .fromTo(
-        bgRef.current || "",
-        { opacity: 0 },
-        { opacity: 1},
-        '-=2'
-      )
+      .fromTo(bgRef.current || "", { opacity: 0 }, { opacity: 1 }, "-=2")
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: contentWrapRef.current || '',
+          trigger: contentWrapRef.current || "",
           start: "center top+=10%",
           end: "center top",
           scrub: true,
@@ -46,18 +41,13 @@ const ContentMaskImage:FC<IContentIntro> = ({imgName, mask, shifted}) => {
         },
         defaults: { duration: 2 },
       })
-      .fromTo(
-        maskRef.current || '',
-        { opacity: 0},
-        { opacity: 1},
-        '+=1'
-      )
+      .fromTo(maskRef.current || "", { opacity: 0 }, { opacity: 1 }, "+=1")
 
     if (shifted) {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: contentWrapRef.current || '',
+            trigger: contentWrapRef.current || "",
             start: "bottom bottom",
             end: "bottom top",
             toggleActions: "play none none reverse",
@@ -67,29 +57,24 @@ const ContentMaskImage:FC<IContentIntro> = ({imgName, mask, shifted}) => {
         })
 
         .to(
-          contentWrapRef.current || '',
-          { overflow: "visible", y: "30vh"},
-          '0'
-        )
-        .to(
           contentWrapRef.current || "",
-          { overflow: "visible" },
-          '0'
+          { overflow: "visible", y: "30vh" },
+          "0"
         )
+        .to(contentWrapRef.current || "", { overflow: "visible" }, "0")
     }
-
   }, [])
   return (
     <Wrapper ref={contentWrapRef}>
-      <Img  className="panel">
+      <Img className="panel">
         <Image imageName={imgName} />
-        <div className={'bg'} ref={bgRef} />
+        <div className={"bg"} ref={bgRef} />
       </Img>
       <Mask ref={maskRef} className="panel">
         <Image imageName={mask} />
       </Mask>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default ContentMaskImage;
+export default ContentMaskImage

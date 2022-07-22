@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 interface IStyleProps {
-    img1Top?: string;
-    img1Width?: string;
-    img2Top?: string;
-    img2Width?: string;
-    imgsWidth?: string;
-    copiesWidth?: string;
-    img1OnTop?: boolean | undefined;
-    img1MaxWidth?: string | undefined;
+  img1Top?: string
+  img1Width?: string
+  img2Top?: string
+  img2Width?: string
+  imgsWidth?: string
+  copiesWidth?: string
+  img1OnTop?: boolean | undefined
+  img1MaxWidth?: string | undefined
 }
 
 export const Wrapper = styled.div<IStyleProps>`
@@ -16,7 +16,7 @@ export const Wrapper = styled.div<IStyleProps>`
   height: 100%;
   position: relative;
   overflow: hidden;
-`;
+`
 
 export const FixedWrapper = styled.div<IStyleProps>`
   position: fixed;
@@ -27,14 +27,13 @@ export const FixedWrapper = styled.div<IStyleProps>`
   display: flex;
   justify-content: space-between;
   padding: 13vh 9% 5vh 6.6%;
-  
+
   .animation-style {
     opacity: 0;
     transform: translate(100vw, 0px);
     will-change: transform, opacity;
   }
-`;
-
+`
 
 export const TeamImgs = styled.div<IStyleProps>`
   width: ${props => props.imgsWidth};
@@ -46,9 +45,9 @@ export const TeamImgs = styled.div<IStyleProps>`
     left: 0;
     width: ${props => props.img1Width};
     max-width: ${props => props.img1MaxWidth};
-    z-index: ${props => props.img1OnTop ? 1 : 0};
+    z-index: ${props => (props.img1OnTop ? 1 : 0)};
   }
-  
+
   .img-overlap {
     content: "";
     position: absolute;
@@ -65,7 +64,7 @@ export const TeamImgs = styled.div<IStyleProps>`
     right: 0;
     width: ${props => props.img2Width};
   }
-`;
+`
 
 export const TeamInfo = styled.div`
   width: 36.5%;
@@ -78,7 +77,7 @@ export const TeamInfo = styled.div`
   h2 {
     padding: 24px 0;
   }
-`;
+`
 export const TeamQuotation = styled.div`
   padding-top: 13%;
 
@@ -99,4 +98,4 @@ export const TeamQuotation = styled.div`
     font-weight: 300;
     letter-spacing: 0.1em;
   }
-`;
+`

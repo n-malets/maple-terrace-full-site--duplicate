@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {mediaMax} from "../../../helpers/MediaQueries";
+import styled from "styled-components"
+import { mediaMax } from "../../../helpers/MediaQueries"
 
 export const FPWrapper = styled.div`
   width: 100%;
@@ -8,7 +8,7 @@ export const FPWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-`;
+`
 export const FloorPlan = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -18,7 +18,7 @@ export const FloorPlan = styled.div`
   min-height: 100vh;
   margin: 0 auto;
   padding-bottom: 14vh;
-`;
+`
 export const FloorPlanImg = styled.div`
   position: sticky;
   top: 12vh;
@@ -118,7 +118,7 @@ export const FloorPlanImg = styled.div`
       }
 }
  
-`;
+`
 
 export const FloorPlanInfo = styled.div`
   width: 100%;
@@ -128,10 +128,10 @@ export const FloorPlanInfo = styled.div`
     width: 25%;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-feature-settings: 'liga' off;
+    font-feature-settings: "liga" off;
     padding-bottom: 15px;
     &:first-child {
       font-weight: 700;
     }
   }
-`;
+`

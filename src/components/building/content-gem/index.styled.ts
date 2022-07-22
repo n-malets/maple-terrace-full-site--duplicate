@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-`;
+`
 export const Info = styled.div`
   width: 43.2%;
   opacity: 0;
@@ -22,7 +22,7 @@ export const Info = styled.div`
   .h2 {
     padding-bottom: 8px;
   }
-`;
+`
 export const Img = styled.div`
   width: 54.6%;
   position: relative;
@@ -53,4 +53,4 @@ export const Img = styled.div`
       height: 100%;
     }
   }
-`;
+`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -10,14 +10,15 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-`;
+`
 export const Headings = styled.div`
   max-width: 45%;
   opacity: 0;
 
   h3 {
+    font-weight: 300;
   }
-`;
+`
 export const Text = styled.div`
   width: 45%;
   opacity: 0;
@@ -26,4 +27,4 @@ export const Text = styled.div`
     padding: 0 10px;
     max-width: 500px;
   }
-`;
+`

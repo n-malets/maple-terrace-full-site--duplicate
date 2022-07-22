@@ -1,13 +1,12 @@
-import React, { FC } from "react";
-import { ImageWrapper } from "./index.styled";
-import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
-
+import React, { FC } from "react"
+import { ImageWrapper } from "./index.styled"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 interface IImageProps {
-  imageName: string;
-  altText?: string;
-  padding?: string;
+  imageName: string
+  altText?: string
+  padding?: string
 }
 
 const Image: FC<IImageProps> = ({ imageName, altText, padding }) => {
@@ -19,7 +18,7 @@ const Image: FC<IImageProps> = ({ imageName, altText, padding }) => {
         }
       }
     }
-  `);
+  `)
 
   return (
     <ImageWrapper padding={padding}>
@@ -35,7 +34,7 @@ const Image: FC<IImageProps> = ({ imageName, altText, padding }) => {
         loading={"eager"}
       />
     </ImageWrapper>
-  );
-};
+  )
+}
 
-export default Image;
+export default Image

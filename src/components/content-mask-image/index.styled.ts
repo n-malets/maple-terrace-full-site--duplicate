@@ -1,5 +1,4 @@
-import styled from "styled-components";
-
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -8,10 +7,10 @@ export const Wrapper = styled.div`
   .gatsby-image-wrapper {
     height: 100vh;
     img {
-      object-position: 0 70%!important;
+      object-position: 0 70% !important;
     }
   }
-`;
+`
 export const Img = styled.section`
   height: 100vh;
   width: 100%;
@@ -25,11 +24,11 @@ export const Img = styled.section`
     top: 0;
     left: 0;
   }
-`;
+`
 export const Mask = styled.section`
   height: 100vh;
   width: 100%;
   position: absolute;
   bottom: 0;
   opacity: 0;
-`;
+`
