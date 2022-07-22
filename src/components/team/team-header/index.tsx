@@ -2,7 +2,6 @@ import React, {FC, useContext} from 'react';
 import MTLogo from "../../../assets/images/main_logo_1.svg"
 import close from "../../../assets/images/button_close_w.svg"
 import {Context} from "../../../context/context";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
 import styled from "styled-components";
 
 export const TeamHeader = styled.div`
@@ -26,8 +25,6 @@ const TeamHeaderContent:FC = () => {
       <img src={MTLogo} alt="Maple Terrace Uptown Dallas"/>
       <img src={close} alt="Close Btn" onClick={() => {
         setOpenTeam(false);
-        ScrollTrigger.getById("v-scroll")?.enable();
-        ScrollTrigger.getById("v-scroll")?.refresh();
       }}/>
     </TeamHeader>
   );
