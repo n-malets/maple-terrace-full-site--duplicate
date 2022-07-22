@@ -89,9 +89,9 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       {openContact && <ContactModal />}
       {openLegal && <LegalModal />}
       <Header location={location} />
-      <LayoutWrapper className={"container"} ref={layoutWrapRef}>
+      <div className={"container"} ref={layoutWrapRef}>
         {children}
-      </LayoutWrapper>
+      </div>
       {openTeam && <Team />}
       {isFirstLoad && location.pathname === "/" && (
         <VideoPreload setIsFirstLoad={setIsFirstLoad} />

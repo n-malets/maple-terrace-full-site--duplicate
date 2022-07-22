@@ -1,7 +1,6 @@
 import React, { FC, useRef, useEffect } from "react"
 import Image from "../image"
 import { Wrapper, Img, Mask } from "./index.styled"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap"
 
 interface IContentIntro {
@@ -64,6 +63,7 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted }) => {
         .to(contentWrapRef.current || "", { overflow: "visible" }, "0")
     }
   }, [])
+
   return (
     <Wrapper ref={contentWrapRef}>
       <Img className="panel">
