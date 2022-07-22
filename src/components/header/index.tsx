@@ -39,14 +39,14 @@ const Header: FC<IHeader> = ({ location }) => {
       })
       tl2.fromTo(
         headerLogo.current,
-        {y: "4.5vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
-        {y: "-15vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
+        {y: "0", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
+        {y: "-18vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
       )
     if (location.pathname === "/") {
       tl1.fromTo(
         headerLogo.current,
-        {y: "50vh", transform: "translate(-50%, -50%) scale(3)", ease: "ease-out"},
-        {y: "4.5vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
+        {y: "45vh", transform: "translate(-50%, -50%) scale(3)", ease: "ease-out"},
+        {y: "0", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
       )
     }
     // if (location.pathname === "/neighborhood") {
