@@ -11,6 +11,9 @@ export const Wrapper = styled.div`
 `
 export const Heading = styled.div`
   padding-bottom: 6vh;
+  .h3 {
+    font-weight: 300;
+  }
 `
 export const Items = styled.div`
   width: 100%;
@@ -31,6 +34,9 @@ export const Items = styled.div`
     text-align: center;
     img {
       padding-bottom: 20px;
+    }
+    p{
+      letter-spacing: 0.05em;
     }
   }
 `

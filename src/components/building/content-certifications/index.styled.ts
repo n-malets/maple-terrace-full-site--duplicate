@@ -28,6 +28,7 @@ export const Items = styled.div`
     h4 {
       align-self: flex-end;
       min-width: 290px;
+      letter-spacing: 0.1em;
     }
     img {
       width: 14.6%;
@@ -65,6 +66,9 @@ export const Milestones = styled.div`
 `
 export const Heading = styled.div`
   padding-bottom: 30px;
+  .h3 {
+    font-weight: 300;
+  }
 `
 export const TimeLine = styled.div`
   width: 100%;
@@ -95,11 +99,13 @@ export const TimeLine = styled.div`
       font-weight: 500;
       font-size: 14px;
       line-height: 17px;
+      letter-spacing: 0.1em;
     }
     p {
       padding-top: 42px;
       text-align: center;
       font-weight: 300;
+      letter-spacing: 0.1em;
     }
   }
   .tl-line {

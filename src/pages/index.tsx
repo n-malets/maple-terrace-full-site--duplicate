@@ -52,7 +52,6 @@ const IndexPage = () => {
         imgName={"building_7.jpg"}
         mask={"building_7_mask.png"}
       />
-
       <section className="panel">
         <ContentImgText data={ImgTextData.building2} />
       </section>
