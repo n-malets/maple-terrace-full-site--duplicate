@@ -6,6 +6,7 @@ import main_logo from "../../assets/images/main_logo_2.svg"
 import main_logoDark from "../../assets/images/main_logo_2-dark.svg"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap"
+import getById = gsap.getById;
 
 interface IHeader {
   location: Location
@@ -37,27 +38,28 @@ const Header: FC<IHeader> = ({ location }) => {
           scrub: 1,
         },
       })
+    if (location.pathname === "/") {
+      tl1.fromTo(
+        headerLogo.current,
+        {y: "45vh", transform: "translate(-50%, 45vh) scale(3)", ease: "ease-out"},
+        {y: "0", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
+      )
+    }
       tl2.fromTo(
         headerLogo.current,
         {y: "0", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
         {y: "-18vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
       )
-    if (location.pathname === "/") {
-      tl1.fromTo(
-        headerLogo.current,
-        {y: "45vh", transform: "translate(-50%, -50%) scale(3)", ease: "ease-out"},
-        {y: "0", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
-      )
-    }
+
     // if (location.pathname === "/neighborhood") {
     //   gsap.to(".dark-color", {color: "black", duration: 1})
     // } else {
     //   gsap.to(".dark-color", {color: "white", duration: 1})
     // }
     return () => {
-      tl1?.kill()
+      ScrollTrigger.getById('headerScroll')?.refresh();
     }
-  }, [location, location.pathname])
+  }, [location.pathname])
 
   return (
     <HeaderWrap>

@@ -35,9 +35,6 @@ export const FloorPlanImg = styled.div`
       position: absolute;
       max-width: 65%;
       transition: 1s ease-out;
-      ${mediaMax.desktop`
-        max-width: 84%;    
-      `}
     }
     .fp_image_thumb {
       opacity: 0;
@@ -127,6 +124,7 @@ export const FloorPlanInfo = styled.div`
   min-height: 120px;
   p {
     width: 25%;
+    padding-right: 10px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-feature-settings: "liga" off;

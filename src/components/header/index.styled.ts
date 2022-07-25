@@ -5,10 +5,10 @@ export const HeaderWrap = styled.header`
   left: 0;
   top: 0;
   width: 100%;
-  padding: 36px 18px;
+  padding: 2.84%;
   display: flex;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 11;
   a,
   span {
     padding: 0 18px;

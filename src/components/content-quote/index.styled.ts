@@ -30,7 +30,4 @@ export const QuoteHeadings = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h2 {
-    font-weight: 300;
-  }
 `

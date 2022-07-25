@@ -61,8 +61,8 @@ const ContentGem: FC = () => {
     <Wrapper ref={wrapperRef}>
       <div className={"gem-wrap"}>
         <Info ref={infoRef}>
-          <h3 className="h2">A 1925 architectural gem reimagined</h3>
-          <h3 className="h2i">as a 21st century workplace.</h3>
+          <h3 className="h2">A 1925 architectural <br/> gem reimagined</h3>
+          <h3 className="h2i">as a 21st century <br/> workplace.</h3>
         </Info>
         <Img>
           <div className="img-l">

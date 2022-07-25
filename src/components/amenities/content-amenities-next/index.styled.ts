@@ -52,8 +52,8 @@ export const PrevButton = styled(Link)`
   font-family: "TT Norms", sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 1.5vh;
+  line-height: 1.17;
   letter-spacing: 0.1em;
   color: #ffffff;
   display: flex;

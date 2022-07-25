@@ -442,94 +442,94 @@ ul li {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 60px;
-  line-height: 71px;
+  font-size: 7.5vh;
+  line-height: 1.2;
   font-feature-settings: 'liga' off;
 }
 .h1i {
   font-family: 'Adobe-Caslon-Pro', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 72px;
-  line-height: 86px;
+  font-size: 9vh;
+  line-height: 1.15;
   display: flex;
 }
 .h2 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 48px;
-  line-height: 57px;
+  font-size: 6vh;
+  line-height: 1.21;
 }
 .h2i {
   font-family: 'Adobe-Caslon-Pro', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 48px;
-  line-height: 58px;
+  font-size: 6vh;
+  line-height: 1.21;
 }
 .h3 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 4.5vh;
+  line-height: 1.18;
 }
 .h3i {
   font-family: 'Adobe-Caslon-Pro', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 36px;
-  line-height: 43px;
+  font-size: 4.5vh;
+  line-height: 1.18;
 }
 .h4 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 2.25vh;
+  line-height: 1.33;
 }
 .h4i {
   font-family: 'Adobe-Caslon-Pro', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 3vh;
+  line-height: 1.01;
 }
 .copy_t1 {
   font-family: 'Adobe-Caslon-Pro', serif;
   font-style: normal;
   font-weight: 100;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 2.25vh;
+  line-height: 1.33;
 }
 .copy_t2 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 2.25vh;
+  line-height: 1.33;
 }
 .caption_t1 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 1.5vh;
+  line-height: 1.25;
 }
 .caption_t2 {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 24px;
+  font-size: 1.5vh;
+  line-height: 2;
 }
 .label {
   font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 2vh;
+  line-height: 1.19;
   letter-spacing: 0.1em;
   font-feature-settings: 'liga' off;
 }

@@ -15,7 +15,7 @@ export const TeamWrapper = styled.div`
   right: 0;
   width: 100%;
   height: 100vh;
-  z-index: 10;
+  z-index: 12;
   background-color: #151515;
   overflow-y: auto;
 `

@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     img {
       height: 100%;
       object-fit: cover !important;
-      object-position: bottom !important;
+      object-position: 0 40% !important;
     }
   }
 `
