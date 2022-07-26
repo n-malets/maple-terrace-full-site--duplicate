@@ -43,4 +43,13 @@ export const headText = {
       "The Terrace amenity deck and lounge includes all the benefits of Maple Terrace with a vast roof terrace both indoors and out.",
     ],
   },
+  neighborhood: {
+    heading: {
+      line1: "Two-star Michelin Chef Danny Grant brings Chicago’s lauded",
+      line2: "Maple & Ash Steakhouse to Uptown Dallas.",
+    },
+    text: [
+      "From his past perfect four-star reviews to his best new chef accolades from Food & Wine, Grant has accumulated praise for his exquisite take on American cuisine. This Dallas restaurant also boasts an outstanding wine list.",
+    ],
+  },
 }
