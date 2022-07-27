@@ -18,15 +18,15 @@ export const FloorPlansData = {
         number Offices <br />
         11
       </>,
-      <></>,
+      <>
+        receptions <br /> 2
+      </>,
       <>MEDIUM DENSITY</>,
       <>total headcount 41</>,
       <>
         Workstations <br /> 28
       </>,
-      <>
-        receptions <br /> 2
-      </>,
+      <></>,
       <>
         OVERALL SQUARE FT <br /> 14,900 SF
       </>,

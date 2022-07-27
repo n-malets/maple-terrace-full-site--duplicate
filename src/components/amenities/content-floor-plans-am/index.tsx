@@ -180,7 +180,6 @@ const ContentFloorPlansAm = () => {
           </a>
         </div>
       </FloorPlanImg>
-      {console.log(FloorPlansData.floorPlan4)}
       <FloorPlan className="panel">
         <FloorPlanInfo ref={fp4InfoRef}>
           <div>
