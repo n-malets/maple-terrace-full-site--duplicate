@@ -119,28 +119,30 @@ export const FloorPlanImg = styled.div`
 
 export const FloorPlanInfo = styled.div`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   min-height: 120px;
   p {
-    width: 25%;
     padding-right: 10px;
     text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
     letter-spacing: 0.1em;
     font-feature-settings: "liga" off;
     padding-bottom: 15px;
     display: flex;
     align-items: center;
     span {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: block;
+      text-align: center;
+      line-height: 24px;
       border-radius: 50%;
       margin-right: 11px;
       width: 24px;
       height: 24px;
       color: #292929;
       background-color: #fff;
+      flex-shrink: 0;
     }
   }
 `

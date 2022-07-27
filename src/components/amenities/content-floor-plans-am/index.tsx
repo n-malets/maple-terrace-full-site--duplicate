@@ -180,22 +180,41 @@ const ContentFloorPlansAm = () => {
           </a>
         </div>
       </FloorPlanImg>
+      {console.log(FloorPlansData.floorPlan4)}
       <FloorPlan className="panel">
         <FloorPlanInfo ref={fp4InfoRef}>
-          {FloorPlansData.floorPlan4.info.map((item, i) => (
-            <p className={"caption_t1"} key={`idf-${i}`}>
-              {item}
-            </p>
-          ))}
+          <div>
+            {FloorPlansData.floorPlan4.info[0].map((item, i) => (
+              <p className={"caption_t1"} key={`idf-${i}`}>
+                {item}
+              </p>
+            ))}
+          </div>
+          <div>
+            {FloorPlansData.floorPlan4.info[1].map((item, i) => (
+              <p className={"caption_t1"} key={`idf-${i}`}>
+                {item}
+              </p>
+            ))}
+          </div>
+          <div>
+            {FloorPlansData.floorPlan4.info[2].map((item, i) => (
+              <p className={"caption_t1"} key={`idf-${i}`}>
+                {item}
+              </p>
+            ))}
+          </div>
         </FloorPlanInfo>
       </FloorPlan>
       <FloorPlan className="panel">
         <FloorPlanInfo className={"top-align"} ref={fp5InfoRef}>
-          {FloorPlansData.floorPlan5.info.map((item, i) => (
-            <p className={"caption_t1"} key={`ids-${i}`}>
-              {item}
-            </p>
-          ))}
+          <div>
+            {FloorPlansData.floorPlan5.info[0].map((item, i) => (
+              <p className={"caption_t1"} key={`ids-${i}`}>
+                {item}
+              </p>
+            ))}
+          </div>
         </FloorPlanInfo>
       </FloorPlan>
     </FPWrapper>

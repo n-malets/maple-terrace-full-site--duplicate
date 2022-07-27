@@ -99,47 +99,55 @@ export const FloorPlansData = {
   floorPlan4: {
     img: floorPlanImg5,
     info: [
-      <>
-        <span>1</span>LIBRArY
-      </>,
-      <>
-        <span>2</span>GARDEN LOUNGE
-      </>,
-      <>
-        <span>3</span>BOARDROOM
-      </>,
-      <>
-        <span>4</span>FITNESS CENTER
-      </>,
-      <>
-        <span>5</span>LOCKER ROOMS
-      </>,
-      <>
-        <span>6</span>CYCLIST LOUNGE & STORAGE (B1)
-      </>,
-      <>
-        <span>7</span>BAR & COCKTAIL LOUNGE
-      </>,
-      <>
-        <span>8</span>TRACKMAN GOLF SIMULATOR
-      </>,
-      <>
-        <span>9</span>DIRECT ACCESS TO <br /> UNDERGROUND PARKING
-      </>,
-      <>
-        <span>10</span>SECRET GARDEN
-      </>,
+      [
+        <>
+          <span>1</span>LIBRArY
+        </>,
+        <>
+          <span>2</span>GARDEN LOUNGE
+        </>,
+        <>
+          <span>3</span>BOARDROOM
+        </>,
+        <>
+          <span>4</span>FITNESS CENTER
+        </>,
+      ],
+      [
+        <>
+          <span>5</span>LOCKER ROOMS
+        </>,
+        <>
+          <span>6</span>CYCLIST LOUNGE & STORAGE (B1)
+        </>,
+        <>
+          <span>7</span>BAR & COCKTAIL LOUNGE
+        </>,
+        <>
+          <span>8</span>TRACKMAN GOLF SIMULATOR
+        </>,
+      ],
+      [
+        <>
+          <span>9</span>DIRECT ACCESS TO <br /> UNDERGROUND PARKING
+        </>,
+        <>
+          <span>10</span>SECRET GARDEN
+        </>,
+      ],
     ],
   },
   floorPlan5: {
     img: floorPlanImg4,
     info: [
-      <>
-        <span>11</span>terrace amenity deck
-      </>,
-      <>
-        <span>12</span>terrace amenity lounge
-      </>,
+      [
+        <>
+          <span>11</span>terrace amenity deck
+        </>,
+        <>
+          <span>12</span>terrace amenity lounge
+        </>,
+      ],
     ],
   },
 }
