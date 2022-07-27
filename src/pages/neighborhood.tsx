@@ -9,6 +9,7 @@ import { ImgTextData } from "../data/img-text"
 import ContentSpaces from "../components/amenities/content-spaces"
 import { spacesData } from "../data/spaces"
 import Footer from "../components/footer"
+import InteractiveMap from "../components/neighborhood/interactive-map";
 
 const NeighborhoodPage = () => {
   return (
@@ -28,6 +29,7 @@ const NeighborhoodPage = () => {
       <section className="panel">
         <ContentIntro imgName={"neighborhood_5.jpg"} />
       </section>
+      <InteractiveMap/>
       <section className={"relative"}>
         <ContentNextSection data={nextData.neighborhood} />
         <Footer />
