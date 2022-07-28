@@ -24,7 +24,7 @@ export const HeaderWrap = styled.header`
 export const Logo = styled.img`
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 4.5vh);
+  transform: translate(-50%, 45vh);
 `
 
 export const Nav = styled.nav`

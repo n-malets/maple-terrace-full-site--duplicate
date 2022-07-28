@@ -23,7 +23,6 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted }) => {
           end: "center top",
           scrub: true,
           toggleActions: "play none none reverse",
-          // markers: true,
         },
         defaults: { duration: 2 },
       })
@@ -36,7 +35,6 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted }) => {
           end: "center top",
           scrub: true,
           toggleActions: "play none none reverse",
-          // markers: true,
         },
         defaults: { duration: 2 },
       })

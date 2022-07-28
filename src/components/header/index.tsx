@@ -15,8 +15,7 @@ const Header: FC<IHeader> = ({ location }) => {
   const headerLogo = useRef(null)
   const { setOpenContact, setOpenTeam, setOpenLegal } = useContext(Context)
   useEffect(() => {
-    ScrollTrigger.getById("introScroll")?.refresh()
-    ScrollTrigger.getById("headerScroll")?.refresh()
+
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: "#preload-wrap",
@@ -27,38 +26,51 @@ const Header: FC<IHeader> = ({ location }) => {
         id: "headerScroll",
       },
     })
-      const tl2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".hide-logo",
-          start: "bottom top+=40%",
-          end: "bottom top",
-          preventOverlaps: true,
-          toggleActions: "restart none none reverse",
-          scrub: 1,
-        },
-      })
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hide-logo",
+        start: "top top",
+        end: "bottom top",
+        preventOverlaps: true,
+        toggleActions: "restart none none reverse",
+        scrub: 1,
+        id: "headerScrollRev",
+      },
+    })
     if (location.pathname === "/") {
+      console.log(location.pathname);
       tl1.fromTo(
         headerLogo.current,
-        {y: "45vh", transform: "translate(-50%, 45vh) scale(3)", ease: "ease-out"},
-        {y: "0", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
+        {y: "45vh", transform: "translate(-50%, 45vh) scale(3)", ease: "Power.easeOut"},
+        {y: "0", transform: "translateX(-50%) scale(1)", ease: "Power.easeOut"},
+      )
+      tl2.to(
+        headerLogo.current,
+        {y: "-18vh", ease: "ease-out"},
       )
     }
+    if (location.pathname !== "/") {
+      console.log(location.pathname);
+
       tl2.fromTo(
         headerLogo.current,
-        {y: "0", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
-        {y: "-18vh", transform: "translate(-50%, 0) scale(1)", ease: "ease-out"},
+        {y: "0",transform: "scale(1) translateX(-50%)", ease: "Power.easeOut"},
+        {y: "-18vh", transform: "scale(1) translateX(-50%)", ease: "Power.easeOut"},
       )
-
-    // if (location.pathname === "/neighborhood") {
-    //   gsap.to(".dark-color", {color: "black", duration: 1})
-    // } else {
-    //   gsap.to(".dark-color", {color: "white", duration: 1})
-    // }
-    return () => {
-      ScrollTrigger.getById('headerScroll')?.refresh();
     }
-  }, [location.pathname])
+
+    if (location.pathname === "/neighborhood") {
+      gsap.to(".dark-color", {color: "black", duration: 1})
+    } else {
+      gsap.to(".dark-color", {color: "white", duration: 1})
+    }
+    return () => {
+      ScrollTrigger.getById('headerScroll')?.kill();
+      ScrollTrigger.getById("introScroll")?.refresh();
+      ScrollTrigger.getById("headerScrollRev")?.kill();
+      console.log('refresh')
+    }
+  }, [location])
 
   return (
     <HeaderWrap>

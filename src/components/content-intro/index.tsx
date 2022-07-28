@@ -9,16 +9,18 @@ interface IContentIntro {
 }
 
 const ContentIntro: FC<IContentIntro> = ({ imgName }) => {
-  const ContentWrapRef = useRef(null)
+  const contentWrapRef = useRef(null)
   const introImgRef = useRef(null)
 
   useEffect(() => {
     ScrollTrigger.create({
-      trigger: ContentWrapRef?.current || "",
+      trigger: contentWrapRef?.current || "",
       toggleActions: "play none none reverse",
       start: "top top",
       end: "bottom top",
       scrub: 3,
+      onLeave: ()=>gsap.to(".dark-color", {color: "white"}, -2),
+      onEnterBack: ()=>gsap.to(".dark-color", {color: "black"}, -2),
       animation: gsap
         .timeline()
         .fromTo(
@@ -29,7 +31,7 @@ const ContentIntro: FC<IContentIntro> = ({ imgName }) => {
     })
   }, [])
   return (
-    <Wrapper ref={ContentWrapRef}>
+    <Wrapper ref={contentWrapRef}>
       <div className="intro-img" ref={introImgRef}>
         <div className="img">
           <Image imageName={imgName} />
