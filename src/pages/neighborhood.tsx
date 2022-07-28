@@ -32,12 +32,12 @@ const NeighborhoodPage = () => {
       <section className="panel">
         <ContentIntro imgName={"neighborhood_5.jpg"} />
       </section>
-      {/*<section className="panel within-walk">*/}
-      {/*  <ContentSlider*/}
-      {/*    data={withinWalkData.slides}*/}
-      {/*    title={withinWalkData.title}*/}
-      {/*  />*/}
-      {/*</section>*/}
+      <section className="panel within-walk">
+        <ContentSlider
+          data={withinWalkData.slides}
+          title={withinWalkData.title}
+        />
+      </section>
       <section className="panel">
         <ContentHeadingText
           heading={headText.neighborhood.heading}
