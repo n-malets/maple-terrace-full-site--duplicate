@@ -6,7 +6,6 @@ import main_logo from "../../assets/images/main_logo_2.svg"
 import main_logoDark from "../../assets/images/main_logo_2-dark.svg"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap"
-import getById = gsap.getById;
 
 interface IHeader {
   location: Location

@@ -22,6 +22,8 @@ export const FooterContent = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    letter-spacing: 0.1em;
+
     a,
     p,
     span {

@@ -23,7 +23,7 @@ export const Text = styled.div`
   width: 45%;
   opacity: 0;
   p {
-    line-height: 36px;
+    line-height: 38px;
     padding: 0 10px;
     max-width: 500px;
   }

@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react"
 import { Context } from "../../context/context"
-import { GlobalStyle, LayoutWrapper } from "./index.styled"
+import { GlobalStyle } from "./index.styled"
 import ContactModal from "../contact"
 import Team from "../team"
 import gsap from "gsap"
