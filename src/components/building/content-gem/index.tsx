@@ -18,7 +18,6 @@ const ContentGem: FC = () => {
           start: "top bottom+=19%",
           end: "center center+=1%",
           scrub: 4,
-          markers: true,
           toggleActions: "play none none reverse",
         },
         defaults: { duration: 3 },
@@ -45,7 +44,6 @@ const ContentGem: FC = () => {
           end: "center top+=15%",
           toggleActions: "play none none reverse",
           scrub: 4,
-          markers: true,
         },
         defaults: { duration: 3 },
       })
