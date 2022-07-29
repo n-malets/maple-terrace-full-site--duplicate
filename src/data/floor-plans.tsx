@@ -147,6 +147,8 @@ export const FloorPlansData = {
         <>
           <span>12</span>terrace amenity lounge
         </>,
+        <div style={{ height: "21px" }}>&nbsp;</div>,
+        <div style={{ height: "21px" }}>&nbsp;</div>,
       ],
     ],
   },

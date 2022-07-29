@@ -16,6 +16,7 @@ export const FloorPlan = styled.div`
   flex-direction: column;
   width: 63%;
   min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
   padding-bottom: 14vh;
 `
@@ -33,7 +34,7 @@ export const FloorPlanImg = styled.div`
     position: absolute;
     img {
       position: absolute;
-      max-width: 65%;
+      max-height: 55vh;
       transition: 1s ease-out;
     }
     .fp_image_thumb {
@@ -75,15 +76,18 @@ export const FloorPlanImg = styled.div`
       bottom: 0;
       right: 0;
       transform: translateX(-50%);
+      ${mediaMax.desktopSmall`    
+         bottom: 5vh;
+         right: -5vh;
+       `}
       svg {
         margin-right: 6px;
       }
     }
     .download_All {
       position: absolute;
-      bottom: -15vh;
-      right: -0%;
-      transform: translateX(-50%);
+      bottom: -20vh;
+      left: 0;
       border: 1px solid #fff;
       padding: 8px 26px 6px;
       svg {
@@ -93,19 +97,24 @@ export const FloorPlanImg = styled.div`
     .level_labels {
       position: absolute;
       left: 0;
-      bottom: -15vh;
       display: flex;
       flex-direction: column;
-      font-family: 'TT Norms', sans-serif;
+      font-family: "TT Norms", sans-serif;
       font-style: normal;
       font-weight: 500;
       font-size: 24px;
       line-height: 28px;
-      font-feature-settings: 'liga' off;
-      color: #FFFFFF;
-      // ${mediaMax.desktop`    
-      //   bottom: -150px;
-      // `}
+      font-feature-settings: "liga" off;
+      color: #ffffff;
+      ${mediaMax.desktopLarge`    
+         bottom: -12vh;
+       `}
+      ${mediaMax.desktop`    
+         bottom: -13.5vh;
+       `}
+       ${mediaMax.desktopSmall`    
+         bottom: -8.5vh;
+       `}
       a {
         padding: 6px 0;
         opacity: 0.25;
@@ -113,8 +122,8 @@ export const FloorPlanImg = styled.div`
           opacity: 1;
         }
       }
-}
- 
+    }
+  }
 `
 
 export const FloorPlanInfo = styled.div`
