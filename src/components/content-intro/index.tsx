@@ -19,8 +19,8 @@ const ContentIntro: FC<IContentIntro> = ({ imgName }) => {
       start: "top top",
       end: "bottom top",
       scrub: 3,
-      onLeave: ()=>gsap.to(".dark-color", {color: "white"}, -2),
-      onEnterBack: ()=>gsap.to(".dark-color", {color: "black"}, -2),
+      onLeave: ()=>gsap.to(".dark-color", {color: "white"}),
+      onEnterBack: ()=>gsap.to(".dark-color", {color: "black"}),
       animation: gsap
         .timeline()
         .fromTo(

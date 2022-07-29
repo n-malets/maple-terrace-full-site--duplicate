@@ -36,7 +36,6 @@ const ContentQuote: FC<IContentQuote> = ({ quote }) => {
           start: "top bottom",
           end: "top top+=48%",
           scrub: 1,
-          markers: true,
           toggleActions: "play none none reverse",
         },
         defaults: { duration: 3 },
