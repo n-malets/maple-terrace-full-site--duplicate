@@ -30,6 +30,14 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   useEffect(() => {
     ScrollTrigger.getById("v-scroll")?.refresh()
   }, [openLegal, openContact, openTeam])
+  useEffect(()=>{
+    window.addEventListener('resize', () => {
+      ScrollTrigger.getAll().forEach(ST => {
+        ST.refresh()
+      })
+      ScrollTrigger.getById('v-scroll')?.refresh();
+    })
+  }, [])
   useEffect(() => {
     const vSections = gsap.utils.toArray(".panel")
 
