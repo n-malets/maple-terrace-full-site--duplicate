@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, {useContext, useEffect} from "react"
 import { quoteData } from "../data/intro"
 import { nextData } from "../data/next"
 import { ImgTextData } from "../data/img-text"
@@ -15,8 +15,13 @@ import ContentCertifications from "../components/building/content-certifications
 import ContentNextSection from "../components/content-next"
 import Footer from "../components/footer"
 import ContentFloorPlans from "../components/building/content-floor-plans"
-
+import { Context } from "../context/context";
 const IndexPage = () => {
+  const { setIsMenuDark } = useContext(Context);
+
+  useEffect(()=> {
+    setIsMenuDark(false)
+  });
   return (
     <div className={"relative"}>
       <section className="panel">

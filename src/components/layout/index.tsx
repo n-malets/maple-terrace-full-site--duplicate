@@ -24,6 +24,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   const layoutWrapRef = useRef(null)
   const [openContact, setOpenContact] = useState(false)
   const [openLegal, setOpenLegal] = useState(false)
+  const [isMenuDark, setIsMenuDark] = useState(false)
   const [openTeam, setOpenTeam] = useState(false)
   const [isFirstLoad, setIsFirstLoad] = useState(true)
 
@@ -91,6 +92,8 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         setOpenLegal,
         openTeam,
         setOpenTeam,
+        isMenuDark,
+        setIsMenuDark
       }}
     >
       <GlobalStyle />

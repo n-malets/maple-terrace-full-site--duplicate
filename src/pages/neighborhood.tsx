@@ -1,4 +1,5 @@
-import * as React from "react"
+import React from "react";
+
 import { quoteData } from "../data/intro"
 import ContentQuote from "../components/content-quote"
 import ContentIntro from "../components/content-intro"
@@ -13,8 +14,8 @@ import ContentSlider from "../components/content-slider"
 import { withinWalkData } from "../data/sliders"
 import ContentHeadingText from "../components/content-heading-text"
 import { headText } from "../data/head-text"
-
 const NeighborhoodPage = () => {
+
   return (
     <>
       <section className="panel">

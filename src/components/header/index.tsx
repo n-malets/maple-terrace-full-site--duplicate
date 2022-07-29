@@ -13,7 +13,7 @@ interface IHeader {
 
 const Header: FC<IHeader> = ({ location }) => {
   const headerLogo = useRef(null)
-  const { setOpenContact, setOpenTeam, setOpenLegal } = useContext(Context)
+  const { setOpenContact, setOpenTeam, setOpenLegal, isMenuDark, setIsMenuDark } = useContext(Context)
   useEffect(() => {
 
     const tl1 = gsap.timeline({
@@ -59,9 +59,9 @@ const Header: FC<IHeader> = ({ location }) => {
     }
 
     if (location.pathname === "/neighborhood" || location.pathname === "/neighborhood/") {
-      gsap.to(".dark-color", {color: "black", duration: 1})
+      setIsMenuDark(true);
     } else {
-      gsap.to(".dark-color", {color: "white", duration: 1})
+      setIsMenuDark(false);
     }
     return () => {
       ScrollTrigger.getById('headerScroll')?.kill();
@@ -72,38 +72,36 @@ const Header: FC<IHeader> = ({ location }) => {
 
   return (
     <HeaderWrap>
-      <Nav className={"prim "} id={"hNav"}>
+      <Nav className={"prim "} id={"hNav"} isMenuDark={isMenuDark}>
         <Link
           activeClassName={'active'}
           to={"/"}
-          className={"dark-color"}>
+        >
           BUILDING
         </Link>
         <Link
           activeClassName={'active'}
           to={"/neighborhood"}
-          className={"dark-color"}
         >
           NEIGHBORHOOD
         </Link>
         <Link
           activeClassName={'active'}
           to={"/amenities"}
-          className={"dark-color"}
         >
           AMENITIES
         </Link>
       </Nav>
       <Logo
         ref={headerLogo}
-        src={location.pathname === "/neighborhood" ? main_logoDark : main_logo}
+        src={isMenuDark ? main_logoDark : main_logo}
         alt={"Maple Terrace Uptown Dallas"}
       />
-      <Nav className={"sec"} id={"sNav"}>
-        <span onClick={() => setOpenTeam(true)} className={"dark-color"}>
+      <Nav className={"sec"} id={"sNav"} isMenuDark={isMenuDark}>
+        <span onClick={() => setOpenTeam(true)} >
           TEAM
         </span>
-        <span onClick={() => setOpenContact(true)} className={"dark-color"}>
+        <span onClick={() => setOpenContact(true)} >
           CONTACT
         </span>
       </Nav>

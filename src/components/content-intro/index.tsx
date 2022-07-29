@@ -1,8 +1,9 @@
-import React, { FC, useEffect, useRef } from "react"
+import React, {FC, useContext, useEffect, useRef} from "react"
 import Image from "../image"
 import { Wrapper } from "./index.styled"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap"
+import {Context} from "../../context/context";
 
 interface IContentIntro {
   imgName: string
@@ -11,16 +12,29 @@ interface IContentIntro {
 const ContentIntro: FC<IContentIntro> = ({ imgName }) => {
   const contentWrapRef = useRef(null)
   const introImgRef = useRef(null)
-
+  const {setIsMenuDark} = useContext(Context);
   useEffect(() => {
+    if(location.pathname === "/neighborhood" || location.pathname === "/neighborhood/") {
+      ScrollTrigger.create({
+        trigger: contentWrapRef?.current || "",
+        toggleActions: "play none none reverse",
+        start: "top top",
+        end: "top+=30% top",
+        scrub: 3,
+        onLeave: () => {
+          setIsMenuDark(false)
+        },
+        onEnterBack: () => {
+          setIsMenuDark(true)
+        }
+      })
+    }
     ScrollTrigger.create({
       trigger: contentWrapRef?.current || "",
       toggleActions: "play none none reverse",
       start: "top top",
       end: "bottom top",
       scrub: 3,
-      onLeave: ()=>gsap.to(".dark-color", {color: "white"}),
-      onEnterBack: ()=>gsap.to(".dark-color", {color: "black"}),
       animation: gsap
         .timeline()
         .fromTo(

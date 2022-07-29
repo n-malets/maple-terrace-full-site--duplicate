@@ -1,9 +1,9 @@
-import * as React from "react"
-import Image from "../components/image"
+import React, {useContext, useEffect} from "react"
 import { quoteData } from "../data/intro"
 import { spacesData } from "../data/spaces"
 import { headText } from "../data/head-text"
 import { ImgTextData } from "../data/img-text"
+import { Context } from "../context/context";
 import ContentIntro from "../components/content-intro"
 import ContentQuote from "../components/content-quote"
 import ContentHeadingText from "../components/content-heading-text"
@@ -16,6 +16,11 @@ import Footer from "../components/footer"
 import ContentAmNext from "../components/amenities/content-amenities-next"
 
 const AmenitiesPage = () => {
+  const { setIsMenuDark } = useContext(Context);
+
+  useEffect(()=> {
+    setIsMenuDark(false)
+  });
   return (
     <>
       <div className={"relative"}>

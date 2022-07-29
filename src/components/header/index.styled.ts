@@ -1,5 +1,7 @@
 import styled from "styled-components"
-
+interface IStyleProps {
+  isMenuDark?: boolean | undefined
+}
 export const HeaderWrap = styled.header`
   position: fixed;
   left: 0;
@@ -27,9 +29,12 @@ export const Logo = styled.img`
   transform: translate(-50%, 45vh);
 `
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<IStyleProps>`
   font-size: 14px;
   font-family: "TT Norms", serif;
+  a, span {
+    color: ${props => (props.isMenuDark ? "black" : "white") };
+  }
   a.active {
     opacity: 1;
   }
