@@ -30,6 +30,9 @@ export const Logo = styled.img`
 export const Nav = styled.nav`
   font-size: 14px;
   font-family: "TT Norms", serif;
+  a.active {
+    opacity: 1;
+  }
   &.prim {
     font-weight: 700;
   }

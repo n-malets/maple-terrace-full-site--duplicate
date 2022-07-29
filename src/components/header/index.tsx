@@ -38,7 +38,6 @@ const Header: FC<IHeader> = ({ location }) => {
       },
     })
     if (location.pathname === "/") {
-      console.log(location.pathname);
       tl1.fromTo(
         headerLogo.current,
         {y: "45vh", transform: "translate(-50%, 45vh) scale(3)", ease: "Power.easeOut"},
@@ -50,8 +49,6 @@ const Header: FC<IHeader> = ({ location }) => {
       )
     }
     if (location.pathname !== "/") {
-      console.log(location.pathname);
-
       tl2.fromTo(
         headerLogo.current,
         {y: "0",transform: "scale(1) translateX(-50%)", ease: "Power.easeOut"},
@@ -68,25 +65,27 @@ const Header: FC<IHeader> = ({ location }) => {
       ScrollTrigger.getById('headerScroll')?.kill();
       ScrollTrigger.getById("introScroll")?.refresh();
       ScrollTrigger.getById("headerScrollRev")?.kill();
-      console.log('refresh')
     }
   }, [location])
 
   return (
     <HeaderWrap>
       <Nav className={"prim "} id={"hNav"}>
-        <Link activeStyle={{ opacity: 1 }} to={"/"} className={"dark-color"}>
+        <Link
+          activeClassName={'active'}
+          to={"/"}
+          className={"dark-color"}>
           BUILDING
         </Link>
         <Link
-          activeStyle={{ opacity: 1 }}
+          activeClassName={'active'}
           to={"/neighborhood"}
           className={"dark-color"}
         >
           NEIGHBORHOOD
         </Link>
         <Link
-          activeStyle={{ opacity: 1 }}
+          activeClassName={'active'}
           to={"/amenities"}
           className={"dark-color"}
         >
