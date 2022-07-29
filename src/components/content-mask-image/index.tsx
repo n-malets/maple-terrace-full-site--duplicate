@@ -31,7 +31,7 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted }) => {
       .timeline({
         scrollTrigger: {
           trigger: contentWrapRef.current || "",
-          start: "center top+=10%",
+          start: "center top+=100%",
           end: "center top",
           scrub: true,
           toggleActions: "play none none reverse",
