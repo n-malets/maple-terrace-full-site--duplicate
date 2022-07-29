@@ -42,7 +42,6 @@ const ContentGem: FC = () => {
           trigger: wrapperRef.current || "",
           start: "bottom top+=15%",
           end: "center bottom-=5%",
-          markers: true,
           toggleActions: "play none none reverse",
           scrub: 4,
         },
