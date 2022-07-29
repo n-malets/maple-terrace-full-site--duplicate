@@ -18,6 +18,7 @@ const ContentGem: FC = () => {
           start: "top bottom+=19%",
           end: "center center+=1%",
           scrub: 4,
+          markers: true,
           toggleActions: "play none none reverse",
         },
         defaults: { duration: 3 },
@@ -40,10 +41,11 @@ const ContentGem: FC = () => {
       .timeline({
         scrollTrigger: {
           trigger: wrapperRef.current || "",
-          start: "bottom top+=15%",
-          end: "center bottom-=5%",
+          start: "bottom bottom-=15%",
+          end: "center top+=15%",
           toggleActions: "play none none reverse",
           scrub: 4,
+          markers: true,
         },
         defaults: { duration: 3 },
       })
@@ -54,7 +56,7 @@ const ContentGem: FC = () => {
         { opacity: 0, y: 0 },
         "0"
       )
-      .fromTo(".img-l", { opacity: 1, y: '-50%' }, { opacity: 0, y: '50%' }, "0")
+      .fromTo(".img-l", { opacity: 1, y: '-50%' }, { opacity: 0, y: '-100%' }, "0")
       .fromTo(".img-r", { maxHeight: "600px" }, { maxHeight: "0" }, "0")
   }, [])
   return (
