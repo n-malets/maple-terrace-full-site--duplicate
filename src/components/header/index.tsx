@@ -59,7 +59,7 @@ const Header: FC<IHeader> = ({ location }) => {
       )
     }
 
-    if (location.pathname === "/neighborhood") {
+    if (location.pathname === "/neighborhood" || location.pathname === "/neighborhood/") {
       gsap.to(".dark-color", {color: "black", duration: 1})
     } else {
       gsap.to(".dark-color", {color: "white", duration: 1})
