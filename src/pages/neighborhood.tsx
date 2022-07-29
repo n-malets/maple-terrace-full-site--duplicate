@@ -49,7 +49,7 @@ const NeighborhoodPage = () => {
         <ContentIntro imgName={"neighborhood_6.jpg"} />
       </section>
       <section className={"relative"}>
-        <ContentNextSection data={nextData.neighborhood} />
+        <ContentNextSection data={nextData.neighborhood} prevBtn={true}/>
         <Footer />
       </section>
     </>
