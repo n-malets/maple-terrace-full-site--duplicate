@@ -4,6 +4,7 @@ interface IStyleProps {
   reversed?: boolean
   infoWidth?: string
   infoPadding?: boolean
+  imgHeight?: string
 }
 export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
@@ -37,8 +38,9 @@ export const Img = styled.div<IStyleProps>`
   overflow: hidden;
   width: ${props => (props.withPadding ? "52.5%" : "57.2%")};
   position: relative;
+
   .gatsby-image-wrapper {
-    max-height: 75vh;
+    height: ${props => (props.imgHeight ? props.imgHeight : "75vh")};
     object-fit: cover;
     object-position: top;
   }

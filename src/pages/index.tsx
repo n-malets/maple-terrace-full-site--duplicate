@@ -32,7 +32,7 @@ const IndexPage = () => {
         <ContentGem />
       </section>
       <section className="panel">
-        <ContentImgText data={ImgTextData.building1} />
+        <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>
       </section>
       <ContentMaskImage
         imgName={"building_5.jpg"}

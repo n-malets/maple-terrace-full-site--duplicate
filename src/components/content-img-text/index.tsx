@@ -15,9 +15,10 @@ interface IContentImgText {
     infoWidth?: string | undefined
     infoPadding?: boolean | undefined
   }
+  imgHeight?: string | undefined
 }
 
-const ContentImgText: FC<IContentImgText> = ({ data }) => {
+const ContentImgText: FC<IContentImgText> = ({ data, imgHeight}) => {
   const wrapperRef = useRef(null)
   const imgWrapperRef = useRef(null)
   const infoWrapperRef = useRef(null)
@@ -53,7 +54,7 @@ const ContentImgText: FC<IContentImgText> = ({ data }) => {
         scrollTrigger: {
           trigger: wrapperRef.current || "",
           start: "bottom bottom +=5%",
-          end: "bottom top",
+          end: "bottom+=1% top",
           toggleActions: "play none none reverse",
           scrub: 4,
           id: "out",
@@ -82,7 +83,7 @@ const ContentImgText: FC<IContentImgText> = ({ data }) => {
       reversed={data.reversed}
       ref={wrapperRef}
     >
-      <Img withPadding={data.withPadding} ref={imgWrapperRef}>
+      <Img withPadding={data.withPadding} ref={imgWrapperRef} imgHeight={imgHeight}>
         <Image imageName={data.img} />
       </Img>
       <Info
