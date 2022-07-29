@@ -42,6 +42,7 @@ const ContentGem: FC = () => {
           trigger: wrapperRef.current || "",
           start: "bottom top+=15%",
           end: "center bottom-=5%",
+          markers: true,
           toggleActions: "play none none reverse",
           scrub: 4,
         },
@@ -54,7 +55,7 @@ const ContentGem: FC = () => {
         { opacity: 0, y: 0 },
         "0"
       )
-      .fromTo(".img-l", { opacity: 1, y: 0 }, { opacity: 0, y: 0 }, "0")
+      .fromTo(".img-l", { opacity: 1, y: '-50%' }, { opacity: 0, y: '50%' }, "0")
       .fromTo(".img-r", { maxHeight: "600px" }, { maxHeight: "0" }, "0")
   }, [])
   return (

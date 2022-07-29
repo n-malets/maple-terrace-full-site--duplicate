@@ -64,6 +64,7 @@ const IndexPage = () => {
       <ContentMaskImage
         imgName={"building_11.jpg"}
         mask={"building_11_mask.png"}
+        darkMenu={true}
       />
       <section className="panel">
         <ContentWhy />

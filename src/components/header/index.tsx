@@ -27,13 +27,15 @@ const Header: FC<IHeader> = ({ location }) => {
       },
     })
     const tl2 = gsap.timeline({
+      defaults: {
+        duration: 1
+      },
       scrollTrigger: {
         trigger: ".hide-logo",
         start: "top top",
         end: "bottom top",
         preventOverlaps: true,
         toggleActions: "restart none none reverse",
-        scrub: 1,
         id: "headerScrollRev",
       },
     })
