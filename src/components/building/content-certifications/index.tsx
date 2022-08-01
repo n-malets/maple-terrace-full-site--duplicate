@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, Milestones, Items, Heading, TimeLine } from "./index.styled"
 import { Certifications } from "../../../data/certifications"
 import gsap from "gsap"
+import { sizes } from "../../../helpers/MediaQueries"
 
 const ContentCertifications: FC = () => {
   const wrapperRef = useRef(null)
@@ -13,6 +14,7 @@ const ContentCertifications: FC = () => {
   const headingRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {

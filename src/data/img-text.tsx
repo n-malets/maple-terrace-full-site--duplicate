@@ -3,14 +3,18 @@ import React from "react"
 export const ImgTextData = {
   building1: {
     img: "building_4.jpg",
-    title: <>PRESERVING THE PAST <br/> WHILE SERVING THE <br/> PRESENT</>,
+    title: (
+      <>
+        PRESERVING THE PAST <br /> WHILE SERVING THE <br /> PRESENT
+      </>
+    ),
     text: "Hines transforms beloved Maple Terrace, Dallas’ first luxury high-rise residence, into the city’s destination for boutique office space, modern living, and Michelin-starred fine dining.",
   },
   building2: {
     img: "building_8.jpg",
     title: (
       <>
-        INDOOR + OUTDOOR <br/> AMENITIES
+        INDOOR + OUTDOOR <br /> AMENITIES
       </>
     ),
     text: "Maple Terrace provides concierge services to ease your workday and allow you to better enjoy downtime —whether at the fitness center, in one of the destination restaurants, exploring the nearby Katy Trail, or 300 nearby amenities.",
@@ -18,22 +22,14 @@ export const ImgTextData = {
   },
   building3: {
     img: "building_9.jpg",
-    title: (
-      <>
-        FOOD & BEVERAGE
-      </>
-    ),
+    title: <>FOOD & BEVERAGE</>,
     text: "Two-star Michelin chef, Danny Grant, brings his flagship Maple & Ash steakhouse to the site, as well as Café Sophie and a bar lounge, all of which makes Maple Terrace the ideal spot to close a deal, unwind, gather or celebrate.",
     withPadding: true,
     reversed: true,
   },
   building4: {
     img: "building_10.jpg",
-    title: (
-      <>
-        DESIGN
-      </>
-    ),
+    title: <>DESIGN</>,
     text: "Inspired by the elegance of the 1920s and old Hollywood glamour, Rottet Studio has created clean, dramatic interiors, including open spaces of limestone and accent metals with a nod to Mission Revival design.",
     withPadding: true,
   },
@@ -85,11 +81,7 @@ export const ImgTextData = {
   },
   neighborhood1: {
     img: "neighborhood_2.jpg",
-    title: (
-      <>
-        Katy Trail <br /> within a
-      </>
-    ),
+    title: <>Katy Trail within a</>,
     title2: "3 minute walk.",
     text: "",
     withPadding: false,

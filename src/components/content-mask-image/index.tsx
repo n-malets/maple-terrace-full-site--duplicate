@@ -2,6 +2,7 @@ import React, { FC, useRef, useEffect } from "react"
 import Image from "../image"
 import { Wrapper, Img, Mask } from "./index.styled"
 import gsap from "gsap"
+import { sizes } from "../../helpers/MediaQueries"
 
 interface IContentIntro {
   imgName: string
@@ -10,12 +11,18 @@ interface IContentIntro {
   darkMenu?: boolean | undefined
 }
 
-const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu }) => {
+const ContentMaskImage: FC<IContentIntro> = ({
+  imgName,
+  mask,
+  shifted,
+  darkMenu,
+}) => {
   const contentWrapRef = useRef<HTMLDivElement>(null)
   const maskRef = useRef<HTMLDivElement>(null)
   const bgRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {
@@ -23,8 +30,8 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu 
           start: "center top+=70%",
           end: "center top",
           scrub: true,
-          onEnter: ()=> {
-            console.log('enter');
+          onEnter: () => {
+            console.log("enter")
           },
           toggleActions: "play none none reverse",
         },

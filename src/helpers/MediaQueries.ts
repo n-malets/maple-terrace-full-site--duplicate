@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 
-const sizes: any = {
+export const sizes: any = {
   phoneSmall: 340,
   phone: 376,
   phoneLarge: 414,

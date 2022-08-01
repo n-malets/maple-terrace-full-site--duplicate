@@ -31,56 +31,55 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   useEffect(() => {
     ScrollTrigger.getById("v-scroll")?.refresh()
   }, [openLegal, openContact, openTeam])
-  useEffect(()=>{
-    window.addEventListener('resize', () => {
+  useEffect(() => {
+    window.addEventListener("resize", () => {
       ScrollTrigger.getAll().forEach(ST => {
         ST.refresh()
       })
-      ScrollTrigger.getById('v-scroll')?.refresh();
+      ScrollTrigger.getById("v-scroll")?.refresh()
     })
   }, [])
   useEffect(() => {
-    const vSections = gsap.utils.toArray(".panel")
-
-    vSections.forEach((panel: any) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top",
-        scrub: 3,
-      })
-    })
-    ScrollTrigger.create({
-      id: "v-scroll",
-      preventOverlaps: true,
-      snap: {
-        snapTo: 1 / (vSections.length - 1),
-        duration: 3,
-        ease: "easeIn",
-      },
-    })
-    Promise.all(
-      Array.from(document.images).map(img => {
-        if (img.complete) return Promise.resolve(img.naturalHeight !== 0)
-        return new Promise(resolve => {
-          img.addEventListener("load", () => resolve(true))
-          img.addEventListener("error", () => resolve(false))
-        })
-      })
-    ).then(results => {
-      if (results.every(res => res)) {
-        setTimeout(() => {
-          ScrollTrigger.getAll().forEach(ST => ST.refresh())
-        }, 600)
-        console.log("all images loaded successfully")
-      } else {
-        console.log("some images failed to load, all finished loading")
-      }
-    })
-    ScrollTrigger.getAll().forEach(ST => {
-      ST.refresh()
-    })
-    // This in case a scroll animation is active while the route is updated
-    gsap.killTweensOf(window)
+    // const vSections = gsap.utils.toArray(".panel")
+    // vSections.forEach((panel: any) => {
+    //   ScrollTrigger.create({
+    //     trigger: panel,
+    //     start: "top top",
+    //     scrub: 3,
+    //   })
+    // })
+    // ScrollTrigger.create({
+    //   id: "v-scroll",
+    //   preventOverlaps: true,
+    //   snap: {
+    //     snapTo: 1 / (vSections.length - 1),
+    //     duration: 3,
+    //     ease: "easeIn",
+    //   },
+    // })
+    // Promise.all(
+    //   Array.from(document.images).map(img => {
+    //     if (img.complete) return Promise.resolve(img.naturalHeight !== 0)
+    //     return new Promise(resolve => {
+    //       img.addEventListener("load", () => resolve(true))
+    //       img.addEventListener("error", () => resolve(false))
+    //     })
+    //   })
+    // ).then(results => {
+    //   if (results.every(res => res)) {
+    //     setTimeout(() => {
+    //       ScrollTrigger.getAll().forEach(ST => ST.refresh())
+    //     }, 600)
+    //     console.log("all images loaded successfully")
+    //   } else {
+    //     console.log("some images failed to load, all finished loading")
+    //   }
+    // })
+    // ScrollTrigger.getAll().forEach(ST => {
+    //   ST.refresh()
+    // })
+    // // This in case a scroll animation is active while the route is updated
+    // gsap.killTweensOf(window)
   }, [])
 
   return (
@@ -93,7 +92,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         openTeam,
         setOpenTeam,
         isMenuDark,
-        setIsMenuDark
+        setIsMenuDark,
       }}
     >
       <GlobalStyle />

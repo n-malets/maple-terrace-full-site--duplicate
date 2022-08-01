@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, Info, Img } from "./index.styled"
 import Image from "../image"
 import gsap from "gsap"
+import { sizes } from "../../helpers/MediaQueries"
 
 interface IContentImgText {
   data: {
@@ -18,12 +19,13 @@ interface IContentImgText {
   imgHeight?: string | undefined
 }
 
-const ContentImgText: FC<IContentImgText> = ({ data, imgHeight}) => {
+const ContentImgText: FC<IContentImgText> = ({ data, imgHeight }) => {
   const wrapperRef = useRef(null)
   const imgWrapperRef = useRef(null)
   const infoWrapperRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {
@@ -83,7 +85,11 @@ const ContentImgText: FC<IContentImgText> = ({ data, imgHeight}) => {
       reversed={data.reversed}
       ref={wrapperRef}
     >
-      <Img withPadding={data.withPadding} ref={imgWrapperRef} imgHeight={imgHeight}>
+      <Img
+        withPadding={data.withPadding}
+        ref={imgWrapperRef}
+        imgHeight={imgHeight}
+      >
         <Image imageName={data.img} />
       </Img>
       <Info
@@ -92,7 +98,9 @@ const ContentImgText: FC<IContentImgText> = ({ data, imgHeight}) => {
         infoWidth={data.infoWidth}
         infoPadding={data.infoPadding}
       >
-        <h4 className={data.bigHeading ? "h3" : "h4"}>{data.title}</h4>
+        <h4 className={`title ${data.bigHeading ? "h3" : "h4"}`}>
+          {data.title}
+        </h4>
         {data.title2 && (
           <h4 className={data.bigHeading ? "h3i" : "h4i"}>{data.title2}</h4>
         )}

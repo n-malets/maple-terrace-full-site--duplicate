@@ -37,6 +37,8 @@ import ACaslonProItaliceot from "../../assets/fonts/ACaslonPro-Italic.eot"
 import ACaslonProItalicwoff from "../../assets/fonts/ACaslonPro-Italic.woff"
 import ACaslonProItalicwoff2 from "../../assets/fonts/ACaslonPro-Italic.woff2"
 
+import { mediaMax } from "../../helpers/MediaQueries"
+
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'TT Norms';
@@ -423,6 +425,11 @@ ol li {
 ul li {
   padding-left: 0;
 }
+
+.container {
+  overflow: hidden;
+}
+
 .pb-10 {
   padding-bottom: 1.25vh;
 }
@@ -445,6 +452,9 @@ ul li {
   font-size: 60px;
   line-height: 1.3;
   font-feature-settings: 'liga' off;
+  ${mediaMax.phoneXL`
+    font-size: 36px;
+  `}
 }
 .h1i {
   font-family: 'Adobe-Caslon-Pro', serif;
@@ -453,6 +463,9 @@ ul li {
   font-size: 72px;
   line-height: 1.25;
   display: flex;
+  ${mediaMax.phoneXL`
+    font-size: 36px;
+  `}
 }
 .h2 {
   font-family: 'TT Norms', sans-serif;
@@ -474,6 +487,10 @@ ul li {
   font-weight: 400;
   font-size: 36px;
   line-height: 1.4;
+  ${mediaMax.phoneXL`
+    font-size: 24px;
+    margin-top: 50px;
+  `}
 }
 .h3i {
   font-family: 'Adobe-Caslon-Pro', serif;
@@ -481,6 +498,9 @@ ul li {
   font-weight: 400;
   font-size: 36px;
   line-height: 1.3;
+   ${mediaMax.phoneXL`
+    font-size: 24px;
+  `}
 }
 .h4 {
   font-family: 'TT Norms', sans-serif;
@@ -488,6 +508,9 @@ ul li {
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
+  ${mediaMax.phoneXL`
+      font-size: 14px;
+  `}
 }
 .h4i {
   font-family: 'Adobe-Caslon-Pro', serif;
@@ -495,6 +518,9 @@ ul li {
   font-weight: 400;
   font-size: 24px;
   line-height: 1.01;
+  ${mediaMax.phoneXL`
+      font-size: 14px;
+  `}
 }
 .copy_t1 {
   font-family: 'Adobe-Caslon-Pro', serif;

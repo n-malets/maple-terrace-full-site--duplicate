@@ -2,6 +2,8 @@ import React, { FC, useEffect, useRef } from "react"
 import { Wrapper } from "./index.styled"
 import Image from "../image"
 import gsap from "gsap"
+import { sizes } from "../../helpers/MediaQueries"
+
 interface IContentImageZoomed {
   imageName: string
 }
@@ -11,6 +13,7 @@ const ContentImageZoomed: FC<IContentImageZoomed> = ({ imageName }) => {
   const contrastRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {

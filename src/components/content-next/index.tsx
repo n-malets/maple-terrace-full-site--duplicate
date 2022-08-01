@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, NextBtn, Headings } from "./index.styled"
 import gsap from "gsap"
-import {PrevButton} from "../amenities/content-amenities-next/index.styled";
+import { PrevButton } from "../amenities/content-amenities-next/index.styled"
+import { sizes } from "../../helpers/MediaQueries"
 
 interface IContentNextSection {
   data: {
@@ -19,6 +20,7 @@ const ContentNextSection: FC<IContentNextSection> = ({ data, prevBtn }) => {
   const prevButtonRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {
@@ -74,7 +76,11 @@ const ContentNextSection: FC<IContentNextSection> = ({ data, prevBtn }) => {
         },
         defaults: { duration: 3 },
       })
-      .fromTo(prevButtonRef.current || ".n-prev-btn", { y: 100, opacity: 0 }, { y: "-6vh", opacity: 1 })
+      .fromTo(
+        prevButtonRef.current || ".n-prev-btn",
+        { y: 100, opacity: 0 },
+        { y: "-6vh", opacity: 1 }
+      )
   }, [])
   return (
     <Wrapper ref={wrapperRef} className={"panel"}>
@@ -98,15 +104,15 @@ const ContentNextSection: FC<IContentNextSection> = ({ data, prevBtn }) => {
           <path d="M14 7L0 14V0L14 7Z" fill="white" />
         </svg>
       </NextBtn>
-      { prevBtn &&
-        <PrevButton to={"/"} ref={prevButtonRef} id={'n-prev-btn'}>
+      {prevBtn && (
+        <PrevButton to={"/"} ref={prevButtonRef} id={"n-prev-btn"}>
           <svg
             width="14"
             height="14"
             viewBox="0 0 14 14"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            >
+          >
             <path d="M6.11959e-07 7L14 0L14 14L6.11959e-07 7Z" fill="white" />
           </svg>
           <p>
@@ -114,7 +120,7 @@ const ContentNextSection: FC<IContentNextSection> = ({ data, prevBtn }) => {
             <span>BUILDING</span>
           </p>
         </PrevButton>
-      }
+      )}
     </Wrapper>
   )
 }

@@ -7,6 +7,7 @@ import {
 } from "./index.styled"
 import { FloorPlansData } from "../../../data/floor-plans"
 import gsap from "gsap"
+import { sizes } from "../../../helpers/MediaQueries"
 
 const ContentFloorPlans = () => {
   const floorPlanImgRef = useRef<HTMLDivElement>(null)
@@ -18,6 +19,7 @@ const ContentFloorPlans = () => {
   const fpImg2Ref = useRef<HTMLImageElement>(null)
   const fpImg3Ref = useRef<HTMLImageElement>(null)
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {
@@ -29,17 +31,19 @@ const ContentFloorPlans = () => {
             levelLabelsRef.current?.childNodes.forEach((el: any) =>
               el.classList.remove("active")
             )
-              if(levelLabelsRef.current) levelLabelsRef.current.children[0].classList.add("active")
-              if(fpImg1Ref.current) fpImg1Ref.current.style.opacity = "1"
-              if(fpImg2Ref.current) fpImg2Ref.current.style.opacity = "0"
+            if (levelLabelsRef.current)
+              levelLabelsRef.current.children[0].classList.add("active")
+            if (fpImg1Ref.current) fpImg1Ref.current.style.opacity = "1"
+            if (fpImg2Ref.current) fpImg2Ref.current.style.opacity = "0"
           },
           onEnterBack: () => {
             levelLabelsRef.current?.childNodes.forEach((el: any) =>
               el.classList.remove("active")
             )
-            if(levelLabelsRef.current) levelLabelsRef.current.children[0].classList.add("active")
-            if(fpImg1Ref.current) fpImg1Ref.current.style.opacity = "1"
-            if(fpImg2Ref.current) fpImg2Ref.current.style.opacity = "0"
+            if (levelLabelsRef.current)
+              levelLabelsRef.current.children[0].classList.add("active")
+            if (fpImg1Ref.current) fpImg1Ref.current.style.opacity = "1"
+            if (fpImg2Ref.current) fpImg2Ref.current.style.opacity = "0"
           },
           toggleActions: "play none none reverse",
         },
@@ -70,17 +74,19 @@ const ContentFloorPlans = () => {
             levelLabelsRef.current?.childNodes.forEach((el: any) =>
               el.classList.remove("active")
             )
-            if(levelLabelsRef.current) levelLabelsRef.current.children[1].classList.add("active")
-            if(fpImg1Ref.current) fpImg1Ref.current.style.opacity = "0"
-            if(fpImg2Ref.current) fpImg2Ref.current.style.opacity = "1"
+            if (levelLabelsRef.current)
+              levelLabelsRef.current.children[1].classList.add("active")
+            if (fpImg1Ref.current) fpImg1Ref.current.style.opacity = "0"
+            if (fpImg2Ref.current) fpImg2Ref.current.style.opacity = "1"
           },
           onEnterBack: () => {
             levelLabelsRef.current?.childNodes.forEach((el: any) =>
               el.classList.remove("active")
             )
-            if(levelLabelsRef.current) levelLabelsRef.current.children[1].classList.add("active")
-            if(fpImg3Ref.current) fpImg3Ref.current.style.opacity = "0"
-            if(fpImg2Ref.current) fpImg2Ref.current.style.opacity = "1"
+            if (levelLabelsRef.current)
+              levelLabelsRef.current.children[1].classList.add("active")
+            if (fpImg3Ref.current) fpImg3Ref.current.style.opacity = "0"
+            if (fpImg2Ref.current) fpImg2Ref.current.style.opacity = "1"
           },
           toggleActions: "play none none reverse",
         },
@@ -111,17 +117,19 @@ const ContentFloorPlans = () => {
             levelLabelsRef.current?.childNodes.forEach((el: any) =>
               el.classList.remove("active")
             )
-            if(levelLabelsRef.current) levelLabelsRef.current.children[2].classList.add("active")
-            if(fpImg3Ref.current) fpImg3Ref.current.style.opacity = "1"
-            if(fpImg2Ref.current) fpImg2Ref.current.style.opacity = "0"
+            if (levelLabelsRef.current)
+              levelLabelsRef.current.children[2].classList.add("active")
+            if (fpImg3Ref.current) fpImg3Ref.current.style.opacity = "1"
+            if (fpImg2Ref.current) fpImg2Ref.current.style.opacity = "0"
           },
           onEnterBack: () => {
             levelLabelsRef.current?.childNodes.forEach((el: any) =>
               el.classList.remove("active")
             )
-           if(levelLabelsRef.current) levelLabelsRef.current.children[2].classList.add("active")
-           if(fpImg3Ref.current) fpImg3Ref.current.style.opacity = "1"
-           if(fpImg2Ref.current) fpImg2Ref.current.style.opacity = "0"
+            if (levelLabelsRef.current)
+              levelLabelsRef.current.children[2].classList.add("active")
+            if (fpImg3Ref.current) fpImg3Ref.current.style.opacity = "1"
+            if (fpImg2Ref.current) fpImg2Ref.current.style.opacity = "0"
           },
           toggleActions: "play none none reverse",
         },

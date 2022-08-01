@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { mediaMax } from "../../helpers/MediaQueries"
+
 interface IStyleProps {
   withPadding?: boolean
   reversed?: boolean
@@ -14,6 +16,10 @@ export const Wrapper = styled.div<IStyleProps>`
   align-items: center;
   padding: ${props => (props.withPadding ? "9% 10.2% 3% 10.2%" : 0)};
   flex-direction: ${props => (props.reversed ? "row-reverse" : "row")};
+  ${mediaMax.phoneXL`
+    flex-direction: column;
+    justify-content: flex-start;
+  `}
 `
 export const Info = styled.div<IStyleProps>`
   width: 42%;
@@ -22,6 +28,9 @@ export const Info = styled.div<IStyleProps>`
   justify-content: center;
   flex-direction: column;
   padding-left: ${props => (props.infoPadding ? "10.2%" : 0)};
+  ${mediaMax.phoneXL`
+    padding: 0;
+  `}
   h4,
   p {
     min-width: 290px;
@@ -33,14 +42,26 @@ export const Info = styled.div<IStyleProps>`
   p {
     padding-top: 4vh;
   }
+  .title {
+    min-width: auto;
+    width: 200px;
+    ${mediaMax.phoneXL`
+      width: 290px;
+    `}
+  }
 `
 export const Img = styled.div<IStyleProps>`
   overflow: hidden;
   width: ${props => (props.withPadding ? "52.5%" : "57.2%")};
   position: relative;
-
+  ${mediaMax.phoneXL`
+      width: 100%;
+  `}
   .gatsby-image-wrapper {
     height: ${props => (props.imgHeight ? props.imgHeight : "75vh")};
+    ${mediaMax.phoneXL`
+      height: auto;
+    `}
     object-fit: cover;
     object-position: top;
   }
