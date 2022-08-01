@@ -30,7 +30,7 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu 
         },
         defaults: { duration: 2 },
       })
-      .fromTo(bgRef.current || "", { opacity: 0 }, { opacity: 1 }, "-=2")
+      .fromTo(bgRef.current || "", { opacity: 0 }, { opacity: 0.7 }, "-=2")
     gsap
       .timeline({
         scrollTrigger: {
@@ -42,7 +42,7 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu 
         },
         defaults: { duration: 2 },
       })
-      .fromTo(maskRef.current || "", { opacity: 0 }, { opacity: 1 }, "+=1")
+      .fromTo(maskRef.current || "", { opacity: 0 }, { opacity: 0.7 }, "+=1")
 
     if (shifted) {
       gsap
