@@ -98,16 +98,19 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-
   @font-face {
-    font-family: "Adobe-Caslon-Pro";
+    font-family: 'Adobe-Caslon-Pro';
+    src: url(${ACaslonProRegulareot});
+    src: local('Adobe-Caslon-Pro Regular'), local('Adobe-Caslon-Pro-Regular'),
+    url(${ACaslonProRegularotf}) format('otf'),
+    url(${ACaslonProRegulareot}) format('embedded-opentype'),
+    url(${ACaslonProRegularwoff2}) format('woff2'),
+    url(${ACaslonProRegularwoff}) format('woff'),
+    url(${ACaslonProRegularttf}) format('truetype');
+    font-weight: normal;
     font-style: normal;
-    src: url(${ACaslonProRegularttf}) format('truetype');
-    src: url(${ACaslonProRegularotf}) format('opentype');
-    src: url(${ACaslonProRegularwoff}) format('woff');
-    src: url(${ACaslonProRegularwoff2}) format('woff2');
-    src: url(${ACaslonProRegulareot}) format('embedded-opentype');
   }
+  
   @font-face {
     font-family: "Adobe-Caslon-Pro";
     font-style: italic;

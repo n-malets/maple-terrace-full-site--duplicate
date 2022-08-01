@@ -14,6 +14,8 @@ import ContentSlider from "../components/content-slider"
 import { withinWalkData } from "../data/sliders"
 import ContentHeadingText from "../components/content-heading-text"
 import { headText } from "../data/head-text"
+import InteractiveMap from "../components/neighborhood/interactive-map";
+
 const NeighborhoodPage = () => {
 
   return (
@@ -48,6 +50,7 @@ const NeighborhoodPage = () => {
       <section className="panel">
         <ContentIntro imgName={"neighborhood_6.jpg"} />
       </section>
+      <InteractiveMap/>
       <section className={"relative"}>
         <ContentNextSection data={nextData.neighborhood} prevBtn={true}/>
         <Footer />
