@@ -2,12 +2,14 @@ import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, Heading, Items } from "./index.styled"
 import { WhyMP } from "../../../data/why-mp"
 import gsap from "gsap"
+import { sizes } from "../../../helpers/MediaQueries"
 
 const ContentWhy: FC = () => {
   const wrapperRef = useRef(null)
   const headingsRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {

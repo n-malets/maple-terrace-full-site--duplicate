@@ -7,6 +7,7 @@ import {
 } from "./index.styled"
 import { FloorPlansData } from "../../../data/floor-plans"
 import gsap from "gsap"
+import { sizes } from "../../../helpers/MediaQueries"
 
 const ContentFloorPlansAm = () => {
   const floorPlanImgRef = useRef<HTMLDivElement>(null)
@@ -16,6 +17,7 @@ const ContentFloorPlansAm = () => {
   const fpImg4Ref = useRef<HTMLImageElement>(null)
   const fpImg5Ref = useRef<HTMLImageElement>(null)
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {

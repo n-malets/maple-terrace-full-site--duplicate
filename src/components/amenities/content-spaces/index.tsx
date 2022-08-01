@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, Info, Img } from "./index.styled"
 import gsap from "gsap"
+import { sizes } from "../../../helpers/MediaQueries"
 
 interface IContentSpaces {
   spaces: {
@@ -29,6 +30,7 @@ const ContentSpaces: FC<IContentSpaces> = ({ spaces }) => {
   const imgRRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {

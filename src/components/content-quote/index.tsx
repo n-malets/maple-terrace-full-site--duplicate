@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, QuoteHeadings } from "./index.styled"
 import QuoteIcon from "../../assets/images/quote.svg"
 import gsap from "gsap"
+import { sizes } from "../../helpers/MediaQueries"
 
 interface IContentQuote {
   quote: {
@@ -15,6 +16,7 @@ const ContentQuote: FC<IContentQuote> = ({ quote }) => {
   const quoteRef = useRef(null)
   const quoteHeadingsRef = useRef(null)
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {
@@ -27,7 +29,6 @@ const ContentQuote: FC<IContentQuote> = ({ quote }) => {
         defaults: { duration: 3 },
       })
       .to("#hFooter", { right: "-15%", ease: "ease-out" }, 0)
-
 
     gsap
       .timeline({

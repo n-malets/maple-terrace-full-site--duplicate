@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, Text, Headings } from "./index.styled"
 import gsap from "gsap"
+import { sizes } from "../../helpers/MediaQueries"
 
 interface IContentHeadingText {
   heading: {
@@ -18,6 +19,7 @@ const ContentHeadingText: FC<IContentHeadingText> = ({ heading, text, textWidth,
   const textRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {

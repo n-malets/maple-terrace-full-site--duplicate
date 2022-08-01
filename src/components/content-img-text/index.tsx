@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, Info, Img } from "./index.styled"
 import Image from "../image"
 import gsap from "gsap"
+import { sizes } from "../../helpers/MediaQueries"
 
 interface IContentImgText {
   data: {
@@ -21,12 +22,18 @@ interface IContentImgText {
   imgMaxWidth?: string | undefined
 }
 
-const ContentImgText: FC<IContentImgText> = ({ data, imgHeight, letterSpacing, imgMaxWidth}) => {
+const ContentImgText: FC<IContentImgText> = ({
+  data,
+  imgHeight,
+  letterSpacing,
+  imgMaxWidth,
+}) => {
   const wrapperRef = useRef(null)
   const imgWrapperRef = useRef(null)
   const infoWrapperRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {
@@ -86,7 +93,13 @@ const ContentImgText: FC<IContentImgText> = ({ data, imgHeight, letterSpacing, i
       reversed={data.reversed}
       ref={wrapperRef}
     >
-      <Img withPadding={data.withPadding} ref={imgWrapperRef} imgHeight={imgHeight} imgMaxWidth={imgMaxWidth} className={"content-img-block"}>
+      <Img
+        withPadding={data.withPadding}
+        ref={imgWrapperRef}
+        imgHeight={imgHeight}
+        imgMaxWidth={imgMaxWidth}
+        className={"content-img-block"}
+      >
         <Image imageName={data.img} />
       </Img>
       <Info
@@ -97,7 +110,9 @@ const ContentImgText: FC<IContentImgText> = ({ data, imgHeight, letterSpacing, i
         letterSpacing={letterSpacing}
         fontWeight={data.fontWeight}
       >
-        <h4 className={data.bigHeading ? "h3" : "h4"}>{data.title}</h4>
+        <h4 className={`title ${data.bigHeading ? "h3" : "h4"}`}>
+          {data.title}
+        </h4>
         {data.title2 && (
           <h4 className={data.bigHeading ? "h3i" : "h4i"}>{data.title2}</h4>
         )}

@@ -3,6 +3,7 @@ import { Wrapper, QuoteHeadings, PrevButton } from "./index.styled"
 import { NextBtn } from "../../content-next/index.styled"
 import QuoteIcon from "../../../assets/images/quote.svg"
 import gsap from "gsap"
+import { sizes } from "../../../helpers/MediaQueries"
 
 interface IContentAmNext {
   quote: {
@@ -18,6 +19,7 @@ const ContentAmNext: FC<IContentAmNext> = ({ quote }) => {
   const nextBtnRef = useRef(null)
   const prevBtnRef = useRef(null)
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
         scrollTrigger: {

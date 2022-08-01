@@ -1,9 +1,10 @@
-import React, {FC, useContext, useEffect, useRef} from "react"
+import React, { FC, useContext, useEffect, useRef } from "react"
 import Image from "../image"
 import { Wrapper } from "./index.styled"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap"
-import {Context} from "../../context/context";
+import { Context } from "../../context/context"
+import { sizes } from "../../helpers/MediaQueries"
 
 interface IContentIntro {
   imgName: string
@@ -13,9 +14,14 @@ interface IContentIntro {
 const ContentIntro: FC<IContentIntro> = ({ imgName, objPosition }) => {
   const contentWrapRef = useRef(null)
   const introImgRef = useRef(null)
-  const {setIsMenuDark} = useContext(Context);
+  const { setIsMenuDark } = useContext(Context)
+
   useEffect(() => {
-    if(location.pathname === "/neighborhood" || location.pathname === "/neighborhood/") {
+    if (window.screen.width < sizes.phoneXL) return
+    if (
+      location.pathname === "/neighborhood" ||
+      location.pathname === "/neighborhood/"
+    ) {
       ScrollTrigger.create({
         trigger: contentWrapRef?.current || "",
         toggleActions: "play none none reverse",
@@ -27,7 +33,7 @@ const ContentIntro: FC<IContentIntro> = ({ imgName, objPosition }) => {
         },
         onEnterBack: () => {
           setIsMenuDark(true)
-        }
+        },
       })
     }
     ScrollTrigger.create({
