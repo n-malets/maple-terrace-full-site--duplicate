@@ -79,6 +79,7 @@ export const MapLogoIcon = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 5.1vw;
 `
 export const MapAirportGreen = styled.div`
   position: absolute;

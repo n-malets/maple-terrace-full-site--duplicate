@@ -6,12 +6,11 @@ import {
   Wrapper,
   MapImageContainer,
 } from "../index.styled"
-import mapImage from "../../../../assets/images/neighborhood/map-2.png"
-import mapLogoIcon from "../../../../assets/images/neighborhood/map-icon.png"
 import gsap from "gsap"
 import animation from "../../../../static/lottie2rev1.json"
 import {MapSubtitle, MapTextContainer, MapTitle} from "./index.styled"
 import Lottie from "react-lottie-player"
+import {NeighborhoodMapData} from "../../../../data/neighborhood";
 
 const SecondMap = () => {
   const [animationFrame, setAnimationFrame] = useState(0)
@@ -131,29 +130,29 @@ const SecondMap = () => {
       <Wrapper className="panel" ref={WrapperRef}>
         <MapWrapper ref={MapWrapperRef}>
           <MapImageContainer>
-            <MapImage src={mapImage} className={"absolute"}/>
+            <MapImage src={NeighborhoodMapData.map2.mapSrc} className={"absolute"}/>
             <Lottie
               animationData={animation}
               loop={false}
               className="lottie-element"
               goTo={animationFrame}
             />
-            <MapLogoIcon src={mapLogoIcon}/>
+            <MapLogoIcon src={NeighborhoodMapData.map2.mapLogoSrc}/>
           </MapImageContainer>
           <MapTextContainer ref={MapTextContainerRef}>
             <div ref={MapTextRef1}>
               <MapSubtitle>
-                DIRECT ACCESS TO
+                {NeighborhoodMapData.map2.listTitle}
               </MapSubtitle>
               <MapTitle>
-                Dallas North Tollway
+                {NeighborhoodMapData.map2.listText1}
               </MapTitle>
             </div>
             <MapTitle ref={MapTextRef3}>
-              Turtle Creek Blvd
+              {NeighborhoodMapData.map2.listText2}
             </MapTitle>
             <MapTitle ref={MapTextRef4}>
-              North Central Expressway (NCX/75)
+              {NeighborhoodMapData.map2.listText3}
             </MapTitle>
           </MapTextContainer>
         </MapWrapper>

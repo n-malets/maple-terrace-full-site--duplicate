@@ -6,12 +6,11 @@ import {
   Wrapper,
   MapImageContainer
 } from "../index.styled"
-import mapImage from "../../../../assets/images/neighborhood/map-3.png"
-import mapLogoIcon from "../../../../assets/images/neighborhood/map-icon.png"
 import gsap, {Linear} from "gsap"
 import animation from "../../../../static/lottie3rev1.json"
 import {MapSidePanel, Marker, MarkersContainer, SidePanelText} from "./index.styled"
 import Lottie from "react-lottie-player"
+import {NeighborhoodMapData} from "../../../../data/neighborhood";
 
 const ThirdMap = () => {
   const [animationFrame, setAnimationFrame] = useState(0)
@@ -139,34 +138,34 @@ const ThirdMap = () => {
       <Wrapper className="panel" ref={WrapperRef}>
         <MapSidePanel ref={MapSidePanelRef}>
           <SidePanelText ref={SidePanelTextRef}>
-            Enjoy Uptown’s walkable amenities and Turtle Creek’s
+            {NeighborhoodMapData.map3.title}
             <br/>
             <span>
-                Verdant Landscape.
+            {NeighborhoodMapData.map3.subtitle}
             </span>
           </SidePanelText>
 
           <MarkersContainer ref={MarkersContainerRef}>
             <Marker ref={MarkerRef1}>
               <span className={"orange"}/>
-              RESTAURANTS
+              {NeighborhoodMapData.map3.listText1}
             </Marker>
             <Marker ref={MarkerRef2}>
               <span className={"blue"}/>
-              MUSEUMS & ENTERTAINMENT
+              {NeighborhoodMapData.map3.listText2}
             </Marker>
           </MarkersContainer>
         </MapSidePanel>
         <MapWrapper ref={MapWrapperRef}>
           <MapImageContainer>
-            <MapImage src={mapImage} className={"absolute"}/>
+            <MapImage src={NeighborhoodMapData.map3.mapSrc} className={"absolute"}/>
             <Lottie
               animationData={animation}
               loop={false}
               className="lottie-element"
               goTo={animationFrame}
             />
-            <MapLogoIcon src={mapLogoIcon}/>
+            <MapLogoIcon src={NeighborhoodMapData.map3.mapLogoSrc}/>
           </MapImageContainer>
         </MapWrapper>
       </Wrapper>

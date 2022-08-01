@@ -7,11 +7,10 @@ import {
   MapImageContainer,
   MapTitle
 } from "../index.styled"
-import mapImage from "../../../../assets/images/neighborhood/map-1.png"
-import mapLogoIcon from "../../../../assets/images/neighborhood/map-icon.png"
 import gsap from "gsap"
 import animation from "../../../../static/lottie1rev1.json"
 import Lottie from "react-lottie-player"
+import {NeighborhoodMapData} from "../../../../data/neighborhood";
 
 const FirstMap = () => {
   const [animationFrame, setAnimationFrame] = useState(0)
@@ -28,7 +27,6 @@ const FirstMap = () => {
         toggleActions: "restart none none reverse",
       },
     }).to(mapWrapperRef.current, {opacity: 1, visibility: "visible", duration: 1});
-
 
     const tl1 = gsap.timeline({
       scrollTrigger: {
@@ -71,19 +69,19 @@ const FirstMap = () => {
       <Wrapper className="panel" ref={wrapperRef}>
         <MapWrapper ref={mapWrapperRef}>
           <MapImageContainer>
-            <MapImage src={mapImage} className={"absolute"}/>
+            <MapImage src={NeighborhoodMapData.map1.mapSrc} className={"absolute"}/>
             <Lottie
               animationData={animation}
               loop={false}
               className="lottie-element first-map"
               goTo={animationFrame}
             />
-            <MapLogoIcon src={mapLogoIcon}/>
+            <MapLogoIcon src={NeighborhoodMapData.map1.mapLogoSrc}/>
           </MapImageContainer>
           <MapTitle ref={mapTitleRef}>
-            Maple Terrace makes arrivals and departures easy
+            {NeighborhoodMapData.map1.title}
             <br/>
-            <span>because minutes matter.</span>
+            <span>{NeighborhoodMapData.map1.subtitle}</span>
           </MapTitle>
         </MapWrapper>
       </Wrapper>
