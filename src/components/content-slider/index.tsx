@@ -4,6 +4,7 @@ import gsap from "gsap"
 
 import Image from "../image"
 import { Wrapper } from "./index.styled"
+import { sizes } from "../../helpers/MediaQueries"
 
 interface IContentSlider {
   title: JSX.Element | string
@@ -14,6 +15,8 @@ const ContentSlider: FC<IContentSlider> = ({ title, data }) => {
   const ContentWrapRef = useRef(null)
 
   useEffect(() => {
+    if (window.screen.width < sizes.phoneXL) return
+
     gsap.registerPlugin(ScrollTrigger)
     const sections = gsap.utils.toArray(".slide")
 

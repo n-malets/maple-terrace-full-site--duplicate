@@ -473,6 +473,9 @@ ul li {
   font-weight: 300;
   font-size: 48px;
   line-height: 1.21;
+  ${mediaMax.phoneXL`
+    font-size: 30px;
+  `}
 }
 .h2i {
   font-family: 'Adobe-Caslon-Pro', serif;
@@ -480,6 +483,9 @@ ul li {
   font-weight: 400;
   font-size: 48px;
   line-height: 1.32;
+   ${mediaMax.phoneXL`
+    font-size: 30px;
+  `}
 }
 .h3 {
   font-family: 'TT Norms', sans-serif;
