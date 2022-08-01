@@ -125,6 +125,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     background-color: var(--color-dark);
     color: var(--color-white);
+    font-feature-settings: 'liga' off;
   }
   
   *::-webkit-scrollbar {

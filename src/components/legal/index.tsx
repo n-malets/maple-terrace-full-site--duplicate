@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react"
+import React, {FC, useContext, useEffect} from "react"
 import { ModalWrapper, HeaderLogo, LegalContent } from "./index.styled"
 import { Context } from "../../context/context"
 import btn_close from "../../assets/images/button_close.svg"
@@ -6,6 +6,10 @@ import MTLogo from "../../assets/images/main_logo_1_dark.svg"
 
 const LegalModal: FC = () => {
   const { setOpenLegal } = useContext(Context)
+  useEffect(()=> {
+    const hash = location.hash;
+    setTimeout(()=> {if(hash !== '') location.hash = ''}, 4000)
+  }, [location.hash])
 
   return (
     <ModalWrapper className={"fade"}>
@@ -20,8 +24,8 @@ const LegalModal: FC = () => {
 
       <LegalContent>
         <aside>
-          <a href="#terms">TERMS OF USE</a>
-          <a href="#privacy">PRIVACY POLICY</a>
+          <a href="#terms" >TERMS OF USE</a>
+          <a href="#privacy" >PRIVACY POLICY</a>
         </aside>
         <section>
           <p id={"terms"} className={"copy_t2"}>

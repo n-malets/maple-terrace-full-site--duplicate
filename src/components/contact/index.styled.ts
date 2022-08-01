@@ -36,6 +36,7 @@ export const ContactTitle = styled.div`
   margin-right: 18.5%;
   h2 {
     color: #0467ae;
+    font-weight: 300;
   }
 `
 export const ContactItems = styled.div`
@@ -47,6 +48,8 @@ export const ContactItems = styled.div`
       color: #000;
       padding-bottom: 10px;
       text-transform: uppercase;
+      letter-spacing: 0.1em;
+
     }
     a,
     span {
@@ -56,6 +59,7 @@ export const ContactItems = styled.div`
       cursor: pointer;
       font-size: 18px;
       line-height: 22px;
+      letter-spacing: 0;
     }
     a:hover,
     span:hover {

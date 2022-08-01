@@ -14,7 +14,7 @@ import HLogo from "../../assets/images/logo_hines.svg"
 import CWLogo from "../../assets/images/logo_cushman_wakefield.svg"
 
 const ContactModal: FC = () => {
-  const { openContact, setOpenContact, setOpenLegal } = useContext(Context)
+  const { setOpenContact, setOpenLegal } = useContext(Context)
 
   return (
     <ModalWrapper className={"fade"}>

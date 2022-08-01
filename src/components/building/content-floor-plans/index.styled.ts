@@ -84,6 +84,13 @@ export const FloorPlanImg = styled.div`
       transform: translateX(-50%);
     }
     .download_fit {
+      font-family: 'TT Norms', serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      line-height: 14px;
+      text-decoration: underline;
       position: absolute;
       bottom: -5vh;
       right: 0;

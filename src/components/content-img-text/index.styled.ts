@@ -5,6 +5,8 @@ interface IStyleProps {
   infoWidth?: string
   infoPadding?: boolean
   imgHeight?: string
+  letterSpacing?: string
+  imgMaxWidth?: string
 }
 export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
@@ -14,6 +16,18 @@ export const Wrapper = styled.div<IStyleProps>`
   align-items: center;
   padding: ${props => (props.withPadding ? "9% 10.2% 3% 10.2%" : 0)};
   flex-direction: ${props => (props.reversed ? "row-reverse" : "row")};
+`
+export const Img = styled.div<IStyleProps>`
+  overflow: hidden;
+  width: ${props => (props.withPadding ? "52.5%" : "57.2%")};
+  position: relative;
+  max-width: ${props => props.imgMaxWidth || '100%'};
+
+  .gatsby-image-wrapper {
+    height: ${props => (props.imgHeight ? props.imgHeight : "75vh")};
+    object-fit: cover;
+    object-position: top;
+  }
 `
 export const Info = styled.div<IStyleProps>`
   width: 42%;
@@ -28,20 +42,9 @@ export const Info = styled.div<IStyleProps>`
     width: ${props => props.infoWidth || "290px"};
   }
   h4 {
-    letter-spacing: 0.1em;
+    letter-spacing: ${props => props.letterSpacing? props.letterSpacing : '0.1em'};
   }
   p {
     padding-top: 4vh;
-  }
-`
-export const Img = styled.div<IStyleProps>`
-  overflow: hidden;
-  width: ${props => (props.withPadding ? "52.5%" : "57.2%")};
-  position: relative;
-
-  .gatsby-image-wrapper {
-    height: ${props => (props.imgHeight ? props.imgHeight : "75vh")};
-    object-fit: cover;
-    object-position: top;
   }
 `

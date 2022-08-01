@@ -27,7 +27,7 @@ const NeighborhoodPage = () => {
         <ContentQuote quote={quoteData.neighborhood1} />
       </section>
       <section className={"panel"}>
-        <ContentImgText data={ImgTextData.neighborhood1} />
+        <ContentImgText data={ImgTextData.neighborhood1} letterSpacing={'0'} />
       </section>
       <section className="panel">
         <ContentSpaces spaces={spacesData.neighborhood1} />

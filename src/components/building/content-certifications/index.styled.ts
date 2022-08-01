@@ -109,7 +109,7 @@ export const TimeLine = styled.div`
     }
   }
   .tl-line {
-    width: 100vw;
+    width: 100%;
     height: 1px;
     background-color: #fff;
     position: absolute;

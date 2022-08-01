@@ -38,6 +38,7 @@ export const Info = styled.div<IStyleProps>`
       &.h3, &.h4 {
         letter-spacing: 0.05em;
         font-weight: 400;
+        font-family: 'TT Norms',serif;
       }
     }
   }
@@ -51,6 +52,8 @@ export const Info = styled.div<IStyleProps>`
   }
   h4 {
     padding-bottom: 32px;
+    letter-spacing: 0.1em;
+    font-weight: 300;
   }
   img {
     display: block;

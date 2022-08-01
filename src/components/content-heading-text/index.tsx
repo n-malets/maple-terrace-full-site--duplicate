@@ -7,9 +7,12 @@ interface IContentHeadingText {
     line1: string
     line2: string
   }
+  headingWidth?: string
   text: string[]
+  textWidth?: string
+  textHeight?: string
 }
-const ContentHeadingText: FC<IContentHeadingText> = ({ heading, text }) => {
+const ContentHeadingText: FC<IContentHeadingText> = ({ heading, text, textWidth, headingWidth, textHeight }) => {
   const wrapperRef = useRef(null)
   const headingRef = useRef(null)
   const textRef = useRef(null)
@@ -44,11 +47,11 @@ const ContentHeadingText: FC<IContentHeadingText> = ({ heading, text }) => {
   return (
     <Wrapper ref={wrapperRef}>
       <div className="content">
-        <Headings ref={headingRef}>
+        <Headings ref={headingRef} headingWidth={headingWidth}>
           <h3 className={"h3"}>{heading.line1}</h3>
           <h3 className={"h3i"}>{heading.line2}</h3>
         </Headings>
-        <Text ref={textRef}>
+        <Text ref={textRef} textWidth={textWidth} textHeight={textHeight}>
           {text.map((item, i) => (
             <p className="copy_t1" key={`id-${i}`}>
               {item}

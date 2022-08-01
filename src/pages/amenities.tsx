@@ -35,7 +35,7 @@ const AmenitiesPage = () => {
             <ContentImageZoomed imageName={'amenities_2.jpg'} />
           </section>
           <section className="panel">
-            <ContentHeadingText heading={headText.amenities1.heading} text={headText.amenities1.text} />
+            <ContentHeadingText heading={headText.amenities1.heading} text={headText.amenities1.text} textWidth={'425px'} textHeight={'27px'} />
           </section>
 
           <section className="panel">
@@ -59,16 +59,16 @@ const AmenitiesPage = () => {
             <ContentImageZoomed imageName={'amenities_11.jpg'} />
           </section>
           <section className="panel">
-            <ContentHeadingText heading={headText.amenities2.heading} text={headText.amenities2.text} />
+            <ContentHeadingText heading={headText.amenities2.heading} text={headText.amenities2.text} textWidth={'445px'} textHeight={'27px'} />
           </section>
           <section className={'panel'}>
-            <ContentImgText data={ImgTextData.amenities1}/>
+            <ContentImgText data={ImgTextData.amenities1} letterSpacing={'0'} />
           </section>
           <section className={'panel'}>
-            <ContentImgText data={ImgTextData.amenities2}/>
+            <ContentImgText data={ImgTextData.amenities2} letterSpacing={'0'} imgMaxWidth={'50%'} />
           </section>
           <section className={'panel'}>
-            <ContentImgText data={ImgTextData.amenities3}/>
+            <ContentImgText data={ImgTextData.amenities3} letterSpacing={'0'}/>
           </section>
           <section className="panel">
             <ContentImageZoomed imageName={'amenities_15.jpg'} />
@@ -77,6 +77,8 @@ const AmenitiesPage = () => {
           <ContentHeadingText
             heading={headText.amenities3.heading}
             text={headText.amenities2.text}
+            textWidth={'300px'}
+            textHeight={'27px'}
           />
         </section>
         <section>
