@@ -103,7 +103,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         setIsMenuDark
       }}
     >
-      <GlobalStyle />
+      <GlobalStyle openLegal={openLegal} />
       {openContact && <ContactModal />}
       {openLegal && <LegalModal />}
       {( width > 500 && width < 1024) ?

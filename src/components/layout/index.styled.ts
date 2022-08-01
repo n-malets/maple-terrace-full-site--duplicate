@@ -36,8 +36,10 @@ import ACaslonProItalicotf from "../../assets/fonts/ACaslonPro-Italic.otf"
 import ACaslonProItaliceot from "../../assets/fonts/ACaslonPro-Italic.eot"
 import ACaslonProItalicwoff from "../../assets/fonts/ACaslonPro-Italic.woff"
 import ACaslonProItalicwoff2 from "../../assets/fonts/ACaslonPro-Italic.woff2"
-
-export const GlobalStyle = createGlobalStyle`
+interface IStyled {
+  openLegal?: boolean
+}
+export const GlobalStyle = createGlobalStyle<IStyled>`
 
   
   @font-face {
@@ -126,6 +128,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--color-dark);
     color: var(--color-white);
     font-feature-settings: 'liga' off;
+    overflow: ${props => props.openLegal ? 'hidden' : 'auto'};
   }
   
   *::-webkit-scrollbar {
