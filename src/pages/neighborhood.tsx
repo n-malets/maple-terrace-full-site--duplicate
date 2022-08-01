@@ -20,7 +20,7 @@ const NeighborhoodPage = () => {
   return (
     <>
       <section className="panel">
-        <ContentIntro imgName={"neighborhood_1.jpg"} />
+        <ContentIntro mobileFullScreen imgName={"neighborhood_1.jpg"} />
       </section>
       <section className="panel">
         <ContentQuote quote={quoteData.neighborhood1} />

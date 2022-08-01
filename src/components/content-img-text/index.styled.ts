@@ -11,6 +11,9 @@ interface IStyleProps {
 export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
   height: 100vh;
+  ${mediaMax.phoneXL`
+    height: auto;
+  `}
   display: flex;
   justify-content: space-between;
   align-items: center;

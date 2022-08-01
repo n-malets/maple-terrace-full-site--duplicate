@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { mediaMax } from "../../../helpers/MediaQueries"
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -11,6 +12,9 @@ export const Wrapper = styled.div`
   position: sticky;
   top: 0;
   left: 0;
+  ${mediaMax.phoneXL`
+    height: auto;
+  `}
   img {
     margin-bottom: 36px;
   }
@@ -59,6 +63,11 @@ export const PrevButton = styled(Link)`
   display: flex;
   align-items: center;
   opacity: 0;
+  ${mediaMax.phoneXL`
+    bottom: 30px;
+    opacity: 1;
+    left: 5%;
+  `}
   svg {
     margin-right: 9px;
   }

@@ -13,12 +13,16 @@ interface IStyleProps {
 export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
   height: 100vh;
+  ${mediaMax.phoneXL`
+    height: auto;
+  `}
   padding-left: ${props => (props.reversed ? "6.5%" : "10.3%")};
   display: flex;
   align-items: center;
   ${mediaMax.phoneXL`
     padding-left: 5%;
     padding-right: 5%;
+    padding-bottom: 50px;
   `}
   .gem-wrap {
     width: 100%;

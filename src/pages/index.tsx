@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react"
+import React, { useContext, useEffect } from "react"
 import { quoteData } from "../data/intro"
 import { nextData } from "../data/next"
 import { ImgTextData } from "../data/img-text"
@@ -15,20 +15,20 @@ import ContentCertifications from "../components/building/content-certifications
 import ContentNextSection from "../components/content-next"
 import Footer from "../components/footer"
 import ContentFloorPlans from "../components/building/content-floor-plans"
-import { Context } from "../context/context";
+import { Context } from "../context/context"
 const IndexPage = () => {
-  const { setIsMenuDark } = useContext(Context);
+  const { setIsMenuDark } = useContext(Context)
 
-  useEffect(()=> {
+  useEffect(() => {
     setIsMenuDark(false)
-  });
+  })
   return (
     <div className={"relative"}>
       <section className="panel">
         <ContentPreload />
       </section>
       <section className="panel">
-        <ContentIntro imgName={"building_1.jpg"} />
+        <ContentIntro mobileFullScreen imgName={"building_1.jpg"} />
       </section>
       <section className="panel">
         <ContentQuote quote={quoteData.building1} />
@@ -37,7 +37,7 @@ const IndexPage = () => {
         <ContentGem />
       </section>
       <section className="panel">
-        <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>
+        <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"} />
       </section>
       <ContentMaskImage
         imgName={"building_5.jpg"}

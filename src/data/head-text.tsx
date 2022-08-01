@@ -45,7 +45,7 @@ export const headText = {
   },
   neighborhood: {
     heading: {
-      line1: "Two-star Michelin Chef Danny Grant brings Chicago’s lauded",
+      line1: "Two-Michelin-Star Chef Danny Grant brings Chicago’s lauded",
       line2: "Maple & Ash Steakhouse to Uptown Dallas.",
     },
     text: [

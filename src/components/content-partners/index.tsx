@@ -1,8 +1,5 @@
-import React, { FC, useEffect, useRef } from "react"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import gsap from "gsap"
+import React, { FC } from "react"
 
-import Image from "../image"
 import { GridRow, TitleRow, Wrapper, Box, FlexRow } from "./index.styled"
 
 interface IContentPartners {
