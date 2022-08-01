@@ -28,7 +28,7 @@ const Image: FC<IImageProps> = ({ imageName, altText, padding }) => {
             (element: any) =>
               element.gatsbyImageData.images.fallback.src.split("/").pop() ===
               imageName
-          ).gatsbyImageData
+          )?.gatsbyImageData
         }
         alt={altText || "Maple Terrace Uptown Dallas"}
         loading={"eager"}

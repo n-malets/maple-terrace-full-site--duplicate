@@ -54,7 +54,7 @@ const ContentSlider: FC<IContentSlider> = ({ title, data }) => {
               <Image imageName={slide.img} />
             </div>
             <p className="h3 number">{slide.number}</p>
-            <div className="line"/>
+            <div className="line" />
             <p className="h3i">{slide.title}</p>
           </div>
         ))}
