@@ -4,6 +4,7 @@ interface IStyleProps {
   reversed?: boolean
   infoWidth?: string
   infoPadding?: boolean
+  imgHeight?: string
 }
 export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
@@ -24,21 +25,22 @@ export const Info = styled.div<IStyleProps>`
   h4,
   p {
     min-width: 290px;
-    width: ${props => props.infoWidth || "53%"};
+    width: ${props => props.infoWidth || "290px"};
   }
   h4 {
     letter-spacing: 0.1em;
   }
   p {
-    padding-top: 3vh;
+    padding-top: 4vh;
   }
 `
 export const Img = styled.div<IStyleProps>`
   overflow: hidden;
   width: ${props => (props.withPadding ? "52.5%" : "57.2%")};
   position: relative;
+
   .gatsby-image-wrapper {
-    max-height: 100vh;
+    height: ${props => (props.imgHeight ? props.imgHeight : "75vh")};
     object-fit: cover;
     object-position: top;
   }

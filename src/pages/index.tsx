@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, {useContext, useEffect} from "react"
 import { quoteData } from "../data/intro"
 import { nextData } from "../data/next"
 import { ImgTextData } from "../data/img-text"
@@ -15,8 +15,13 @@ import ContentCertifications from "../components/building/content-certifications
 import ContentNextSection from "../components/content-next"
 import Footer from "../components/footer"
 import ContentFloorPlans from "../components/building/content-floor-plans"
-
+import { Context } from "../context/context";
 const IndexPage = () => {
+  const { setIsMenuDark } = useContext(Context);
+
+  useEffect(()=> {
+    setIsMenuDark(false)
+  });
   return (
     <div className={"relative"}>
       <section className="panel">
@@ -32,7 +37,7 @@ const IndexPage = () => {
         <ContentGem />
       </section>
       <section className="panel">
-        <ContentImgText data={ImgTextData.building1} />
+        <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>
       </section>
       <ContentMaskImage
         imgName={"building_5.jpg"}
@@ -64,6 +69,7 @@ const IndexPage = () => {
       <ContentMaskImage
         imgName={"building_11.jpg"}
         mask={"building_11_mask.png"}
+        darkMenu={true}
       />
       <section className="panel">
         <ContentWhy />
@@ -75,7 +81,7 @@ const IndexPage = () => {
         <ContentFloorPlans />
       </section>
       <section className={"relative"}>
-        <ContentNextSection data={nextData.building} />
+        <ContentNextSection data={nextData.building} prevBtn={false} />
         <Footer />
       </section>
     </div>

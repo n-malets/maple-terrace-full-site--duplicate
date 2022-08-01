@@ -40,8 +40,8 @@ const ContentGem: FC = () => {
       .timeline({
         scrollTrigger: {
           trigger: wrapperRef.current || "",
-          start: "bottom top+=15%",
-          end: "center bottom-=5%",
+          start: "bottom bottom-=15%",
+          end: "center top+=15%",
           toggleActions: "play none none reverse",
           scrub: 4,
         },
@@ -54,7 +54,7 @@ const ContentGem: FC = () => {
         { opacity: 0, y: 0 },
         "0"
       )
-      .fromTo(".img-l", { opacity: 1, y: 0 }, { opacity: 0, y: 0 }, "0")
+      .fromTo(".img-l", { opacity: 1, y: '-50%' }, { opacity: 0, y: '-100%' }, "0")
       .fromTo(".img-r", { maxHeight: "600px" }, { maxHeight: "0" }, "0")
   }, [])
   return (

@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react"
 import { Context } from "../../context/context"
-import { GlobalStyle, LayoutWrapper } from "./index.styled"
+import { GlobalStyle } from "./index.styled"
 import ContactModal from "../contact"
 import Team from "../team"
 import gsap from "gsap"
@@ -24,12 +24,21 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   const layoutWrapRef = useRef(null)
   const [openContact, setOpenContact] = useState(false)
   const [openLegal, setOpenLegal] = useState(false)
+  const [isMenuDark, setIsMenuDark] = useState(false)
   const [openTeam, setOpenTeam] = useState(false)
   const [isFirstLoad, setIsFirstLoad] = useState(true)
 
   useEffect(() => {
     ScrollTrigger.getById("v-scroll")?.refresh()
   }, [openLegal, openContact, openTeam])
+  useEffect(()=>{
+    window.addEventListener('resize', () => {
+      ScrollTrigger.getAll().forEach(ST => {
+        ST.refresh()
+      })
+      ScrollTrigger.getById('v-scroll')?.refresh();
+    })
+  }, [])
   useEffect(() => {
     const vSections = gsap.utils.toArray(".panel")
 
@@ -83,6 +92,8 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         setOpenLegal,
         openTeam,
         setOpenTeam,
+        isMenuDark,
+        setIsMenuDark
       }}
     >
       <GlobalStyle />

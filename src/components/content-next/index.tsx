@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from "react"
 import { Wrapper, NextBtn, Headings } from "./index.styled"
 import gsap from "gsap"
+import {PrevButton} from "../amenities/content-amenities-next/index.styled";
 
 interface IContentNextSection {
   data: {
@@ -8,12 +9,14 @@ interface IContentNextSection {
     title: string
     next: string
   }
+  prevBtn?: boolean | undefined
 }
-const ContentNextSection: FC<IContentNextSection> = ({ data }) => {
+const ContentNextSection: FC<IContentNextSection> = ({ data, prevBtn }) => {
   const wrapperRef = useRef(null)
   const headingTRef = useRef(null)
   const headingBRef = useRef(null)
   const nextBtnRef = useRef(null)
+  const prevButtonRef = useRef(null)
 
   useEffect(() => {
     gsap
@@ -59,6 +62,19 @@ const ContentNextSection: FC<IContentNextSection> = ({ data }) => {
         defaults: { duration: 3 },
       })
       .to(wrapperRef.current || "", { y: -55 }, "0")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: wrapperRef.current || "",
+          start: "bottom center",
+          end: "bottom top",
+          scrub: 4,
+          toggleActions: "play none none reverse",
+        },
+        defaults: { duration: 3 },
+      })
+      .fromTo(prevButtonRef.current || ".n-prev-btn", { y: 100, opacity: 0 }, { y: "-6vh", opacity: 1 })
   }, [])
   return (
     <Wrapper ref={wrapperRef} className={"panel"}>
@@ -82,6 +98,23 @@ const ContentNextSection: FC<IContentNextSection> = ({ data }) => {
           <path d="M14 7L0 14V0L14 7Z" fill="white" />
         </svg>
       </NextBtn>
+      { prevBtn &&
+        <PrevButton to={"/"} ref={prevButtonRef} id={'n-prev-btn'}>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            >
+            <path d="M6.11959e-07 7L14 0L14 14L6.11959e-07 7Z" fill="white" />
+          </svg>
+          <p>
+            PREVIOUS SECTION <br />
+            <span>BUILDING</span>
+          </p>
+        </PrevButton>
+      }
     </Wrapper>
   )
 }

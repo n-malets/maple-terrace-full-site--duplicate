@@ -28,6 +28,7 @@ const ContentQuote: FC<IContentQuote> = ({ quote }) => {
       })
       .to("#hFooter", { right: "-15%", ease: "ease-out" }, 0)
 
+
     gsap
       .timeline({
         scrollTrigger: {

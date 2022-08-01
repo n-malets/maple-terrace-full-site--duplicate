@@ -15,7 +15,7 @@ const ContentSlider: FC<IContentSlider> = ({ title, data }) => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-    let sections = gsap.utils.toArray(".slide")
+    const sections = gsap.utils.toArray(".slide")
 
     gsap.to(sections, {
       xPercent: -60 * (sections.length - 1),
@@ -54,7 +54,7 @@ const ContentSlider: FC<IContentSlider> = ({ title, data }) => {
               <Image imageName={slide.img} />
             </div>
             <p className="h3 number">{slide.number}</p>
-            <div className="line"></div>
+            <div className="line"/>
             <p className="h3i">{slide.title}</p>
           </div>
         ))}
