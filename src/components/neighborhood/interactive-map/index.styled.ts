@@ -11,7 +11,6 @@ export const MapWrapper = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  left: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
@@ -32,23 +31,35 @@ export const MapWrapper = styled.div`
 `
 export const MapImageContainer = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100vw !important;
+  height: 200vh !important;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  
+  
   &.hidden, .hidden {
     opacity: 0;
+  }
+  .lottie-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    &.first-map {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50.6%);
+    }
   }
 `
 export const MapImage = styled.img`
   width: 100%;
-  //height: 100%;
-  //object-fit: cover;
   
   &.absolute {
     position: absolute;
