@@ -38,6 +38,8 @@ import ACaslonProItalicwoff from "../../assets/fonts/ACaslonPro-Italic.woff"
 import ACaslonProItalicwoff2 from "../../assets/fonts/ACaslonPro-Italic.woff2"
 
 export const GlobalStyle = createGlobalStyle`
+
+  
   @font-face {
     font-family: 'TT Norms';
     src: url(${TTNormsBoldEOT});
@@ -96,7 +98,7 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-  
+
   @font-face {
     font-family: "Adobe-Caslon-Pro";
     font-style: normal;

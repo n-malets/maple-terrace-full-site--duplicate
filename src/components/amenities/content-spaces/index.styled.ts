@@ -35,6 +35,10 @@ export const Info = styled.div<IStyleProps>`
     }
     h3 {
       line-height: 30px;
+      &.h3, &.h4 {
+        letter-spacing: 0.05em;
+        font-weight: 400;
+      }
     }
   }
   p {

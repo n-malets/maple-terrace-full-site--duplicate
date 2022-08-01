@@ -12,6 +12,7 @@ export const ModalWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   z-index: 100;
+  letter-spacing: 0.1em;
 `
 
 export const HeaderLogo = styled.div`

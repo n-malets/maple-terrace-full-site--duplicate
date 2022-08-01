@@ -54,7 +54,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       preventOverlaps: true,
       snap: {
         snapTo: 1 / (vSections.length - 1),
-        duration: 3,
+        duration: 2.5,
         ease: "easeIn",
       },
     })
