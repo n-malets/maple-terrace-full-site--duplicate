@@ -1,12 +1,13 @@
 import styled from "styled-components"
 interface IStyleProps {
-  withPadding?: boolean
-  reversed?: boolean
-  infoWidth?: string
-  infoPadding?: boolean
-  imgHeight?: string
-  letterSpacing?: string
-  imgMaxWidth?: string
+  withPadding?: boolean | undefined
+  reversed?: boolean | undefined
+  infoWidth?: string | undefined
+  infoPadding?: boolean | undefined
+  imgHeight?: string | undefined
+  letterSpacing?: string | undefined
+  imgMaxWidth?: string | undefined
+  fontWeight?: string | undefined
 }
 export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
@@ -14,6 +15,7 @@ export const Wrapper = styled.div<IStyleProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #151515;
   padding: ${props => (props.withPadding ? "9% 10.2% 3% 10.2%" : 0)};
   flex-direction: ${props => (props.reversed ? "row-reverse" : "row")};
 `
@@ -43,6 +45,7 @@ export const Info = styled.div<IStyleProps>`
   }
   h4 {
     letter-spacing: ${props => props.letterSpacing? props.letterSpacing : '0.1em'};
+    font-weight: ${props => props.fontWeight? props.fontWeight : 300 };
   }
   p {
     padding-top: 4vh;

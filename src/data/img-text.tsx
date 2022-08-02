@@ -98,5 +98,6 @@ export const ImgTextData = {
     infoPadding: true,
     reversed: true,
     infoWidth: "95%",
+    fontWeight: "300"
   },
 }

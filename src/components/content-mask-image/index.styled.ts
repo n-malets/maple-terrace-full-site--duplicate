@@ -2,20 +2,29 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 200vh;
+  height: 100vh;
   position: relative;
+  &.panel {
+    will-change: unset;
+  }
   .gatsby-image-wrapper {
     height: 100vh;
     img {
-      object-position: 0 70% !important;
+      object-position: center 65% !important;
     }
   }
 `
 export const Img = styled.section`
   height: 100vh;
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
   .bg {
     width: 100%;
     height: 100%;
@@ -28,7 +37,17 @@ export const Img = styled.section`
 export const Mask = styled.section`
   height: 100vh;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
   opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+`
+export const BlankSpace = styled.section`
+  height: 100vh;
+
+  &.panel {
+    will-change: unset;
+  }
 `

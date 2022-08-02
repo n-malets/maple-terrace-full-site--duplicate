@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   overflow: hidden;
   position: relative;
+  background-color: #151515;
 
   .img-zoomed {
     overflow: hidden;

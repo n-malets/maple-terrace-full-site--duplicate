@@ -13,6 +13,7 @@ interface IContentImgText {
     reversed?: boolean | undefined
     bigHeading?: boolean | undefined
     infoWidth?: string | undefined
+    fontWeight?: string | undefined
     infoPadding?: boolean | undefined
   }
   imgHeight?: string | undefined
@@ -94,6 +95,7 @@ const ContentImgText: FC<IContentImgText> = ({ data, imgHeight, letterSpacing, i
         infoWidth={data.infoWidth}
         infoPadding={data.infoPadding}
         letterSpacing={letterSpacing}
+        fontWeight={data.fontWeight}
       >
         <h4 className={data.bigHeading ? "h3" : "h4"}>{data.title}</h4>
         {data.title2 && (

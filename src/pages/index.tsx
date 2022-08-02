@@ -27,23 +27,25 @@ const IndexPage = () => {
       <section className="panel">
         <ContentPreload />
       </section>
-      <section className="panel">
-        <ContentIntro imgName={"building_1.jpg"} />
-      </section>
-      <section className="panel">
-        <ContentQuote quote={quoteData.building1} />
-      </section>
-      <section className="panel">
-        <ContentGem />
-      </section>
+      {/*<section className="panel">*/}
+      {/*  <ContentIntro imgName={"building_1.jpg"} />*/}
+      {/*</section>*/}
+      {/*<section className="panel">*/}
+      {/*  <ContentQuote quote={quoteData.building1} />*/}
+      {/*</section>*/}
+      {/*<section className="panel">*/}
+      {/*  <ContentGem />*/}
+      {/*</section>*/}
       <section className="panel">
         <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>
       </section>
-      <ContentMaskImage
-        imgName={"building_5.jpg"}
-        mask={"building_5_mask.png"}
-        shifted={true}
-      />
+      <section className="relative">
+        <ContentMaskImage
+          imgName={"building_5.jpg"}
+          mask={"building_5_mask.png"}
+          shifted={true}
+        />
+      </section>
       <section className="panel">
         <ContentHeadingText
           heading={headText.building.heading}
@@ -60,7 +62,7 @@ const IndexPage = () => {
         />
       </section>
       <section className="panel">
-        <ContentImgText data={ImgTextData.building2} />
+        <ContentImgText data={ImgTextData.building2} imgMaxWidth={"50%"}/>
       </section>
       <section className="panel">
         <ContentImgText data={ImgTextData.building3} />
@@ -68,11 +70,13 @@ const IndexPage = () => {
       <section className="panel">
         <ContentImgText data={ImgTextData.building4} />
       </section>
-      <ContentMaskImage
-        imgName={"building_11.jpg"}
-        mask={"building_11_mask.png"}
-        darkMenu={true}
-      />
+      <section className={'relative'}>
+        <ContentMaskImage
+          imgName={"building_11.jpg"}
+          mask={"building_11_mask.png"}
+          darkMenu={true}
+        />
+      </section>
       <section className="panel">
         <ContentWhy />
       </section>

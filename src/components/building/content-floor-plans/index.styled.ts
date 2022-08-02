@@ -8,6 +8,7 @@ export const FPWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: #151515;
 `
 export const FloorPlan = styled.div`
   display: flex;

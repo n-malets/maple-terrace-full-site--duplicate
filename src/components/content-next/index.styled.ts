@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   position: sticky;
   top: 0;
   z-index: 10;
+  background-color: #151515;
 `
 export const Headings = styled.div`
   position: relative;

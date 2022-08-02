@@ -14,6 +14,7 @@ export const Wrapper = styled.div<IStyleProps>`
   padding-left: ${props => (props.reversed ? "6.5%" : "10.3%")};
   display: flex;
   align-items: center;
+  background-color: #151515;
   .gem-wrap {
     width: 100%;
     height: 100%;
@@ -72,7 +73,7 @@ export const Img = styled.div<IStyleProps>`
     position: absolute;
     left: 0;
     top: ${props => props.img1Top};
-    z-index: ${props => (props.reversed ? -1 : 1)};
+    z-index: ${props => (props.reversed ? 0 : 1)};
     transform: translateY(-40%);
   }
   .img-r {

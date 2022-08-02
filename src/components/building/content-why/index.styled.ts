@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   padding: 14.15vh 6% 0;
+  background-color: #151515;
 `
 export const Heading = styled.div`
   padding-bottom: 6vh;
