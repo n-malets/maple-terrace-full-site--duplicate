@@ -42,7 +42,7 @@ export const ImgTextData = {
     img: "amenities_12.jpg",
     title: (
       <>
-        A meeting always <br /> starts on time when
+        A meeting always starts <br /> on time when
       </>
     ),
     title2: "your team lives next door.",
