@@ -158,7 +158,7 @@ const ThirdMap = () => {
         </MapSidePanel>
         <MapWrapper ref={MapWrapperRef}>
           <MapImageContainer>
-            <MapImage src={NeighborhoodMapData.map3.mapSrc} className={"absolute"}/>
+            <MapImage src={NeighborhoodMapData.map3.mapSrc}/>
             <Lottie
               animationData={animation}
               loop={false}

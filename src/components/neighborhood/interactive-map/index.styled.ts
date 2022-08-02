@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.section`
   height: 100vh;
-  
+
   &.panel {
     will-change: unset;
   }
@@ -15,9 +15,9 @@ export const MapWrapper = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  
   opacity: 0;
   visibility: hidden;
+
   .copy {
     text-align: center;
     color: black;
@@ -38,19 +38,19 @@ export const MapImageContainer = styled.div`
   top: 50%;
   left: 50%;
   width: 100vw !important;
-  height: 200vh !important;
+  height: 62.5vw !important;
   min-height: 100vh;
-  min-width: 177.77vh;
-  
-  
+  min-width: 160vh;
+
   &.hidden, .hidden {
     opacity: 0;
   }
+
   .lottie-element {
     position: absolute;
     width: 100%;
     height: 100%;
-    
+
     &.first-map {
       top: 50%;
       left: 50%;
@@ -60,13 +60,10 @@ export const MapImageContainer = styled.div`
 `
 export const MapImage = styled.img`
   width: 100%;
-  
-  &.absolute {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `
 export const MapLogoText = styled.div`
   position: absolute;
@@ -89,6 +86,7 @@ export const MapAirportGreen = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 185px;
+
   img {
     margin-bottom: 12px;
     width: 48px;
@@ -103,6 +101,7 @@ export const MapAirportYellow = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 185px;
+
   img {
     margin-bottom: 12px;
     width: 48px;
@@ -125,6 +124,7 @@ export const MapTitle = styled.div`
   font-size: 36px;
   line-height: 42px;
   max-width: 450px;
+
   span {
     font-family: 'Adobe-Caslon-Pro', sans-serif;
     font-style: italic;

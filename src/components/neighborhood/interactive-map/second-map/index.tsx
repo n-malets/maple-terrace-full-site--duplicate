@@ -130,7 +130,7 @@ const SecondMap = () => {
       <Wrapper className="panel" ref={WrapperRef}>
         <MapWrapper ref={MapWrapperRef}>
           <MapImageContainer>
-            <MapImage src={NeighborhoodMapData.map2.mapSrc} className={"absolute"}/>
+            <MapImage src={NeighborhoodMapData.map2.mapSrc}/>
             <Lottie
               animationData={animation}
               loop={false}

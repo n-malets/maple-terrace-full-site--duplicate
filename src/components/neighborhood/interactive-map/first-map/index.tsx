@@ -69,7 +69,7 @@ const FirstMap = () => {
       <Wrapper className="panel" ref={wrapperRef}>
         <MapWrapper ref={mapWrapperRef}>
           <MapImageContainer>
-            <MapImage src={NeighborhoodMapData.map1.mapSrc} className={"absolute"}/>
+            <MapImage src={NeighborhoodMapData.map1.mapSrc}/>
             <Lottie
               animationData={animation}
               loop={false}
