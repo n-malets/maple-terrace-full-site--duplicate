@@ -21,7 +21,7 @@ const NeighborhoodPage = () => {
   return (
     <>
       <section className="panel">
-        <ContentIntro imgName={"neighborhood_1.jpg"} />
+        <ContentIntro imgName={"neighborhood_1.jpg"} objPosition={'center 35% !important'} />
       </section>
       <section className="panel">
         <ContentQuote quote={quoteData.neighborhood1} />

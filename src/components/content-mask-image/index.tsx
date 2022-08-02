@@ -9,9 +9,10 @@ interface IContentIntro {
   mask: string
   shifted?: boolean | undefined
   darkMenu?: boolean | undefined
+  maskMove?: boolean | undefined
 }
 
-const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu }) => {
+const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu, maskMove }) => {
   const contentWrapRef = useRef<HTMLDivElement>(null)
   const maskRef = useRef<HTMLDivElement>(null)
   const maskTriggerRef = useRef<HTMLDivElement>(null)
@@ -48,9 +49,9 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu 
         scrub: true,
         toggleActions: "play none none reverse",
       },
-      defaults: { duration: .5 },
+      defaults: { duration: 1.5 },
     })
-    .fromTo(maskRef.current || "", { opacity: 0, visibility: 'hidden' }, { opacity: 0.7, visibility: 'visible' }, "+=2")
+    .fromTo(maskRef.current || "", { opacity: 0, visibility: 'hidden', y: maskMove? '80' : '0' }, { opacity: 0.7, visibility: 'visible', y: maskMove? '0' : '0' }, "+=2")
 
 
     if (shifted) {

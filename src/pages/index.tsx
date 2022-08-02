@@ -28,7 +28,7 @@ const IndexPage = () => {
         <ContentPreload />
       </section>
       <section className="panel">
-        <ContentIntro imgName={"building_1.jpg"} />
+        <ContentIntro imgName={"building_1.jpg"} objPosition={'center 38% !important'} />
       </section>
       <section className="panel">
         <ContentQuote quote={quoteData.building1} />

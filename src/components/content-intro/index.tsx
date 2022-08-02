@@ -7,9 +7,10 @@ import {Context} from "../../context/context";
 
 interface IContentIntro {
   imgName: string
+  objPosition?: string
 }
 
-const ContentIntro: FC<IContentIntro> = ({ imgName }) => {
+const ContentIntro: FC<IContentIntro> = ({ imgName, objPosition }) => {
   const contentWrapRef = useRef(null)
   const introImgRef = useRef(null)
   const {setIsMenuDark} = useContext(Context);
@@ -45,7 +46,7 @@ const ContentIntro: FC<IContentIntro> = ({ imgName }) => {
     })
   }, [])
   return (
-    <Wrapper ref={contentWrapRef}>
+    <Wrapper ref={contentWrapRef} objPosition={objPosition}>
       <div className="intro-img" ref={introImgRef}>
         <div className="img">
           <Image imageName={imgName} />

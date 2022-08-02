@@ -26,7 +26,7 @@ const AmenitiesPage = () => {
       <AmenitiesWrapper className={"relative"}>
           <section className="panel">
             <div className="topContrast" />
-            <ContentIntro imgName={'amenities_1.jpg'} />
+            <ContentIntro imgName={'amenities_1.jpg'} objPosition={'center 100% !important'} />
           </section>
           <section className="panel">
             <ContentQuote quote={quoteData.amenities1}/>
@@ -37,11 +37,9 @@ const AmenitiesPage = () => {
           <section className="panel">
             <ContentHeadingText heading={headText.amenities1.heading} text={headText.amenities1.text} textWidth={'425px'} textHeight={'27px'} />
           </section>
-
           <section className="panel">
             <ContentIntro imgName={'amenities_3.jpg'} />
           </section>
-
           <section className="panel">
             <ContentSpaces spaces={spacesData.spaces1}/>
           </section>
@@ -52,7 +50,7 @@ const AmenitiesPage = () => {
             <ContentSpaces spaces={spacesData.spaces3}/>
           </section>
           <section className="relative">
-            <ContentMaskImage imgName={'amenities_10.jpg'} mask={'amenities_10_mask.png'} />
+            <ContentMaskImage imgName={'amenities_10.jpg'} mask={'amenities_10_mask.png'} maskMove={true} />
           </section>
           <section className="panel">
             <ContentQuote quote={quoteData.amenities2}/>
