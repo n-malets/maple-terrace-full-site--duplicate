@@ -95,25 +95,25 @@ const TeamPage = () => {
       <TeamHeaderContent />
       <TeamSectionsContainer ref={containerRef}>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_1} parentRef={wrapperRef} />
+          <TeamSection teamData={teamData.team_1} />
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_2} parentRef={wrapperRef} />
+          <TeamSection teamData={teamData.team_2} />
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_3} parentRef={wrapperRef} />
+          <TeamSection teamData={teamData.team_3} />
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_4} parentRef={wrapperRef} />
+          <TeamSection teamData={teamData.team_4} />
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_5} parentRef={wrapperRef} />
+          <TeamSection teamData={teamData.team_5} />
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_6} parentRef={wrapperRef} />
+          <TeamSection teamData={teamData.team_6} />
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_7} parentRef={wrapperRef} />
+          <TeamSection teamData={teamData.team_7} />
         </TeamSectionWrapper>
       </TeamSectionsContainer>
     </>

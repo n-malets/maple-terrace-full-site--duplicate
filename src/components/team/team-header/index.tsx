@@ -22,13 +22,7 @@ export const TeamHeader = styled.div`
 
 const TeamHeaderContent: FC = () => {
   const handleNavigate = () => {
-    const pathNavigate = sessionStorage.getItem('teamNavigate');
-    if(pathNavigate){
-      navigate(pathNavigate)
-    }
-    else {
       navigate("/")
-    }
   }
   return (
     <TeamHeader>
@@ -36,7 +30,7 @@ const TeamHeaderContent: FC = () => {
       <img
         src={close}
         alt="Close Btn"
-        onClick={handleNavigate}
+        onClick={() => navigate("/")}
       />
     </TeamHeader>
   )
