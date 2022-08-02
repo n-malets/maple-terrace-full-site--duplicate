@@ -31,7 +31,7 @@ export const headText = {
       line2: "Easy Access to your Home.",
     },
     text: [
-      "The Terrace amenity deck and lounge includes all the benefits of Maple Terrace with a vast roof terrace both indoors and out.",
+      "Catch a quick de-brief or brainstorm for a five-year plan. Maple Terrace is set up to provide privacy and tranquility, whatever your goal. If you need a task handled as you work, a 24-hour concierge is at the ready.",
     ],
   },
   amenities3: {
