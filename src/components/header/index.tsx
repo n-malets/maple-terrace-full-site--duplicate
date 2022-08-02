@@ -101,6 +101,7 @@ const Header: FC<IHeader> = ({ location }) => {
         <Link
           to={"/team"}
           className={"active"}
+          onClick={()=>sessionStorage.setItem('teamNavigate', location.pathname)}
         >
           TEAM
         </Link>
