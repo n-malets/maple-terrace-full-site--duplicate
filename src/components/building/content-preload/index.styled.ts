@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #151515;
 `
 
 export const Logo = styled.img`
