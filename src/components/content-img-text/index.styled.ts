@@ -7,6 +7,8 @@ interface IStyleProps {
   infoWidth?: string
   infoPadding?: boolean
   imgHeight?: string
+  letterSpacing?: string
+  imgMaxWidth?: string
 }
 export const Wrapper = styled.div<IStyleProps>`
   width: 100%;
@@ -24,6 +26,22 @@ export const Wrapper = styled.div<IStyleProps>`
     justify-content: flex-start;
   `}
 `
+export const Img = styled.div<IStyleProps>`
+  overflow: hidden;
+  width: ${props => (props.withPadding ? "52.5%" : "57.2%")};
+  position: relative;
+  max-width: ${props => props.imgMaxWidth || '100%'};
+  ${mediaMax.phoneXL`
+      width: 100%;
+  `}
+  .gatsby-image-wrapper {
+    height: ${props => (props.imgHeight ? props.imgHeight : "75vh")};
+    ${mediaMax.phoneXL`
+      height: auto;
+    `}object-fit: cover;
+    object-position: top;
+  }
+`
 export const Info = styled.div<IStyleProps>`
   width: 42%;
   display: flex;
@@ -40,7 +58,7 @@ export const Info = styled.div<IStyleProps>`
     width: ${props => props.infoWidth || "290px"};
   }
   h4 {
-    letter-spacing: 0.1em;
+    letter-spacing: ${props => props.letterSpacing? props.letterSpacing : '0.1em'};
   }
   p {
     padding-top: 4vh;
@@ -53,19 +71,4 @@ export const Info = styled.div<IStyleProps>`
     `}
   }
 `
-export const Img = styled.div<IStyleProps>`
-  overflow: hidden;
-  width: ${props => (props.withPadding ? "52.5%" : "57.2%")};
-  position: relative;
-  ${mediaMax.phoneXL`
-      width: 100%;
-  `}
-  .gatsby-image-wrapper {
-    height: ${props => (props.imgHeight ? props.imgHeight : "75vh")};
-    ${mediaMax.phoneXL`
-      height: auto;
-    `}
-    object-fit: cover;
-    object-position: top;
-  }
-`
+

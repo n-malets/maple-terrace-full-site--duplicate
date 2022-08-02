@@ -3,6 +3,7 @@ import Image from "../image"
 import { Wrapper, Img, Mask } from "./index.styled"
 import gsap from "gsap"
 import { sizes } from "../../helpers/MediaQueries"
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 interface IContentIntro {
   imgName: string
@@ -20,6 +21,7 @@ const ContentMaskImage: FC<IContentIntro> = ({
   const contentWrapRef = useRef<HTMLDivElement>(null)
   const maskRef = useRef<HTMLDivElement>(null)
   const bgRef = useRef<HTMLDivElement>(null)
+  const imgRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (window.screen.width < sizes.phoneXL) return
@@ -47,9 +49,9 @@ const ContentMaskImage: FC<IContentIntro> = ({
           scrub: true,
           toggleActions: "play none none reverse",
         },
-        defaults: { duration: 2 },
+        defaults: { duration: .5 },
       })
-      .fromTo(maskRef.current || "", { opacity: 0 }, { opacity: 0.7 }, "+=1")
+      .fromTo(maskRef.current || "", { opacity: 0 }, { opacity: 0.7 }, "+=2")
 
     if (shifted) {
       gsap
@@ -71,11 +73,28 @@ const ContentMaskImage: FC<IContentIntro> = ({
         )
         .to(contentWrapRef.current || "", { overflow: "visible" }, "0")
     }
+    if (!shifted) {
+      ScrollTrigger.create({
+        trigger: maskRef?.current || "",
+        toggleActions: "play none none reverse",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        animation: gsap
+          .timeline()
+          .fromTo(
+            imgRef.current || "",
+            { maxHeight: "100%",position: 'sticky', overflow: 'hidden'},
+            { maxHeight: "0",position: 'fixed', overflow: 'hidden'},
+          )
+
+      })
+    }
   }, [])
 
   return (
     <Wrapper ref={contentWrapRef}>
-      <Img className="panel">
+      <Img className="panel" ref={imgRef}>
         <Image imageName={imgName} />
         <div className={"bg"} ref={bgRef} />
       </Img>

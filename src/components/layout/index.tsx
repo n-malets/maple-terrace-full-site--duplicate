@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useRef, useState } from "react"
 import { Context } from "../../context/context"
 import { GlobalStyle } from "./index.styled"
+import RotateScreen from "../rotate";
+import useWindowSize from "../../helpers/windowSize";
 import ContactModal from "../contact"
 import Team from "../team"
 import gsap from "gsap"
@@ -21,13 +23,16 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, location }) => {
+  const {width} = useWindowSize();
   const layoutWrapRef = useRef(null)
   const [openContact, setOpenContact] = useState(false)
   const [openLegal, setOpenLegal] = useState(false)
   const [isMenuDark, setIsMenuDark] = useState(false)
   const [openTeam, setOpenTeam] = useState(false)
   const [isFirstLoad, setIsFirstLoad] = useState(true)
-
+  if (typeof window === `undefined`) {
+    return(<></>);
+  }
   useEffect(() => {
     ScrollTrigger.getById("v-scroll")?.refresh()
   }, [openLegal, openContact, openTeam])
@@ -38,6 +43,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       })
       ScrollTrigger.getById("v-scroll")?.refresh()
     })
+    return () => ScrollTrigger.getAll().forEach(ST => ST.refresh())
   }, [])
   useEffect(() => {
     const vSections = gsap.utils.toArray(".panel")
@@ -53,7 +59,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       preventOverlaps: true,
       snap: {
         snapTo: 1 / (vSections.length - 1),
-        duration: 3,
+        duration: 2.5,
         ease: "easeIn",
       },
     })
@@ -80,6 +86,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
     })
     // This in case a scroll animation is active while the route is updated
     gsap.killTweensOf(window)
+    return () => ScrollTrigger.getAll().forEach(ST => ST.refresh())
   }, [])
 
   return (
@@ -95,13 +102,19 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         setIsMenuDark,
       }}
     >
-      <GlobalStyle />
+      <GlobalStyle openLegal={openLegal} />
       {openContact && <ContactModal />}
       {openLegal && <LegalModal />}
-      <Header location={location} />
-      <div className={"container"} ref={layoutWrapRef}>
-        {children}
-      </div>
+      {( width > 500 && width < 1024) ?
+        <RotateScreen/>
+        :
+        <>
+          <Header location={location} />
+          <div className={"container"} ref={layoutWrapRef}>
+            {children}
+          </div>
+        </>
+      }
       {openTeam && <Team />}
       {isFirstLoad && location.pathname === "/" && (
         <VideoPreload setIsFirstLoad={setIsFirstLoad} />

@@ -16,6 +16,8 @@ import ContentHeadingText from "../components/content-heading-text"
 import { headText } from "../data/head-text"
 import ContentPartners from "../components/content-partners"
 import { partners } from "../data/partners"
+import InteractiveMap from "../components/neighborhood/interactive-map";
+
 const NeighborhoodPage = () => {
   return (
     <>
@@ -26,7 +28,7 @@ const NeighborhoodPage = () => {
         <ContentQuote quote={quoteData.neighborhood1} />
       </section>
       <section className={"panel"}>
-        <ContentImgText data={ImgTextData.neighborhood1} />
+        <ContentImgText data={ImgTextData.neighborhood1} letterSpacing={'0'} />
       </section>
       <section className="panel">
         <ContentSpaces spaces={spacesData.neighborhood1} />
@@ -52,6 +54,7 @@ const NeighborhoodPage = () => {
       <section className="panel">
         <ContentPartners items={partners} />
       </section>
+      <InteractiveMap/>
       <section className={"relative"}>
         <ContentNextSection data={nextData.neighborhood} prevBtn={true} />
         <Footer />

@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { mediaMax } from "../../helpers/MediaQueries"
 
 import TTNormsRegTTF from "../../assets/fonts/TTNorms-Regular.ttf"
 import TTNormsRegWOFF from "../../assets/fonts/TTNorms-Regular.woff"
@@ -37,9 +38,11 @@ import ACaslonProItaliceot from "../../assets/fonts/ACaslonPro-Italic.eot"
 import ACaslonProItalicwoff from "../../assets/fonts/ACaslonPro-Italic.woff"
 import ACaslonProItalicwoff2 from "../../assets/fonts/ACaslonPro-Italic.woff2"
 
-import { mediaMax } from "../../helpers/MediaQueries"
+interface IStyled {
+  openLegal?: boolean
+}
+export const GlobalStyle = createGlobalStyle<IStyled>`
 
-export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'TT Norms';
     src: url(${TTNormsBoldEOT});
@@ -98,16 +101,19 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-  
   @font-face {
-    font-family: "Adobe-Caslon-Pro";
+    font-family: 'Adobe-Caslon-Pro';
+    src: url(${ACaslonProRegulareot});
+    src: local('Adobe-Caslon-Pro Regular'), local('Adobe-Caslon-Pro-Regular'),
+    url(${ACaslonProRegularotf}) format('otf'),
+    url(${ACaslonProRegulareot}) format('embedded-opentype'),
+    url(${ACaslonProRegularwoff2}) format('woff2'),
+    url(${ACaslonProRegularwoff}) format('woff'),
+    url(${ACaslonProRegularttf}) format('truetype');
+    font-weight: normal;
     font-style: normal;
-    src: url(${ACaslonProRegularttf}) format('truetype');
-    src: url(${ACaslonProRegularotf}) format('opentype');
-    src: url(${ACaslonProRegularwoff}) format('woff');
-    src: url(${ACaslonProRegularwoff2}) format('woff2');
-    src: url(${ACaslonProRegulareot}) format('embedded-opentype');
   }
+  
   @font-face {
     font-family: "Adobe-Caslon-Pro";
     font-style: italic;
@@ -122,6 +128,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     background-color: var(--color-dark);
     color: var(--color-white);
+    font-feature-settings: 'liga' off;
+    overflow: ${props => props.openLegal ? 'hidden' : 'auto'};
   }
   
   *::-webkit-scrollbar {

@@ -40,11 +40,9 @@ const AmenitiesPage = () => {
             text={headText.amenities1.text}
           />
         </section>
-
         <section className="panel">
           <ContentIntro imgName={"amenities_3.jpg"} />
         </section>
-
         <section className="panel">
           <ContentSpaces spaces={spacesData.spaces1} />
         </section>
@@ -86,6 +84,8 @@ const AmenitiesPage = () => {
           <ContentHeadingText
             heading={headText.amenities3.heading}
             text={headText.amenities2.text}
+            textWidth={'300px'}
+            textHeight={'27px'}
           />
         </section>
         <section>

@@ -9,14 +9,14 @@ import React, {
 import { VideoStyled, VideoWrapper } from "./index.styled"
 import srcVideo from "../../assets/videos/MT_Animateddoors_base.mp4"
 import srcVideoOpt from "../../assets/videos/MT_Animateddoors_base_opt.mp4"
-import { useWindowSize } from "../../helpers/windowSize"
+import useWindowSize from "../../helpers/windowSize"
 interface IProps {
   setIsFirstLoad: Dispatch<SetStateAction<boolean>>
 }
 const VideoPreload: FC<IProps> = ({ setIsFirstLoad }) => {
   const videoWrapperRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const { windowSize } = useWindowSize()
+  const { width } = useWindowSize()
   const playVideo = () => {
     setTimeout(() => {
       if (videoRef && videoRef.current) {
@@ -49,7 +49,7 @@ const VideoPreload: FC<IProps> = ({ setIsFirstLoad }) => {
         autoPlay={true}
         onEnded={hideVideo}
         onError={hideVideo}
-        src={windowSize.width <= 1024 ? srcVideoOpt : srcVideo}
+        src={width <= 1024 ? srcVideoOpt : srcVideo}
       />
     </VideoWrapper>
   )

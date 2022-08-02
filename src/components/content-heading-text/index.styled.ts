@@ -1,6 +1,11 @@
 import styled from "styled-components"
 import { mediaMax } from "../../helpers/MediaQueries"
 
+interface IStyledProps{
+  headingWidth?: string | undefined
+  textWidth?: string | undefined
+  textHeight?: string | undefined
+}
 export const Wrapper = styled.div`
   height: 100vh;
   ${mediaMax.phoneXL`
@@ -21,8 +26,8 @@ export const Wrapper = styled.div`
     `}
   }
 `
-export const Headings = styled.div`
-  max-width: 45%;
+export const Headings = styled.div<IStyledProps>`
+  max-width: 50%;
   opacity: 0;
   font-feature-settings: "liga" off;
   ${mediaMax.phoneXL`
@@ -35,19 +40,23 @@ export const Headings = styled.div`
       font-size: 30px;
       line-height: 36px;
     `}
+    max-width: ${props => props.headingWidth? props.headingWidth : '500px'};
   }
 `
-export const Text = styled.div`
-  width: 45%;
+export const Text = styled.div<IStyledProps>`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   opacity: 0;
   ${mediaMax.phoneXL`
     opacity: 1;
     width: 100%;
   `}
   p {
-    line-height: 38px;
+    line-height: ${props => props.textHeight? props.textHeight : '38px'};
     padding: 0 10px;
-    max-width: 500px;
+    max-width: ${props => props.textWidth? props.textWidth : '500px'};
     ${mediaMax.phoneXL`
       padding: 0;
       line-height: 18px;

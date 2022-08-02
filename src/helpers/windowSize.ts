@@ -1,29 +1,27 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
-export const useWindowSize = () => {
-  const isSSR = typeof window === "undefined"
-  const [windowSize, setWindowSize] = useState({
-    width: isSSR ? 1200 : window.innerWidth,
-    height: isSSR ? 800 : window.innerHeight,
-  })
-  const [tabletPortrait, setTabletPortrait] = useState(false)
+interface Size {
+  width: number;
+  height: number;
+}
+
+export default function useWindowSize(): Size {
+  const isSSR = typeof window === "undefined";
+  const [windowSize, setWindowSize] = useState<Size>({
+    width: isSSR ? 450 : window.innerWidth,
+    height: isSSR ? 400 : window.innerHeight,
+  });
   useEffect(() => {
-    function handleResize() {
+    const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      })
-      setTabletPortrait(
-        window.innerWidth > 576 && window.innerWidth < window.innerHeight
-      )
+      });
     }
-
-    // Add event listener
-    window.addEventListener("resize", handleResize)
-    // Call handler right away so state gets updated with initial window size
-    handleResize()
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize)
-  }, []) // Empty array ensures that effect is only run on mount
-  return { windowSize, tabletPortrait }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
 }
+
