@@ -53,10 +53,12 @@ const IndexPage = () => {
       <section className="panel">
         <ContentQuote quote={quoteData.building2} />
       </section>
-      <ContentMaskImage
-        imgName={"building_7.jpg"}
-        mask={"building_7_mask.png"}
-      />
+      <section className={'relative'}>
+        <ContentMaskImage
+          imgName={"building_7.jpg"}
+          mask={"building_7_mask.png"}
+        />
+      </section>
       <section className="panel">
         <ContentImgText data={ImgTextData.building2} />
       </section>

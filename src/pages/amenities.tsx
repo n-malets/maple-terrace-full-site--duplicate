@@ -51,7 +51,9 @@ const AmenitiesPage = () => {
           <section className="panel">
             <ContentSpaces spaces={spacesData.spaces3}/>
           </section>
-          <ContentMaskImage imgName={'amenities_10.jpg'} mask={'amenities_10_mask.png'} />
+          <section className="relative">
+            <ContentMaskImage imgName={'amenities_10.jpg'} mask={'amenities_10_mask.png'} />
+          </section>
           <section className="panel">
             <ContentQuote quote={quoteData.amenities2}/>
           </section>
