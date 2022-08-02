@@ -86,7 +86,7 @@ const ContentImgText: FC<IContentImgText> = ({ data, imgHeight, letterSpacing, i
       reversed={data.reversed}
       ref={wrapperRef}
     >
-      <Img withPadding={data.withPadding} ref={imgWrapperRef} imgHeight={imgHeight} imgMaxWidth={imgMaxWidth}>
+      <Img withPadding={data.withPadding} ref={imgWrapperRef} imgHeight={imgHeight} imgMaxWidth={imgMaxWidth} className={"content-img-block"}>
         <Image imageName={data.img} />
       </Img>
       <Info

@@ -14,6 +14,7 @@ import ContentSpaces from "../components/amenities/content-spaces"
 import ContentImgText from "../components/content-img-text"
 import Footer from "../components/footer"
 import ContentAmNext from "../components/amenities/content-amenities-next"
+import { AmenitiesWrapper } from "../components/amenities/index.styled"
 
 const AmenitiesPage = () => {
   const { setIsMenuDark } = useContext(Context);
@@ -22,8 +23,7 @@ const AmenitiesPage = () => {
     setIsMenuDark(false)
   });
   return (
-    <>
-      <div className={"relative"}>
+      <AmenitiesWrapper className={"relative"}>
           <section className="panel">
             <div className="topContrast" />
             <ContentIntro imgName={'amenities_1.jpg'} />
@@ -63,7 +63,7 @@ const AmenitiesPage = () => {
           <section className="panel">
             <ContentHeadingText heading={headText.amenities2.heading} text={headText.amenities2.text} textWidth={'445px'} textHeight={'27px'} />
           </section>
-          <section className={'panel'}>
+          <section className={'panel amenities1-block'}>
             <ContentImgText data={ImgTextData.amenities1} letterSpacing={'0'} />
           </section>
           <section className={'panel'}>
@@ -90,8 +90,7 @@ const AmenitiesPage = () => {
           <ContentAmNext quote={quoteData.amenities3} />
           <Footer />
         </section>
-      </div>
-    </>
+      </AmenitiesWrapper>
   )
 }
 
