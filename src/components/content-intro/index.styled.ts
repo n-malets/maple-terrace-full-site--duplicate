@@ -8,6 +8,7 @@ export const Wrapper = styled.div<IStyledProps>`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background-color: #151515;
   .img {
     width: 100%;
     height: 100vh;
