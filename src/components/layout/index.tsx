@@ -4,7 +4,6 @@ import { GlobalStyle } from "./index.styled"
 import RotateScreen from "../rotate";
 import useWindowSize from "../../helpers/windowSize";
 import ContactModal from "../contact"
-import Team from "../team"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -28,14 +27,13 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   const [openContact, setOpenContact] = useState(false)
   const [openLegal, setOpenLegal] = useState(false)
   const [isMenuDark, setIsMenuDark] = useState(false)
-  const [openTeam, setOpenTeam] = useState(false)
   const [isFirstLoad, setIsFirstLoad] = useState(true)
   if (typeof window === `undefined`) {
     return(<></>);
   }
   useEffect(() => {
     ScrollTrigger.getById("v-scroll")?.refresh()
-  }, [openLegal, openContact, openTeam])
+  }, [openLegal, openContact])
   useEffect(()=>{
     window.addEventListener('resize', () => {
       ScrollTrigger.getAll().forEach(ST => {
@@ -46,24 +44,6 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
     return () => ScrollTrigger.getAll().forEach(ST => ST.refresh())
   }, [])
   useEffect(() => {
-    const vSections = gsap.utils.toArray(".panel")
-
-    vSections.forEach((panel: any) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top",
-        scrub: 3,
-      })
-    })
-    ScrollTrigger.create({
-      id: "v-scroll",
-      preventOverlaps: true,
-      snap: {
-        snapTo: 1 / (vSections.length - 1),
-        duration: 2.5,
-        ease: "easeIn",
-      },
-    })
     Promise.all(
       Array.from(document.images).map(img => {
         if (img.complete) return Promise.resolve(img.naturalHeight !== 0)
@@ -97,8 +77,6 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         setOpenContact,
         openLegal,
         setOpenLegal,
-        openTeam,
-        setOpenTeam,
         isMenuDark,
         setIsMenuDark
       }}
@@ -110,13 +88,12 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         <RotateScreen/>
         :
         <>
-          <Header location={location} />
+        {location.pathname !== "/team" && <Header location={location} />}
           <div className={"container"} ref={layoutWrapRef}>
             {children}
           </div>
         </>
       }
-      {openTeam && <Team />}
       {isFirstLoad && location.pathname === "/" && (
         <VideoPreload setIsFirstLoad={setIsFirstLoad} />
       )}

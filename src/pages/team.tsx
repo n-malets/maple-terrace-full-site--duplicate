@@ -1,58 +1,71 @@
 import * as React from "react"
-import { teamData } from "../../data/team"
-import TeamHeaderContent from "./team-header"
-import TeamSection from "./team-section"
 import { useEffect, useRef } from "react"
 import gsap, { Linear } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import styled from "styled-components"
+import styled, {createGlobalStyle} from "styled-components"
+import { teamData } from "../data/team"
+import TeamHeaderContent from "../components/team/team-header"
+import TeamSection from "../components/team/team-section"
 
-export const TeamWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 12;
-  background-color: #151515;
-  overflow-y: auto;
-`
 export const TeamSectionsContainer = styled.div`
-  width: 100%;
+  width: auto;
+  height: 100vh;
+  display: inline-flex;
+  background-color: #151515;
 `
 export const TeamSectionWrapper = styled.section`
-  width: 100%;
   height: 100vh;
-  pointer-events: none;
+  min-width: 100vw;
 `
 
-const Team = () => {
+const TeamPageStyle = createGlobalStyle`
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    border-radius: 36px;
+  }
+  *::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 36px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: white;
+    outline: none;
+    border-radius: 36px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+`
+
+const TeamPage = () => {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const pages = useRef<HTMLElement[]>([])
   const goToPage = (section: HTMLElement) => {
-    gsap.timeline().to(wrapperRef.current, {
-      scrollTo: { y: section },
+    gsap.timeline().to(window, {
+      scrollTo: { x: section },
       duration: 2,
       ease: Linear.easeNone,
     })
   }
 
   useEffect(() => {
-    document.body.style.overflow = "hidden"
+    document.body.style.overflowY = "hidden";
+    document.body.style.overflowX = "auto";
+    const scrollTriggersArray: any = []
     pages.current.forEach((page: HTMLElement) => {
-      ScrollTrigger.create({
+      scrollTriggersArray[scrollTriggersArray.length] = ScrollTrigger.create({
         trigger: page,
-        scroller: wrapperRef.current,
+        horizontal: true,
         onEnter: () => goToPage(page),
         onEnterBack: () => goToPage(page),
         preventOverlaps: true,
       })
     })
-    return () => {
-      document.body.style.overflow = "auto"
+    return ()=>{
+      document.body.style.overflowY = "auto";
+      document.body.style.overflowX = "hidden";
+      scrollTriggersArray.forEach((el: any) => el.kill())
     }
   }, [])
 
@@ -62,8 +75,23 @@ const Team = () => {
     }
   }
 
+  useEffect(() => {
+    const itemHtml = document.querySelector('html');
+    const scrollPage = (event: WheelEvent) => {
+      event.preventDefault();
+      if (event.deltaX !== 0 && Math.abs(event.deltaY) < 2) {
+        itemHtml!.scrollLeft += Number(event.deltaX);
+      } else {
+        itemHtml!.scrollLeft += Number(event.deltaY);
+      }
+    };
+    document.addEventListener('wheel', scrollPage, { passive: false });
+    return () => document.removeEventListener('wheel', scrollPage);
+  }, []);
+
   return (
-    <TeamWrapper ref={wrapperRef}>
+    <>
+      <TeamPageStyle/>
       <TeamHeaderContent />
       <TeamSectionsContainer ref={containerRef}>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
@@ -88,8 +116,8 @@ const Team = () => {
           <TeamSection teamData={teamData.team_7} parentRef={wrapperRef} />
         </TeamSectionWrapper>
       </TeamSectionsContainer>
-    </TeamWrapper>
+    </>
   )
 }
 
-export default Team
+export default TeamPage

@@ -14,6 +14,8 @@ import ContentSpaces from "../components/amenities/content-spaces"
 import ContentImgText from "../components/content-img-text"
 import Footer from "../components/footer"
 import ContentAmNext from "../components/amenities/content-amenities-next"
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 const AmenitiesPage = () => {
   const { setIsMenuDark } = useContext(Context);
@@ -21,6 +23,27 @@ const AmenitiesPage = () => {
   useEffect(()=> {
     setIsMenuDark(false)
   });
+
+  useEffect(()=> {
+    const vSections = gsap.utils.toArray(".panel")
+
+    vSections.forEach((panel: any) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        scrub: 3,
+      })
+    })
+    ScrollTrigger.create({
+      id: "v-scroll",
+      preventOverlaps: true,
+      snap: {
+        snapTo: 1 / (vSections.length - 1),
+        duration: 2.5,
+        ease: "easeIn",
+      },
+    })
+  }, []);
   return (
     <>
       <div className={"relative"}>

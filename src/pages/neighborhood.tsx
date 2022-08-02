@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import { quoteData } from "../data/intro"
 import ContentQuote from "../components/content-quote"
@@ -15,9 +15,31 @@ import { withinWalkData } from "../data/sliders"
 import ContentHeadingText from "../components/content-heading-text"
 import { headText } from "../data/head-text"
 import InteractiveMap from "../components/neighborhood/interactive-map";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 const NeighborhoodPage = () => {
 
+  useEffect(()=> {
+    const vSections = gsap.utils.toArray(".panel")
+
+    vSections.forEach((panel: any) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        scrub: 3,
+      })
+    })
+    ScrollTrigger.create({
+      id: "v-scroll",
+      preventOverlaps: true,
+      snap: {
+        snapTo: 1 / (vSections.length - 1),
+        duration: 2.5,
+        ease: "easeIn",
+      },
+    })
+  }, []);
   return (
     <>
       <section className="panel">
