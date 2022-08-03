@@ -1,7 +1,7 @@
 import React from "react";
 import mapImage1 from "../assets/images/neighborhood/map-1.svg"
 import mapImage2 from "../assets/images/neighborhood/map-2.svg"
-import mapImage3 from "../assets/images/neighborhood/map-3.jpg"
+import mapImage3 from "../assets/images/neighborhood/map-3.svg"
 import mapLogoIcon from "../assets/images/neighborhood/map-icon.svg"
 
 export const NeighborhoodMapData = {
