@@ -8,10 +8,12 @@ import TeamHeaderContent from "../components/team/team-header"
 import TeamSection from "../components/team/team-section"
 
 export const TeamSectionsContainer = styled.div`
-  width: auto;
   height: 100vh;
   display: inline-flex;
   background-color: #151515;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  width: 100vw;
 `
 export const TeamSectionWrapper = styled.section`
   height: 100vh;
@@ -19,6 +21,9 @@ export const TeamSectionWrapper = styled.section`
 `
 
 const TeamPageStyle = createGlobalStyle`
+  html, body {
+    overflow: hidden;
+  }
   *::-webkit-scrollbar {
     width: 5px;
     height: 10px;
@@ -38,11 +43,10 @@ const TeamPageStyle = createGlobalStyle`
 `
 
 const TeamPage = () => {
-  const wrapperRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const pages = useRef<HTMLElement[]>([])
   const goToPage = (section: HTMLElement) => {
-    gsap.timeline().to(window, {
+    gsap.timeline().to(containerRef.current, {
       scrollTo: { x: section },
       duration: 2,
       ease: Linear.easeNone,
@@ -51,12 +55,12 @@ const TeamPage = () => {
 
   useEffect(() => {
     document.body.style.overflowY = "hidden";
-    document.body.style.overflowX = "auto";
     const scrollTriggersArray: any = []
     pages.current.forEach((page: HTMLElement) => {
       scrollTriggersArray[scrollTriggersArray.length] = ScrollTrigger.create({
         trigger: page,
         horizontal: true,
+        scroller: containerRef.current,
         onEnter: () => goToPage(page),
         onEnterBack: () => goToPage(page),
         preventOverlaps: true,
@@ -76,13 +80,12 @@ const TeamPage = () => {
   }
 
   useEffect(() => {
-    const itemHtml = document.querySelector('html');
     const scrollPage = (event: WheelEvent) => {
       event.preventDefault();
       if (event.deltaX !== 0 && Math.abs(event.deltaY) < 2) {
-        itemHtml!.scrollLeft += Number(event.deltaX);
+        containerRef.current!.scrollLeft += Number(event.deltaX);
       } else {
-        itemHtml!.scrollLeft += Number(event.deltaY);
+        containerRef.current!.scrollLeft += Number(event.deltaY);
       }
     };
     document.addEventListener('wheel', scrollPage, { passive: false });
@@ -95,25 +98,25 @@ const TeamPage = () => {
       <TeamHeaderContent />
       <TeamSectionsContainer ref={containerRef}>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_1} />
+          <TeamSection teamData={teamData.team_1}  parentRef={containerRef}/>
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_2} />
+          <TeamSection teamData={teamData.team_2}  parentRef={containerRef}/>
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_3} />
+          <TeamSection teamData={teamData.team_3}  parentRef={containerRef}/>
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_4} />
+          <TeamSection teamData={teamData.team_4}  parentRef={containerRef}/>
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_5} />
+          <TeamSection teamData={teamData.team_5}  parentRef={containerRef}/>
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_6} />
+          <TeamSection teamData={teamData.team_6}  parentRef={containerRef}/>
         </TeamSectionWrapper>
         <TeamSectionWrapper className="h-panel page" ref={addPageToRefs}>
-          <TeamSection teamData={teamData.team_7} />
+          <TeamSection teamData={teamData.team_7}  parentRef={containerRef}/>
         </TeamSectionWrapper>
       </TeamSectionsContainer>
     </>
