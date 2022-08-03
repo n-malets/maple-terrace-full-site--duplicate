@@ -36,7 +36,7 @@ const ContentMaskImageShifted: FC<IContentIntro> = ({ imgName, mask, maskMove })
         scrub: true,
         onEnter: self => self.refresh(),
         onLeave: self => self.refresh(),
-        toggleActions: "play none none reverse",
+        toggleActions: "restart none none reverse",
       },
       defaults: { duration: 2 },
     })
@@ -50,7 +50,7 @@ const ContentMaskImageShifted: FC<IContentIntro> = ({ imgName, mask, maskMove })
         scrub: true,
         onEnter: self => self.refresh(),
         onLeave: self => self.refresh(),
-        toggleActions: "play none none reverse",
+        toggleActions: "restart none none reverse",
       },
       defaults: { duration: 1.5 },
     })
@@ -61,7 +61,7 @@ const ContentMaskImageShifted: FC<IContentIntro> = ({ imgName, mask, maskMove })
         trigger: maskTriggerRef.current || "",
         start: "bottom bottom",
         end: "bottom top",
-        toggleActions: "play none none reverse",
+        toggleActions: "restart none none reverse",
         scrub: true,
         onEnter: self => self.refresh(),
         onLeave: self => self.refresh(),
@@ -86,7 +86,7 @@ const ContentMaskImageShifted: FC<IContentIntro> = ({ imgName, mask, maskMove })
         scrub: true,
         onEnter: self => self.refresh(),
         onLeave: self => self.refresh(),
-        toggleActions: "play none none reverse",
+        toggleActions: "restart none none reverse",
       },
     })
       .to(
