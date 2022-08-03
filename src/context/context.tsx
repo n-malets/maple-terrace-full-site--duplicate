@@ -5,8 +5,6 @@ interface IContextProps {
   setOpenContact: Dispatch<SetStateAction<boolean>>
   openLegal: boolean
   setOpenLegal: Dispatch<SetStateAction<boolean>>
-  openTeam: boolean
-  setOpenTeam: Dispatch<SetStateAction<boolean>>
   isMenuDark: boolean
   setIsMenuDark: Dispatch<SetStateAction<boolean>>
 }
@@ -18,10 +16,6 @@ export const Context = React.createContext<IContextProps>({
   },
   openLegal: false,
   setOpenLegal(value: ((prevState: boolean) => boolean) | boolean): void {
-    /* **/
-  },
-  openTeam: false,
-  setOpenTeam(value: ((prevState: boolean) => boolean) | boolean): void {
     /* **/
   },
   isMenuDark: false,

@@ -19,18 +19,15 @@ export const Wrapper = styled.div<IStyleProps>`
 `
 
 export const FixedWrapper = styled.div<IStyleProps>`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   padding: 13vh 9% 5vh 6.6%;
+  position: relative;
 
   .animation-style {
     opacity: 0;
-    transform: translate(100vw, 0px);
+    transform: translate(20vw, 0px);
     will-change: transform, opacity;
   }
 `
