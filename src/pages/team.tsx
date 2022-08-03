@@ -90,10 +90,10 @@ const TeamPage = () => {
     };
     const scrollPageOnKey = (e: KeyboardEvent) => {
       if (e.keyCode === 39 || e.keyCode === 40) {
-        containerRef.current!.scrollLeft += 100
+        containerRef.current!.scrollLeft += 10
       }
       if (e.keyCode === 38 || e.keyCode === 47) {
-        containerRef.current!.scrollLeft -= 100
+        containerRef.current!.scrollLeft -= 10
       }
     }
     document.addEventListener('keydown', scrollPageOnKey);
