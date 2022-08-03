@@ -49,18 +49,18 @@ const IndexPage = () => {
       <section className="panel">
         <ContentPreload />
       </section>
-      {/*<section className="panel">*/}
-      {/*  <ContentIntro imgName={"building_1.jpg"} objPosition={'center 38% !important'} />*/}
-      {/*</section>*/}
-      {/*<section className="panel">*/}
-      {/*  <ContentQuote quote={quoteData.building1} />*/}
-      {/*</section>*/}
-      {/*<section className="panel">*/}
-      {/*  <ContentGem />*/}
-      {/*</section>*/}
-      {/*<section className="panel">*/}
-      {/*  <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>*/}
-      {/*</section>*/}
+      <section className="panel">
+        <ContentIntro imgName={"building_1.jpg"} objPosition={'center 38% !important'} />
+      </section>
+      <section className="panel">
+        <ContentQuote quote={quoteData.building1} />
+      </section>
+      <section className="panel">
+        <ContentGem />
+      </section>
+      <section className="panel">
+        <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>
+      </section>
       <section>
         <ContentMaskImageShifted
           imgName={"building_5.jpg"}
