@@ -26,9 +26,10 @@ interface IContentTeam {
     copy: string | React.ReactElement
     quotation?: boolean | undefined
   }
+  parentRef: any
 }
 gsap.defaults({ overwrite: true })
-const TeamSection: FC<IContentTeam> = ({ teamData }) => {
+const TeamSection: FC<IContentTeam> = ({ teamData, parentRef }) => {
   const wrapperRef = useRef(null)
   const title1 = useRef(null)
   const title2 = useRef(null)
@@ -42,6 +43,7 @@ const TeamSection: FC<IContentTeam> = ({ teamData }) => {
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: wrapperRef?.current || "",
+        scroller: parentRef?.current,
         horizontal: true,
         toggleActions: "restart none reverse none",
         start: "center+=10 center",
@@ -65,6 +67,7 @@ const TeamSection: FC<IContentTeam> = ({ teamData }) => {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: wrapperRef?.current || "",
+        scroller: parentRef?.current,
         horizontal: true,
         start: "+=10 center",
         end: "center-=10 center",
