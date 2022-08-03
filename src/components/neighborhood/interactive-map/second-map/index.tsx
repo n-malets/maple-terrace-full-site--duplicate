@@ -116,7 +116,7 @@ const SecondMap = () => {
         start: "bottom-=1 top",
         end: "bottom top",
       },
-    }).to(WrapperRef.current || "",
+    }).to(MapWrapperRef.current || "",
       {
         opacity: 0, visibility: "hidden", duration: .1
       }

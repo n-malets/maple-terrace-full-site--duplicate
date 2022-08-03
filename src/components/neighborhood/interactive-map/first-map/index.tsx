@@ -56,7 +56,7 @@ const FirstMap = () => {
         start: "bottom-=1 top",
         end: "bottom top",
       },
-    }).to(wrapperRef.current || "",
+    }).to(mapWrapperRef.current || "",
       {
         opacity: 0, visibility: "hidden", duration: .1
       }

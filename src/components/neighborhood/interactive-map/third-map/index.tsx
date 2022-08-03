@@ -55,10 +55,10 @@ const ThirdMap = () => {
       }
     ).fromTo(MapWrapperRef.current || "",
       {
-        width: "100%", duration: 1, ease: Linear.easeNone
+        right: 0, width: "100%", duration: 1, ease: Linear.easeNone
       },
       {
-        width: "55%", duration: 1, ease: Linear.easeNone
+        right: 0, width: "55%", duration: 1, ease: Linear.easeNone
       },
       "-=1"
     ).fromTo(SidePanelTextRef.current || "",
