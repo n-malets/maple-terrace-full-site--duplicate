@@ -88,8 +88,20 @@ const TeamPage = () => {
         containerRef.current!.scrollLeft += Number(event.deltaY);
       }
     };
+    const scrollPageOnKey = (e: KeyboardEvent) => {
+      if (e.keyCode === 39 || e.keyCode === 40) {
+        containerRef.current!.scrollLeft += 100
+      }
+      if (e.keyCode === 38 || e.keyCode === 47) {
+        containerRef.current!.scrollLeft -= 100
+      }
+    }
+    document.addEventListener('keydown', scrollPageOnKey);
     document.addEventListener('wheel', scrollPage, { passive: false });
-    return () => document.removeEventListener('wheel', scrollPage);
+    return () => {
+      document.removeEventListener('wheel', scrollPage);
+      document.removeEventListener('keydown', scrollPageOnKey);
+    }
   }, []);
 
   return (
