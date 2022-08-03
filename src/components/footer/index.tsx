@@ -11,7 +11,7 @@ import iconIn from "../../assets/images/icon_in.svg"
 const Footer = () => {
   const { setOpenLegal } = useContext(Context)
   return (
-    <Wrapper className={"panel"}>
+    <Wrapper>
       <FooterContent>
         <div className="col">
           <p>

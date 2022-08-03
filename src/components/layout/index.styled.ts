@@ -129,7 +129,7 @@ export const GlobalStyle = createGlobalStyle<IStyled>`
     background-color: var(--color-dark);
     color: var(--color-white);
     font-feature-settings: 'liga' off;
-    overflow: ${props => props.openLegal ? 'hidden' : 'auto'};
+    overflow: ${props => (props.openLegal ? "hidden" : "auto")};
   }
   
   *::-webkit-scrollbar {
@@ -580,6 +580,11 @@ ul li {
   will-change: transform;
   width: 100%;
   height: 100%;
+}
+.pin-spacer {
+  height: 200vh!important;
+  padding: 0 !important;
+  overflow: hidden!important;
 }
 .topContrast {
   position: absolute;

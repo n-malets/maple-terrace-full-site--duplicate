@@ -80,7 +80,7 @@ const IndexPage = () => {
       <section>
         <ContentFloorPlans />
       </section>
-      <section className={"relative"}>
+      <section className={"panel relative"}>
         <ContentNextSection data={nextData.building} prevBtn={false} />
         <Footer />
       </section>

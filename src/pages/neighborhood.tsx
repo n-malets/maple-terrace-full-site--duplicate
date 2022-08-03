@@ -16,7 +16,7 @@ import ContentHeadingText from "../components/content-heading-text"
 import { headText } from "../data/head-text"
 import ContentPartners from "../components/content-partners"
 import { partners } from "../data/partners"
-import InteractiveMap from "../components/neighborhood/interactive-map";
+import InteractiveMap from "../components/neighborhood/interactive-map"
 
 const NeighborhoodPage = () => {
   return (
@@ -28,7 +28,7 @@ const NeighborhoodPage = () => {
         <ContentQuote quote={quoteData.neighborhood1} />
       </section>
       <section className={"panel"}>
-        <ContentImgText data={ImgTextData.neighborhood1} letterSpacing={'0'} />
+        <ContentImgText data={ImgTextData.neighborhood1} letterSpacing={"0"} />
       </section>
       <section className="panel">
         <ContentSpaces spaces={spacesData.neighborhood1} />
@@ -36,7 +36,7 @@ const NeighborhoodPage = () => {
       <section className="panel">
         <ContentIntro imgName={"neighborhood_5.jpg"} />
       </section>
-      <section className="panel within-walk">
+      <section className="within-walk panel">
         <ContentSlider
           data={withinWalkData.slides}
           title={withinWalkData.title}
@@ -46,16 +46,14 @@ const NeighborhoodPage = () => {
         <ContentHeadingText
           heading={headText.neighborhood.heading}
           text={headText.neighborhood.text}
+          image={"neighborhood_6.jpg"}
         />
       </section>
-      <section className="panel">
-        <ContentIntro imgName={"neighborhood_6.jpg"} />
-      </section>
+      <InteractiveMap />
       <section className="panel">
         <ContentPartners items={partners} />
       </section>
-      <InteractiveMap/>
-      <section className={"relative"}>
+      <section className={"panel relative"}>
         <ContentNextSection data={nextData.neighborhood} prevBtn={true} />
         <Footer />
       </section>

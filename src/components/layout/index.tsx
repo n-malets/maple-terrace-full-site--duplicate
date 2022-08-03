@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useRef, useState } from "react"
 import { Context } from "../../context/context"
 import { GlobalStyle } from "./index.styled"
-import RotateScreen from "../rotate";
-import useWindowSize from "../../helpers/windowSize";
+import RotateScreen from "../rotate"
+import useWindowSize from "../../helpers/windowSize"
 import ContactModal from "../contact"
 import Team from "../team"
 import gsap from "gsap"
@@ -23,7 +23,7 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, location }) => {
-  const {width} = useWindowSize();
+  const { width } = useWindowSize()
   const layoutWrapRef = useRef(null)
   const [openContact, setOpenContact] = useState(false)
   const [openLegal, setOpenLegal] = useState(false)
@@ -31,7 +31,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
   const [openTeam, setOpenTeam] = useState(false)
   const [isFirstLoad, setIsFirstLoad] = useState(true)
   if (typeof window === `undefined`) {
-    return(<></>);
+    return <></>
   }
   useEffect(() => {
     ScrollTrigger.getById("v-scroll")?.refresh()
@@ -45,8 +45,10 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
     })
     return () => ScrollTrigger.getAll().forEach(ST => ST.refresh())
   }, [])
+
   useEffect(() => {
-    const vSections = gsap.utils.toArray(".panel")
+    const vSections = gsap.utils.toArray([".panel"])
+
     vSections.forEach((panel: any) => {
       ScrollTrigger.create({
         trigger: panel,
@@ -63,6 +65,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         ease: "easeIn",
       },
     })
+
     Promise.all(
       Array.from(document.images).map(img => {
         if (img.complete) return Promise.resolve(img.naturalHeight !== 0)
@@ -105,16 +108,16 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       <GlobalStyle openLegal={openLegal} />
       {openContact && <ContactModal />}
       {openLegal && <LegalModal />}
-      {( width > 500 && width < 1024) ?
-        <RotateScreen/>
-        :
+      {width > 500 && width < 1024 ? (
+        <RotateScreen />
+      ) : (
         <>
           <Header location={location} />
           <div className={"container"} ref={layoutWrapRef}>
             {children}
           </div>
         </>
-      }
+      )}
       {openTeam && <Team />}
       {isFirstLoad && location.pathname === "/" && (
         <VideoPreload setIsFirstLoad={setIsFirstLoad} />

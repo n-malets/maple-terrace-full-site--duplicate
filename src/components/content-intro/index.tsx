@@ -45,13 +45,6 @@ const ContentIntro: FC<IContentIntro> = ({
       start: "top top",
       end: "bottom top",
       scrub: 3,
-      animation: gsap
-        .timeline()
-        .fromTo(
-          introImgRef.current || "",
-          { height: "100%", overflow: "hidden" },
-          { height: "0", overflow: "hidden" }
-        ),
     })
   }, [])
   return (

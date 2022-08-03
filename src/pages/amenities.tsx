@@ -84,14 +84,14 @@ const AmenitiesPage = () => {
           <ContentHeadingText
             heading={headText.amenities3.heading}
             text={headText.amenities2.text}
-            textWidth={'300px'}
-            textHeight={'27px'}
+            textWidth={"300px"}
+            textHeight={"27px"}
           />
         </section>
         <section>
           <ContentFloorPlansAm />
         </section>
-        <section className={"relative"}>
+        <section className={"panel relative"}>
           <ContentAmNext quote={quoteData.amenities3} />
           <Footer />
         </section>

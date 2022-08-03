@@ -3,7 +3,7 @@ import Image from "../image"
 import { Wrapper, Img, Mask } from "./index.styled"
 import gsap from "gsap"
 import { sizes } from "../../helpers/MediaQueries"
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 interface IContentIntro {
   imgName: string
@@ -49,7 +49,7 @@ const ContentMaskImage: FC<IContentIntro> = ({
           scrub: true,
           toggleActions: "play none none reverse",
         },
-        defaults: { duration: .5 },
+        defaults: { duration: 0.5 },
       })
       .fromTo(maskRef.current || "", { opacity: 0 }, { opacity: 0.7 }, "+=2")
 
@@ -84,10 +84,9 @@ const ContentMaskImage: FC<IContentIntro> = ({
           .timeline()
           .fromTo(
             imgRef.current || "",
-            { maxHeight: "100%",position: 'sticky', overflow: 'hidden'},
-            { maxHeight: "0",position: 'fixed', overflow: 'hidden'},
-          )
-
+            { maxHeight: "100%", position: "sticky", overflow: "hidden" },
+            { maxHeight: "0", position: "fixed", overflow: "hidden" }
+          ),
       })
     }
   }, [])

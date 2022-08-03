@@ -28,8 +28,9 @@ const ContentSlider: FC<IContentSlider> = ({ title, data }) => {
         trigger: ".within-walk",
         pin: true,
         scrub: 1,
-        snap: 1 / (sections.length - 1),
-        end: "+=2500",
+        // snap: 1 / (sections.length - 1),
+        start: "-=10%",
+        end: "+=124%",
       },
     })
 
@@ -41,14 +42,15 @@ const ContentSlider: FC<IContentSlider> = ({ title, data }) => {
         trigger: ".within-walk",
         pin: true,
         scrub: 1,
-        snap: 1 / (sections.length - 1),
-        end: "+=2500",
+        // snap: 1 / (sections.length - 1),
+        start: "-=10%",
+        end: "+=124%",
       },
     })
   }, [])
 
   return (
-    <Wrapper ref={ContentWrapRef}>
+    <Wrapper ref={ContentWrapRef} className="panel">
       <h2 className="h2 title">{title}</h2>
       <div className="slider-wrapper">
         {data.map((slide, index) => (

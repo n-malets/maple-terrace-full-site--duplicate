@@ -1,35 +1,40 @@
 import styled from "styled-components"
 import { mediaMax } from "../../helpers/MediaQueries"
 
-interface IStyledProps{
+interface IStyledProps {
   headingWidth?: string | undefined
   textWidth?: string | undefined
   textHeight?: string | undefined
 }
 export const Wrapper = styled.div`
   height: 100vh;
-  ${mediaMax.phoneXL`
-    height: auto;
-  `}
-  display: flex;
-  align-items: flex-end;
-  padding: 20px 1.8% 19vh 10.2%;
-  ${mediaMax.phoneXL`
-    padding: 0 5%;
-  `}
+  padding-top: 15vh;
   .content {
     width: 100%;
+    height: 20vh;
     display: flex;
     justify-content: space-between;
+    padding: 0 5%;
+    ${mediaMax.phoneXL`
+    padding: 0 5%;
+  `}
     ${mediaMax.phoneXL`
       flex-direction: column;
+      padding: 0 5%;
     `}
+  }
+  .img {
+    width: 100%;
+    margin-top: 10vh;
   }
 `
 export const Headings = styled.div<IStyledProps>`
-  max-width: 50%;
-  opacity: 0;
+  width: 50%;
+  opacity: 1;
   font-feature-settings: "liga" off;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   ${mediaMax.phoneXL`
     opacity: 1;
     max-width: 100%;
@@ -40,7 +45,7 @@ export const Headings = styled.div<IStyledProps>`
       font-size: 30px;
       line-height: 36px;
     `}
-    max-width: ${props => props.headingWidth? props.headingWidth : '500px'};
+    max-width: ${props => (props.headingWidth ? props.headingWidth : "500px")};
   }
 `
 export const Text = styled.div<IStyledProps>`
@@ -48,15 +53,16 @@ export const Text = styled.div<IStyledProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0;
+  align-items: center;
+  opacity: 1;
   ${mediaMax.phoneXL`
     opacity: 1;
     width: 100%;
   `}
   p {
-    line-height: ${props => props.textHeight? props.textHeight : '38px'};
+    line-height: ${props => (props.textHeight ? props.textHeight : "38px")};
     padding: 0 10px;
-    max-width: ${props => props.textWidth? props.textWidth : '500px'};
+    max-width: ${props => (props.textWidth ? props.textWidth : "500px")};
     ${mediaMax.phoneXL`
       padding: 0;
       line-height: 18px;

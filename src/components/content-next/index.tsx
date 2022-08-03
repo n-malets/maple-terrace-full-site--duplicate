@@ -83,7 +83,7 @@ const ContentNextSection: FC<IContentNextSection> = ({ data, prevBtn }) => {
       )
   }, [])
   return (
-    <Wrapper ref={wrapperRef} className={"panel"}>
+    <Wrapper ref={wrapperRef}>
       <Headings>
         <p ref={headingTRef} className={"h3"}>
           {data.num}

@@ -4,7 +4,7 @@ import { mediaMax } from "../../helpers/MediaQueries"
 export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 0 10%;
+  padding: 10vh 10%;
   overflow: hidden;
   ${mediaMax.phoneXL`
     height: 100%;

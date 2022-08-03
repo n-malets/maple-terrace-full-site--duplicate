@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  padding-top: 10vh;
+  padding-top: 3vh;
   ${mediaMax.phoneXL`
     padding-left: 5%;
     padding-right: 5%;

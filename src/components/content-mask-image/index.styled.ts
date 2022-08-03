@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 200vh;
+  height: 100vh;
   position: relative;
   .gatsby-image-wrapper {
     height: 100vh;
