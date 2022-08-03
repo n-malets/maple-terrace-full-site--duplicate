@@ -18,9 +18,9 @@ import ContentFloorPlans from "../components/building/content-floor-plans"
 import { Context } from "../context/context";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import ContentMaskImageShifted from "../components/content-mask-image-shifted";
 const IndexPage = () => {
   const { setIsMenuDark } = useContext(Context);
-
   useEffect(()=> {
     setIsMenuDark(false)
   });
@@ -45,27 +45,26 @@ const IndexPage = () => {
     })
   }, []);
   return (
-    <div className={"relative"}>
+    <>
       <section className="panel">
         <ContentPreload />
       </section>
-      <section className="panel">
-        <ContentIntro imgName={"building_1.jpg"} objPosition={'center 38% !important'} />
-      </section>
-      <section className="panel">
-        <ContentQuote quote={quoteData.building1} />
-      </section>
-      <section className="panel">
-        <ContentGem />
-      </section>
-      <section className="panel">
-        <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>
-      </section>
-      <section className="relative">
-        <ContentMaskImage
+      {/*<section className="panel">*/}
+      {/*  <ContentIntro imgName={"building_1.jpg"} objPosition={'center 38% !important'} />*/}
+      {/*</section>*/}
+      {/*<section className="panel">*/}
+      {/*  <ContentQuote quote={quoteData.building1} />*/}
+      {/*</section>*/}
+      {/*<section className="panel">*/}
+      {/*  <ContentGem />*/}
+      {/*</section>*/}
+      {/*<section className="panel">*/}
+      {/*  <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>*/}
+      {/*</section>*/}
+      <section>
+        <ContentMaskImageShifted
           imgName={"building_5.jpg"}
           mask={"building_5_mask.png"}
-          shifted={true}
         />
       </section>
       <section className="panel">
@@ -92,7 +91,7 @@ const IndexPage = () => {
       <section className="panel">
         <ContentImgText data={ImgTextData.building4} />
       </section>
-      <section className={'relative'}>
+      <section>
         <ContentMaskImage
           imgName={"building_11.jpg"}
           mask={"building_11_mask.png"}
@@ -108,11 +107,11 @@ const IndexPage = () => {
       <section>
         <ContentFloorPlans />
       </section>
-      <section className={"relative"}>
+      <section>
         <ContentNextSection data={nextData.building} prevBtn={false} />
         <Footer />
       </section>
-    </div>
+    </>
   )
 }
 

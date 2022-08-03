@@ -37,8 +37,8 @@ export const Img = styled.section`
 export const Mask = styled.section`
   height: 100vh;
   width: 100%;
-  position: absolute;
-  top: -100vh;
+  position: fixed;
+  top: 0;
   right: 0;
   bottom: 0;
   opacity: 0;

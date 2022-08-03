@@ -6,12 +6,10 @@ import gsap, {Power0} from "gsap"
 interface IContentIntro {
   imgName: string
   mask: string
-  shifted?: boolean | undefined
-  darkMenu?: boolean | undefined
   maskMove?: boolean | undefined
 }
 
-const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu, maskMove }) => {
+const ContentMaskImageShifted: FC<IContentIntro> = ({ imgName, mask, maskMove }) => {
   const contentWrapRef = useRef<HTMLDivElement>(null)
   const maskRef = useRef<HTMLDivElement>(null)
   const maskTriggerRef = useRef<HTMLDivElement>(null)
@@ -58,6 +56,59 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu,
     })
     .fromTo(maskRef.current || "", { opacity: 0, visibility: 'hidden', y: maskMove? '80' : '0' }, { opacity: 0.7, visibility: 'visible', y: maskMove? '0' : '0' }, "+=2")
 
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: maskTriggerRef.current || "",
+        start: "bottom bottom",
+        end: "bottom top",
+        toggleActions: "play none none reverse",
+        scrub: true,
+        onEnter: self => self.refresh(),
+        onLeave: self => self.refresh(),
+      },
+      defaults: { duration: 2.5, ease: Power0.easeIn },
+    })
+      .to(
+        imgRef.current || "",
+        { overflow: "visible", top: "-70vh" },
+        "0"
+      )
+      .to(
+        maskRef.current || "",
+        { overflow: "visible", top: "-70vh" },
+        "0"
+      )
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: maskTriggerRef.current || "",
+        start: "bottom top",
+        end: "bottom top-=30%",
+        scrub: true,
+        onEnter: self => self.refresh(),
+        onLeave: self => self.refresh(),
+        toggleActions: "play none none reverse",
+      },
+    })
+      .to(
+        imgRef.current || "",
+        { overflow: "visible", top: "-100vh" },
+        -1
+      )
+      .to(
+        maskRef.current || "",
+        { overflow: "visible", top: "-100vh" },
+        -1
+      )
+      .to(
+        imgRef.current || "",
+        { overflow: "visible", visibility: "hidden", opacity: 0 },
+        1
+      )
+      .to(
+        maskRef.current || "",
+        { overflow: "visible", visibility: "hidden", opacity: 0 },
+        1
+      )
   }, [])
 
   return (
@@ -76,4 +127,4 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu,
   )
 }
 
-export default ContentMaskImage
+export default ContentMaskImageShifted
