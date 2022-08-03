@@ -46,21 +46,23 @@ const TeamPage = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const pages = useRef<HTMLElement[]>([])
   const goToPage = (section: HTMLElement) => {
-    gsap.timeline().to(containerRef.current, {
+    gsap.timeline().to(containerRef.current || "", {
       scrollTo: { x: section },
       duration: 2,
-      ease: Linear.easeNone,
+      ease: Linear.easeNone
     })
   }
 
   useEffect(() => {
     document.body.style.overflowY = "hidden";
     const scrollTriggersArray: any = []
-    pages.current.forEach((page: HTMLElement) => {
+    pages?.current?.forEach((page: HTMLElement) => {
       scrollTriggersArray[scrollTriggersArray.length] = ScrollTrigger.create({
         trigger: page,
         horizontal: true,
-        scroller: containerRef.current,
+        scroller: containerRef.current || "",
+        start: "top+=5 bottom",
+        end: "bottom-=5 top",
         onEnter: () => goToPage(page),
         onEnterBack: () => goToPage(page),
         preventOverlaps: true,
@@ -74,8 +76,8 @@ const TeamPage = () => {
   }, [])
 
   const addPageToRefs = (el: HTMLElement) => {
-    if (el && !pages.current.includes(el)) {
-      pages.current.push(el)
+    if (el && !pages?.current?.includes(el)) {
+      pages?.current?.push(el)
     }
   }
 

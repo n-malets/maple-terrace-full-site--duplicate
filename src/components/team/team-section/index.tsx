@@ -43,7 +43,7 @@ const TeamSection: FC<IContentTeam> = ({ teamData, parentRef }) => {
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: wrapperRef?.current || "",
-        scroller: parentRef?.current,
+        scroller: parentRef?.current || "",
         horizontal: true,
         toggleActions: "restart none reverse none",
         start: "center+=10 center",
@@ -52,8 +52,7 @@ const TeamSection: FC<IContentTeam> = ({ teamData, parentRef }) => {
     })
     tl1
       .to(
-        [title1?.current, title2?.current, image1?.current, image2?.current] ||
-          {},
+        [title1?.current, title2?.current, image1?.current, image2?.current] || "",
         { x: "-10vw", opacity: 0 },
         "0"
       )
@@ -67,7 +66,7 @@ const TeamSection: FC<IContentTeam> = ({ teamData, parentRef }) => {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: wrapperRef?.current || "",
-        scroller: parentRef?.current,
+        scroller: parentRef?.current || "",
         horizontal: true,
         start: "+=10 center",
         end: "center-=10 center",
