@@ -92,7 +92,7 @@ const TeamPage = () => {
       if (e.keyCode === 39 || e.keyCode === 40) {
         containerRef.current!.scrollLeft += 10
       }
-      if (e.keyCode === 38 || e.keyCode === 47) {
+      if (e.keyCode === 38 || e.keyCode === 37) {
         containerRef.current!.scrollLeft -= 10
       }
     }
