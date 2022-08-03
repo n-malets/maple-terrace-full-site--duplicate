@@ -88,7 +88,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         <RotateScreen/>
         :
         <>
-        {location.pathname !== "/team" && <Header location={location} />}
+        {location.pathname.includes("/team") && <Header location={location} />}
           <div className={"container"} ref={layoutWrapRef}>
             {children}
           </div>
