@@ -1,22 +1,24 @@
 import React, {useEffect} from "react";
 
 import { quoteData } from "../data/intro"
+import { partners } from "../data/partners"
+import { spacesData } from "../data/spaces"
+import { nextData } from "../data/next"
+import { ImgTextData } from "../data/img-text"
+import { withinWalkData } from "../data/sliders"
+import { headText } from "../data/head-text"
 import ContentQuote from "../components/content-quote"
 import ContentIntro from "../components/content-intro"
 import ContentNextSection from "../components/content-next"
-import { nextData } from "../data/next"
 import ContentImgText from "../components/content-img-text"
-import { ImgTextData } from "../data/img-text"
 import ContentSpaces from "../components/amenities/content-spaces"
-import { spacesData } from "../data/spaces"
 import Footer from "../components/footer"
 import ContentSlider from "../components/content-slider"
-import { withinWalkData } from "../data/sliders"
-import { headText } from "../data/head-text"
+import ContentPartners from "../components/content-partners"
 import InteractiveMap from "../components/neighborhood/interactive-map";
+import ContentHeadingTextImage from "../components/content-heading-text-image";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import ContentHeadingTextImage from "../components/content-heading-text-image";
 
 const NeighborhoodPage = () => {
 
@@ -68,6 +70,9 @@ const NeighborhoodPage = () => {
         />
       </section>
       <InteractiveMap/>
+      <section className="panel">
+        <ContentPartners items={partners} />
+      </section>
       <section className={"relative"}>
         <ContentNextSection data={nextData.neighborhood} prevBtn={true}/>
         <Footer />
