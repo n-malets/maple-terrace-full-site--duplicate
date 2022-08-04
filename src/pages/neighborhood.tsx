@@ -27,7 +27,6 @@ const NeighborhoodPage = () => {
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
-        scrub: 3,
       })
     })
     ScrollTrigger.create({

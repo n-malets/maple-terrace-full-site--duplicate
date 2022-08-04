@@ -1,9 +1,7 @@
 import styled from "styled-components"
 
-export const Wrapper = styled.div`
-  width: 100%;
+export const Wrapper = styled.section`
   height: 100vh;
-  position: relative;
   &.panel {
     will-change: unset;
   }
@@ -14,7 +12,7 @@ export const Wrapper = styled.div`
     }
   }
 `
-export const Img = styled.section`
+export const Img = styled.div`
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -34,20 +32,19 @@ export const Img = styled.section`
     left: 0;
   }
 `
-export const Mask = styled.section`
+export const Mask = styled.div`
   height: 100vh;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   opacity: 0;
   visibility: hidden;
-  z-index: -1;
+  z-index: 0;
 `
 export const BlankSpace = styled.section`
   height: 100vh;
-
   &.panel {
     will-change: unset;
   }

@@ -1,9 +1,7 @@
 import styled from "styled-components"
 
-export const Wrapper = styled.div`
-  width: 100%;
+export const Wrapper = styled.section`
   height: 100vh;
-  position: relative;
   &.panel {
     will-change: unset;
   }
@@ -38,12 +36,12 @@ export const Mask = styled.section`
   height: 100vh;
   width: 100%;
   position: absolute;
-  top: -100vh;
+  top: 0;
   right: 0;
   bottom: 0;
   opacity: 0;
   visibility: hidden;
-  z-index: -1;
+  z-index: 0;
 `
 export const BlankSpace = styled.section`
   height: 100vh;

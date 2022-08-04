@@ -16,7 +16,7 @@ import ContentNextSection from "../components/content-next"
 import Footer from "../components/footer"
 import ContentFloorPlans from "../components/building/content-floor-plans"
 import { Context } from "../context/context";
-import gsap from "gsap";
+import gsap, {Power0} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import ContentMaskImageShifted from "../components/content-mask-image-shifted";
 const IndexPage = () => {
@@ -31,7 +31,6 @@ const IndexPage = () => {
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
-        scrub: 3,
       })
     })
     ScrollTrigger.create({
@@ -61,12 +60,10 @@ const IndexPage = () => {
       <section className="panel">
         <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"}/>
       </section>
-      <section>
-        <ContentMaskImageShifted
-          imgName={"building_5.jpg"}
-          mask={"building_5_mask.png"}
-        />
-      </section>
+      <ContentMaskImageShifted
+        imgName={"building_5.jpg"}
+        mask={"building_5_mask.png"}
+      />
       <section className="panel">
         <ContentHeadingText
           heading={headText.building.heading}
@@ -76,12 +73,10 @@ const IndexPage = () => {
       <section className="panel">
         <ContentQuote quote={quoteData.building2} />
       </section>
-      <section className={'relative'}>
-        <ContentMaskImage
-          imgName={"building_7.jpg"}
-          mask={"building_7_mask.png"}
-        />
-      </section>
+      <ContentMaskImage
+        imgName={"building_7.jpg"}
+        mask={"building_7_mask.png"}
+      />
       <section className="panel">
         <ContentImgText data={ImgTextData.building2} imgMaxWidth={"50%"}/>
       </section>
@@ -91,13 +86,11 @@ const IndexPage = () => {
       <section className="panel">
         <ContentImgText data={ImgTextData.building4} />
       </section>
-      <section>
-        <ContentMaskImage
-          imgName={"building_11.jpg"}
-          mask={"building_11_mask.png"}
-          darkMenu={true}
-        />
-      </section>
+      <ContentMaskImage
+        imgName={"building_11.jpg"}
+        mask={"building_11_mask.png"}
+        darkMenu={true}
+      />
       <section className="panel">
         <ContentWhy />
       </section>
