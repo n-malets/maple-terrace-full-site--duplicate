@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-interface IStyledProps{
+interface IStyledProps {
   headingWidth?: string | undefined
   textWidth?: string | undefined
   textHeight?: string | undefined
@@ -17,12 +17,19 @@ export const Wrapper = styled.div`
   }
 `
 export const Headings = styled.div<IStyledProps>`
-  max-width: 50%;
-  opacity: 0;
-
+  width: 50%;
+  opacity: 1;
+  font-feature-settings: "liga" off;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ${mediaMax.phoneXL`
+    opacity: 1;
+    width: 100%;
+  `}
   h3 {
     font-weight: 300;
-    max-width: ${props => props.headingWidth? props.headingWidth : '500px'};
+    max-width: ${props => (props.headingWidth ? props.headingWidth : "500px")};
   }
 `
 export const Text = styled.div<IStyledProps>`
@@ -32,8 +39,8 @@ export const Text = styled.div<IStyledProps>`
   justify-content: center;
   opacity: 0;
   p {
-    line-height: ${props => props.textHeight? props.textHeight : '38px'};
+    line-height: ${props => (props.textHeight ? props.textHeight : "38px")};
     padding: 0 10px;
-    max-width: ${props => props.textWidth? props.textWidth : '500px'};
+    max-width: ${props => (props.textWidth ? props.textWidth : "500px")};
   }
 `

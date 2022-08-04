@@ -27,6 +27,7 @@ export const ContentContainer = styled.div`
   ${mediaMax.phoneXL`
     padding-left: 5%;
     padding-right: 5%;
+    height: 90vh;
   `}
   h2 {
     margin-left: 20%;

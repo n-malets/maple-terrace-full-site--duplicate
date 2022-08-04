@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react"
 
 import { quoteData } from "../data/intro"
 import { partners } from "../data/partners"
@@ -15,14 +15,15 @@ import ContentSpaces from "../components/amenities/content-spaces"
 import Footer from "../components/footer"
 import ContentSlider from "../components/content-slider"
 import ContentPartners from "../components/content-partners"
-import InteractiveMap from "../components/neighborhood/interactive-map";
-import ContentHeadingTextImage from "../components/content-heading-text-image";
-import gsap from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import InteractiveMap from "../components/neighborhood/interactive-map"
+import ContentHeadingTextImage from "../components/content-heading-text-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import MobileContentHeadingText from "../components/content-heading-text/mobile"
+import MobileInteractiveMap from "../components/neighborhood/mobile-interactive-map"
 
 const NeighborhoodPage = () => {
-
-  useEffect(()=> {
+  useEffect(() => {
     const vSections = gsap.utils.toArray(".panel")
 
     vSections.forEach((panel: any) => {
@@ -40,17 +41,20 @@ const NeighborhoodPage = () => {
         ease: "easeIn",
       },
     })
-  }, []);
+  }, [])
   return (
     <>
       <section className="panel">
-        <ContentIntro imgName={"neighborhood_1.jpg"} objPosition={'center 35% !important'} />
+        <ContentIntro
+          imgName={"neighborhood_1.jpg"}
+          objPosition={"center 35% !important"}
+        />
       </section>
       <section className="panel">
         <ContentQuote quote={quoteData.neighborhood1} />
       </section>
       <section className={"panel"}>
-        <ContentImgText data={ImgTextData.neighborhood1} letterSpacing={'0'} />
+        <ContentImgText data={ImgTextData.neighborhood1} letterSpacing={"0"} />
       </section>
       <section className="panel">
         <ContentSpaces spaces={spacesData.neighborhood1} />
@@ -63,18 +67,30 @@ const NeighborhoodPage = () => {
         title={withinWalkData.title}
       />
       <section className="panel">
-        <ContentHeadingTextImage
-          heading={headText.neighborhood.heading}
-          text={headText.neighborhood.text}
-          image={"neighborhood_6.jpg"}
-        />
+        {window.screen.width > 576 ? (
+          <ContentHeadingTextImage
+            heading={headText.neighborhood.heading}
+            text={headText.neighborhood.text}
+            image={"neighborhood_6.jpg"}
+          />
+        ) : (
+          <MobileContentHeadingText
+            heading={headText.neighborhood.heading}
+            text={headText.neighborhood.text}
+            image={"neighborhood_6.jpg"}
+          />
+        )}
       </section>
-      <InteractiveMap/>
+      {window.screen.width > 576 ? (
+        <InteractiveMap />
+      ) : (
+        <MobileInteractiveMap />
+      )}
       <section className="panel">
         <ContentPartners items={partners} />
       </section>
       <section className={"relative"}>
-        <ContentNextSection data={nextData.neighborhood} prevBtn={true}/>
+        <ContentNextSection data={nextData.neighborhood} prevBtn={true} />
         <Footer />
       </section>
     </>
