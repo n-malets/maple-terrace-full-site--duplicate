@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
   height: 100vh;
 `
 
-export const HideOverlay = styled.section`
+export const HideOverlay = styled.div`
   position: absolute;
   bottom: -1px;
   right: -1px;
@@ -15,7 +15,7 @@ export const HideOverlay = styled.section`
   height: 0;
 `
 
-export const ContentContainer = styled.section`
+export const ContentContainer = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
