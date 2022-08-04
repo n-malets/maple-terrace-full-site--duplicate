@@ -23,10 +23,6 @@ export const Headings = styled.div<IStyledProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  ${mediaMax.phoneXL`
-    opacity: 1;
-    width: 100%;
-  `}
   h3 {
     font-weight: 300;
     max-width: ${props => (props.headingWidth ? props.headingWidth : "500px")};

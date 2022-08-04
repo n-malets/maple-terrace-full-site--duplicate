@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useRef, useState } from "react"
 import { Context } from "../../context/context"
 import { GlobalStyle } from "./index.styled"
-import RotateScreen from "../rotate";
-import useWindowSize from "../../helpers/windowSize";
+import RotateScreen from "../rotate"
+import useWindowSize from "../../helpers/windowSize"
 import ContactModal from "../contact"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
@@ -24,24 +24,24 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, location }) => {
-  const {width} = useWindowSize();
+  const { width } = useWindowSize()
   const layoutWrapRef = useRef(null)
   const [openContact, setOpenContact] = useState(false)
   const [openLegal, setOpenLegal] = useState(false)
   const [isMenuDark, setIsMenuDark] = useState(false)
   const [isFirstLoad, setIsFirstLoad] = useState(true)
   if (typeof window === `undefined`) {
-    return(<></>);
+    return <></>
   }
   useEffect(() => {
     ScrollTrigger.getById("v-scroll")?.refresh()
   }, [openLegal, openContact])
-  useEffect(()=>{
-    window.addEventListener('resize', () => {
+  useEffect(() => {
+    window.addEventListener("resize", () => {
       ScrollTrigger.getAll().forEach(ST => {
         ST.refresh()
       })
-      ScrollTrigger.getById('v-scroll')?.refresh();
+      ScrollTrigger.getById("v-scroll")?.refresh()
     })
     return () => ScrollTrigger.getAll().forEach(ST => ST.refresh())
   }, [])
@@ -101,7 +101,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
         openLegal,
         setOpenLegal,
         isMenuDark,
-        setIsMenuDark
+        setIsMenuDark,
       }}
     >
       <GlobalStyle openLegal={openLegal} />
@@ -120,7 +120,7 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
             {children}
           </div>
         </>
-      }
+      )}
       {isFirstLoad && location.pathname === "/" && (
         <VideoPreload setIsFirstLoad={setIsFirstLoad} />
       )}
