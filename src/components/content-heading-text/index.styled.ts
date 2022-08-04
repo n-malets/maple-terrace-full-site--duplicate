@@ -37,7 +37,7 @@ export const Headings = styled.div<IStyledProps>`
   align-items: center;
   ${mediaMax.phoneXL`
     opacity: 1;
-    max-width: 100%;
+    width: 100%;
   `}
   h3 {
     font-weight: 300;

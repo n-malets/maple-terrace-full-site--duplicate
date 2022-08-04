@@ -17,6 +17,8 @@ import { headText } from "../data/head-text"
 import ContentPartners from "../components/content-partners"
 import { partners } from "../data/partners"
 import InteractiveMap from "../components/neighborhood/interactive-map"
+import MobileContentHeadingText from "../components/content-heading-text/mobile"
+import MobileInteractiveMap from "../components/neighborhood/mobile-interactive-map"
 
 const NeighborhoodPage = () => {
   return (
@@ -43,13 +45,25 @@ const NeighborhoodPage = () => {
         />
       </section>
       <section className="panel">
-        <ContentHeadingText
-          heading={headText.neighborhood.heading}
-          text={headText.neighborhood.text}
-          image={"neighborhood_6.jpg"}
-        />
+        {window.screen.width > 576 ? (
+          <ContentHeadingText
+            heading={headText.neighborhood.heading}
+            text={headText.neighborhood.text}
+            image={"neighborhood_6.jpg"}
+          />
+        ) : (
+          <MobileContentHeadingText
+            heading={headText.neighborhood.heading}
+            text={headText.neighborhood.text}
+            image={"neighborhood_6.jpg"}
+          />
+        )}
       </section>
-      <InteractiveMap />
+      {window.screen.width > 576 ? (
+        <InteractiveMap />
+      ) : (
+        <MobileInteractiveMap />
+      )}
       <section className="panel">
         <ContentPartners items={partners} />
       </section>
