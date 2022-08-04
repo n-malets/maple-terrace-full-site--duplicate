@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   padding-left: 10.3%;
   display: flex;
   align-items: center;
-
+  background-color: #151515;
   .gem-wrap {
     width: 100%;
     display: flex;

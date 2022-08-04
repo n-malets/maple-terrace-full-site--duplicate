@@ -8,7 +8,7 @@ import {
   MapTitle
 } from "../index.styled"
 import gsap from "gsap"
-import animation from "../../../../static/lottie1rev1.json"
+import animation from "../../../../../static/lottie1rev1.json"
 import Lottie from "react-lottie-player"
 import {NeighborhoodMapData} from "../../../../data/neighborhood";
 
@@ -56,7 +56,7 @@ const FirstMap = () => {
         start: "bottom-=1 top",
         end: "bottom top",
       },
-    }).to(wrapperRef.current || "",
+    }).to(mapWrapperRef.current || "",
       {
         opacity: 0, visibility: "hidden", duration: .1
       }

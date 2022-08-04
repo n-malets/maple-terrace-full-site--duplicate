@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   height: 100vh;
   padding: 10vh 10%;
   overflow: hidden;
+<<<<<<< HEAD
+=======
+  background-color: #151515;
+>>>>>>> a84f0f96dc9ed28ab30f0da7c5c254cbd9fa680b
   ${mediaMax.phoneXL`
     height: 100%;
     padding-top: 50px;

@@ -14,6 +14,7 @@ interface IContentImgText {
     reversed?: boolean | undefined
     bigHeading?: boolean | undefined
     infoWidth?: string | undefined
+    fontWeight?: string | undefined
     infoPadding?: boolean | undefined
   }
   imgHeight?: string | undefined
@@ -88,7 +89,7 @@ const ContentImgText: FC<IContentImgText> = ({ data, imgHeight, letterSpacing, i
       reversed={data.reversed}
       ref={wrapperRef}
     >
-      <Img withPadding={data.withPadding} ref={imgWrapperRef} imgHeight={imgHeight} imgMaxWidth={imgMaxWidth}>
+      <Img withPadding={data.withPadding} ref={imgWrapperRef} imgHeight={imgHeight} imgMaxWidth={imgMaxWidth} className={"content-img-block"}>
         <Image imageName={data.img} />
       </Img>
       <Info
@@ -97,6 +98,7 @@ const ContentImgText: FC<IContentImgText> = ({ data, imgHeight, letterSpacing, i
         infoWidth={data.infoWidth}
         infoPadding={data.infoPadding}
         letterSpacing={letterSpacing}
+        fontWeight={data.fontWeight}
       >
         <h4 className={`title ${data.bigHeading ? "h3" : "h4"}`}>
           {data.title}

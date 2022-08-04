@@ -12,10 +12,14 @@ export const Wrapper = styled.div`
   position: sticky;
   top: 0;
   z-index: 10;
+<<<<<<< HEAD
   ${mediaMax.phoneXL`
     height: auto;
     padding: 120px 5%;
   `}
+=======
+  background-color: #151515;
+>>>>>>> a84f0f96dc9ed28ab30f0da7c5c254cbd9fa680b
 `
 export const Headings = styled.div`
   position: relative;

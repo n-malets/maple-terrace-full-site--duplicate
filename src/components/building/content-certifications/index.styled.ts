@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+  background-color: #151515;
 `
 export const Items = styled.div`
   width: 100%;

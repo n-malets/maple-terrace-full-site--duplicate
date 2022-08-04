@@ -15,6 +15,7 @@ import ContentCertifications from "../components/building/content-certifications
 import ContentNextSection from "../components/content-next"
 import Footer from "../components/footer"
 import ContentFloorPlans from "../components/building/content-floor-plans"
+<<<<<<< HEAD
 import { Context } from "../context/context"
 const IndexPage = () => {
   const { setIsMenuDark } = useContext(Context)
@@ -22,13 +23,47 @@ const IndexPage = () => {
   useEffect(() => {
     setIsMenuDark(false)
   })
+=======
+import { Context } from "../context/context";
+import gsap, {Power0} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import ContentMaskImageShifted from "../components/content-mask-image-shifted";
+const IndexPage = () => {
+  const { setIsMenuDark } = useContext(Context);
+  useEffect(()=> {
+    setIsMenuDark(false)
+  });
+  useEffect(()=> {
+    const vSections = gsap.utils.toArray(".panel")
+
+    vSections.forEach((panel: any) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+      })
+    })
+    ScrollTrigger.create({
+      id: "v-scroll",
+      preventOverlaps: true,
+      snap: {
+        snapTo: 1 / (vSections.length - 1),
+        duration: 2.5,
+        ease: "easeIn",
+      },
+    })
+  }, []);
+>>>>>>> a84f0f96dc9ed28ab30f0da7c5c254cbd9fa680b
   return (
-    <div className={"relative"}>
+    <>
       <section className="panel">
         <ContentPreload />
       </section>
       <section className="panel">
+<<<<<<< HEAD
         <ContentIntro mobileFullScreen imgName={"building_1.jpg"} />
+=======
+        <ContentIntro imgName={"building_1.jpg"} objPosition={'center 38% !important'} />
+>>>>>>> a84f0f96dc9ed28ab30f0da7c5c254cbd9fa680b
       </section>
       <section className="panel">
         <ContentQuote quote={quoteData.building1} />
@@ -39,10 +74,9 @@ const IndexPage = () => {
       <section className="panel">
         <ContentImgText data={ImgTextData.building1} imgHeight={"100vh"} />
       </section>
-      <ContentMaskImage
+      <ContentMaskImageShifted
         imgName={"building_5.jpg"}
         mask={"building_5_mask.png"}
-        shifted={true}
       />
       <section className="panel">
         <ContentHeadingText
@@ -58,7 +92,7 @@ const IndexPage = () => {
         mask={"building_7_mask.png"}
       />
       <section className="panel">
-        <ContentImgText data={ImgTextData.building2} />
+        <ContentImgText data={ImgTextData.building2} imgMaxWidth={"50%"}/>
       </section>
       <section className="panel">
         <ContentImgText data={ImgTextData.building3} />
@@ -80,11 +114,15 @@ const IndexPage = () => {
       <section>
         <ContentFloorPlans />
       </section>
+<<<<<<< HEAD
       <section className={"panel relative"}>
+=======
+      <section>
+>>>>>>> a84f0f96dc9ed28ab30f0da7c5c254cbd9fa680b
         <ContentNextSection data={nextData.building} prevBtn={false} />
         <Footer />
       </section>
-    </div>
+    </>
   )
 }
 

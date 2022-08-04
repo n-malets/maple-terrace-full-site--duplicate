@@ -7,7 +7,7 @@ import {
   MapImageContainer
 } from "../index.styled"
 import gsap, {Linear} from "gsap"
-import animation from "../../../../static/lottie3rev1.json"
+import animation from "../../../../../static/lottie3rev1.json"
 import {MapSidePanel, Marker, MarkersContainer, SidePanelText} from "./index.styled"
 import Lottie from "react-lottie-player"
 import {NeighborhoodMapData} from "../../../../data/neighborhood";
@@ -55,10 +55,10 @@ const ThirdMap = () => {
       }
     ).fromTo(MapWrapperRef.current || "",
       {
-        width: "100%", duration: 1, ease: Linear.easeNone
+        right: 0, width: "100%", duration: 1, ease: Linear.easeNone
       },
       {
-        width: "55%", duration: 1, ease: Linear.easeNone
+        right: 0, width: "55%", duration: 1, ease: Linear.easeNone
       },
       "-=1"
     ).fromTo(SidePanelTextRef.current || "",

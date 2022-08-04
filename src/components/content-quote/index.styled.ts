@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  background-color: #151515;
   img {
     margin-bottom: 36px;
   }

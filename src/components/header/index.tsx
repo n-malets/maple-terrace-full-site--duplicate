@@ -13,7 +13,7 @@ interface IHeader {
 
 const Header: FC<IHeader> = ({ location }) => {
   const headerLogo = useRef(null)
-  const { setOpenContact, setOpenTeam, setOpenLegal, isMenuDark, setIsMenuDark } = useContext(Context)
+  const { setOpenContact, setOpenLegal, isMenuDark, setIsMenuDark } = useContext(Context)
   useEffect(() => {
 
     const tl1 = gsap.timeline({
@@ -98,9 +98,13 @@ const Header: FC<IHeader> = ({ location }) => {
         alt={"Maple Terrace Uptown Dallas"}
       />
       <Nav className={"sec"} id={"sNav"} isMenuDark={isMenuDark}>
-        <span onClick={() => setOpenTeam(true)} >
+        <Link
+          to={"/team"}
+          className={"active"}
+          onClick={()=>sessionStorage.setItem('teamNavigate', location.pathname)}
+        >
           TEAM
-        </span>
+        </Link>
         <span onClick={() => setOpenContact(true)} >
           CONTACT
         </span>

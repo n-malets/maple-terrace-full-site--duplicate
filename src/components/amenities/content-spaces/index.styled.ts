@@ -19,11 +19,15 @@ export const Wrapper = styled.div<IStyleProps>`
   padding-left: ${props => (props.reversed ? "6.5%" : "10.3%")};
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   ${mediaMax.phoneXL`
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 50px;
   `}
+=======
+  background-color: #151515;
+>>>>>>> a84f0f96dc9ed28ab30f0da7c5c254cbd9fa680b
   .gem-wrap {
     width: 100%;
     height: 100%;
@@ -102,7 +106,7 @@ export const Img = styled.div<IStyleProps>`
     position: absolute;
     left: 0;
     top: ${props => props.img1Top};
-    z-index: ${props => (props.reversed ? -1 : 1)};
+    z-index: ${props => (props.reversed ? 0 : 1)};
     transform: translateY(-40%);
     ${mediaMax.phoneXL`
       width: 159px;

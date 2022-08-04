@@ -43,7 +43,8 @@ const TeamSection: FC<IContentTeam> = ({ teamData, parentRef }) => {
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: wrapperRef?.current || "",
-        scroller: parentRef?.current,
+        scroller: parentRef?.current || "",
+        horizontal: true,
         toggleActions: "restart none reverse none",
         start: "center+=10 center",
         scrub: 1,
@@ -51,22 +52,22 @@ const TeamSection: FC<IContentTeam> = ({ teamData, parentRef }) => {
     })
     tl1
       .to(
-        [title1?.current, title2?.current, image1?.current, image2?.current] ||
-          {},
-        { x: "-100vw", opacity: 0 },
+        [title1?.current, title2?.current, image1?.current, image2?.current] || "",
+        { x: "-10vw", opacity: 0 },
         "0"
       )
       .to(image1Overlap?.current || {}, { width: "100%" }, "0")
       .to(
         [description?.current, devText?.current] || {},
-        { x: "-100vw", opacity: 0 },
-        "-=0.48"
+        { opacity: 0 },
+        "0"
       )
 
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: wrapperRef?.current || "",
-        scroller: parentRef?.current,
+        scroller: parentRef?.current || "",
+        horizontal: true,
         start: "+=10 center",
         end: "center-=10 center",
         scrub: 1,
@@ -84,7 +85,7 @@ const TeamSection: FC<IContentTeam> = ({ teamData, parentRef }) => {
       .to(
         [description?.current, devText?.current] || {},
         { x: 0, opacity: 1 },
-        "-=0.48"
+        "-=0.4"
       )
   }, [])
 
