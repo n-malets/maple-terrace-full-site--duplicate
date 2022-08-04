@@ -2,7 +2,7 @@ import React, {FC, useEffect, useRef} from "react"
 import gsap, {Linear} from "gsap"
 
 import Image from "../image"
-import {ContentContainer, Wrapper} from "./index.styled"
+import {ContentContainer, HideOverlay, Wrapper} from "./index.styled"
 import {sizes} from "../../helpers/MediaQueries"
 
 interface IContentSlider {
@@ -15,6 +15,7 @@ const ContentSlider: FC<IContentSlider> = ({title, data}) => {
   const SliderRef = useRef(null)
   const ContentContainerRef = useRef(null)
   const FirstSceneRef = useRef(null)
+  const SecondSceneRef = useRef(null)
 
   useEffect(() => {
     if (window.screen.width < sizes.phoneXL) return
@@ -58,6 +59,25 @@ const ContentSlider: FC<IContentSlider> = ({title, data}) => {
         end: "bottom+=100% bottom",
       },
     })
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: SecondSceneRef.current || "",
+        toggleActions: "restart none none reverse",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+      },
+    }).to(Array.from({length: sections.length}, (_, i) => `.text-${i}`) || "",
+      {
+        opacity: 0
+      }
+    ).to(Array.from({length: sections.length}, (_, i) => `.image-${i}`) || "",
+      {
+        height: "100%"
+      },
+      "0"
+    )
   }, [])
 
   return (
@@ -70,17 +90,20 @@ const ContentSlider: FC<IContentSlider> = ({title, data}) => {
               <div className="slide" key={`slide_${index}`}>
                 <div className="img">
                   <Image imageName={slide.img}/>
+                  <HideOverlay className={`image-${index}`}/>
                 </div>
-                <p className="h3 number">{slide.number}</p>
-                <div className="line"/>
-                <p className="h3i">{slide.title}</p>
+                <div className={`text-${index}`}>
+                  <p className="h3 number">{slide.number}</p>
+                  <div className="line"/>
+                  <p className="h3i">{slide.title}</p>
+                </div>
               </div>
             ))}
           </div>
         </ContentContainer>
       </Wrapper>
       <Wrapper className={"panel"} ref={FirstSceneRef}/>
-      <Wrapper className={"panel"}/>
+      <Wrapper className={"panel"} ref={SecondSceneRef}/>
     </>
   )
 }

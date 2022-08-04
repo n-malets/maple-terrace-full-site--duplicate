@@ -6,6 +6,15 @@ export const Wrapper = styled.section`
   height: 100vh;
 `
 
+export const HideOverlay = styled.section`
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  left: -1px;
+  background: #151515;
+  height: 0;
+`
+
 export const ContentContainer = styled.section`
   width: 100%;
   height: 100vh;
@@ -47,6 +56,7 @@ export const ContentContainer = styled.section`
   .img {
     width: 30vw;
     height: 30vw;
+    position: relative;
     ${mediaMax.phoneXL`
       width: 100%;
       height: auto;

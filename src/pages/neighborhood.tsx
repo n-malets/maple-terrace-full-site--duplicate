@@ -12,11 +12,11 @@ import { spacesData } from "../data/spaces"
 import Footer from "../components/footer"
 import ContentSlider from "../components/content-slider"
 import { withinWalkData } from "../data/sliders"
-import ContentHeadingText from "../components/content-heading-text"
 import { headText } from "../data/head-text"
 import InteractiveMap from "../components/neighborhood/interactive-map";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import ContentHeadingTextImage from "../components/content-heading-text-image";
 
 const NeighborhoodPage = () => {
 
@@ -61,13 +61,11 @@ const NeighborhoodPage = () => {
         title={withinWalkData.title}
       />
       <section className="panel">
-        <ContentHeadingText
+        <ContentHeadingTextImage
           heading={headText.neighborhood.heading}
           text={headText.neighborhood.text}
+          image={"neighborhood_6.jpg"}
         />
-      </section>
-      <section className="panel">
-        <ContentIntro imgName={"neighborhood_6.jpg"} />
       </section>
       <InteractiveMap/>
       <section className={"relative"}>
