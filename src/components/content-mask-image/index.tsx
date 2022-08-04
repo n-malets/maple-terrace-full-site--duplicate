@@ -48,12 +48,10 @@ const ContentMaskImage: FC<IContentIntro> = ({ imgName, mask, shifted, darkMenu,
       .to(
         imgRef.current || "",
         { overflow: "visible", visibility: "hidden", opacity: 0 },
-        1
       )
       .to(
         maskRef.current || "",
         { overflow: "visible", visibility: "hidden", opacity: 0 },
-        1
       )
   }, [])
 
