@@ -11,6 +11,8 @@ import { CSSPlugin } from "gsap/CSSPlugin"
 import LegalModal from "../legal"
 import VideoPreload from "../video-preload"
 import Header from "../header"
+import HeaderMobile from "../header/mobile"
+import { sizes } from "../../helpers/MediaQueries"
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, CSSPlugin)
 gsap.config({
   nullTargetWarn: false,
@@ -44,6 +46,27 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
     return () => ScrollTrigger.getAll().forEach(ST => ST.refresh())
   }, [])
   useEffect(() => {
+    if (window.screen.width > 576) {
+      const vSections = gsap.utils.toArray([".panel"])
+
+      vSections.forEach((panel: any) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top top",
+          scrub: 3,
+        })
+      })
+      ScrollTrigger.create({
+        id: "v-scroll",
+        preventOverlaps: true,
+        snap: {
+          snapTo: 1 / (vSections.length - 1),
+          duration: 2.5,
+          ease: "easeIn",
+        },
+      })
+    }
+
     Promise.all(
       Array.from(document.images).map(img => {
         if (img.complete) return Promise.resolve(img.naturalHeight !== 0)
@@ -84,11 +107,15 @@ const Layout: FC<LayoutProps> = ({ children, location }) => {
       <GlobalStyle openLegal={openLegal} />
       {openContact && <ContactModal />}
       {openLegal && <LegalModal />}
-      {( width > 500 && width < 1024) ?
-        <RotateScreen/>
-        :
+      {width > sizes.phoneXL && width < 1024 ? (
+        <RotateScreen />
+      ) : (
         <>
-        {!location.pathname.includes("/team") && <Header location={location} />}
+          {width < sizes.phoneXL ? (
+            <HeaderMobile location={location} />
+          ) : (
+            <Header location={location} />
+          )}
           <div className={"container"} ref={layoutWrapRef}>
             {children}
           </div>

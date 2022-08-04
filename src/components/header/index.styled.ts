@@ -32,8 +32,9 @@ export const Logo = styled.img`
 export const Nav = styled.nav<IStyleProps>`
   font-size: 14px;
   font-family: "TT Norms", serif;
-  a, span {
-    color: ${props => (props.isMenuDark ? "black" : "white") };
+  a,
+  span {
+    color: ${props => (props.isMenuDark ? "black" : "white")};
   }
   a.active {
     opacity: 1;
