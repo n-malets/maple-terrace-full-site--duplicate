@@ -26,7 +26,7 @@ const Image: FC<IImageProps> = ({ imageName, altText, padding }) => {
         image={
           data.allImageSharp.nodes.find(
             (element: any) =>
-              element.gatsbyImageData.images.fallback.src.split("/").pop() ===
+              element?.gatsbyImageData?.images?.fallback?.src?.split("/").pop() ===
               imageName
           ).gatsbyImageData
         }
