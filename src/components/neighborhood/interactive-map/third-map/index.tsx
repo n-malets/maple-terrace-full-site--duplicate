@@ -7,7 +7,7 @@ import {
   MapImageContainer
 } from "../index.styled"
 import gsap, {Linear} from "gsap"
-import animation from "../../../../static/lottie3rev1.json"
+import animation from "../../../../../static/lottie3rev1.json"
 import {MapSidePanel, Marker, MarkersContainer, SidePanelText} from "./index.styled"
 import Lottie from "react-lottie-player"
 import {NeighborhoodMapData} from "../../../../data/neighborhood";

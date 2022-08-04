@@ -1,65 +1,87 @@
-import React, { FC, useEffect, useRef } from "react"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import gsap from "gsap"
+import React, {FC, useEffect, useRef} from "react"
+import gsap, {Linear} from "gsap"
 
 import Image from "../image"
-import { Wrapper } from "./index.styled"
+import {ContentContainer, Wrapper} from "./index.styled"
+import {sizes} from "../../helpers/MediaQueries"
 
 interface IContentSlider {
   title: JSX.Element | string
   data: any[]
 }
 
-const ContentSlider: FC<IContentSlider> = ({ title, data }) => {
+const ContentSlider: FC<IContentSlider> = ({title, data}) => {
   const ContentWrapRef = useRef(null)
+  const SliderRef = useRef(null)
+  const ContentContainerRef = useRef(null)
+  const FirstSceneRef = useRef(null)
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
+    if (window.screen.width < sizes.phoneXL) return
     const sections = gsap.utils.toArray(".slide")
 
-    gsap.to(sections, {
-      xPercent: -60 * (sections.length - 1),
-      opacity: 1,
-      ease: "ease",
+    gsap.timeline({
       scrollTrigger: {
-        trigger: ".within-walk",
-        pin: true,
+        trigger: ContentWrapRef.current,
+        start: "top-=10 top",
+        end: "bottom+=201% bottom",
+        pin: ContentContainerRef.current,
         scrub: 1,
-        snap: 1 / (sections.length - 1),
-        end: "+=2500",
+        toggleActions: "restart none none reverse",
       },
     })
-
-    gsap.to(".title", {
-      xPercent: 5 * (sections.length - 1),
-      opacity: 1,
-      ease: "ease",
+    gsap.timeline({
       scrollTrigger: {
-        trigger: ".within-walk",
-        pin: true,
+        trigger: ContentWrapRef.current,
+        start: "top-=10 bottom",
+        end: "bottom bottom",
         scrub: 1,
-        snap: 1 / (sections.length - 1),
-        end: "+=2500",
+        toggleActions: "restart none none reverse",
+      },
+    })
+      .to(ContentContainerRef.current, {opacity: 1, duration: 1})
+      .fromTo(
+        SliderRef.current,
+        {x: 150, duration: 1},
+        {x: 0, duration: 1},
+        0
+      );
+
+    gsap.to(sections, {
+      xPercent: -51 * (sections.length - 1),
+      opacity: (self) => (sections.length - self + 1) / 2,
+      ease: Linear.easeNone,
+      scrollTrigger: {
+        trigger: FirstSceneRef.current,
+        scrub: 1,
+        start: "top bottom",
+        end: "bottom+=100% bottom",
       },
     })
   }, [])
 
   return (
-    <Wrapper ref={ContentWrapRef}>
-      <h2 className="h2 title">{title}</h2>
-      <div className="slider-wrapper">
-        {data.map((slide, index) => (
-          <div className="slide" key={`slide_${index}`}>
-            <div className="img">
-              <Image imageName={slide.img} />
-            </div>
-            <p className="h3 number">{slide.number}</p>
-            <div className="line"/>
-            <p className="h3i">{slide.title}</p>
+    <>
+      <Wrapper ref={ContentWrapRef} className="panel">
+        <ContentContainer ref={ContentContainerRef}>
+          <h2 className="h2 title">{title}</h2>
+          <div className="slider-wrapper" ref={SliderRef}>
+            {data.map((slide, index) => (
+              <div className="slide" key={`slide_${index}`}>
+                <div className="img">
+                  <Image imageName={slide.img}/>
+                </div>
+                <p className="h3 number">{slide.number}</p>
+                <div className="line"/>
+                <p className="h3i">{slide.title}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </Wrapper>
+        </ContentContainer>
+      </Wrapper>
+      <Wrapper className={"panel"} ref={FirstSceneRef}/>
+      <Wrapper className={"panel"}/>
+    </>
   )
 }
 

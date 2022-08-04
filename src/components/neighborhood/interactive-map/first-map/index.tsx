@@ -8,7 +8,7 @@ import {
   MapTitle
 } from "../index.styled"
 import gsap from "gsap"
-import animation from "../../../../static/lottie1rev1.json"
+import animation from "../../../../../static/lottie1rev1.json"
 import Lottie from "react-lottie-player"
 import {NeighborhoodMapData} from "../../../../data/neighborhood";
 
