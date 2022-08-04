@@ -12,7 +12,7 @@ interface IContentSlider {
 
 const ContentSlider: FC<IContentSlider> = ({title, data}) => {
   const ContentWrapRef = useRef(null)
-  const SliderRef = useRef(null)
+  const SliderRef = useRef<HTMLDivElement>(null)
   const ContentContainerRef = useRef(null)
   const FirstSceneRef = useRef(null)
   const SecondSceneRef = useRef(null)
@@ -35,7 +35,7 @@ const ContentSlider: FC<IContentSlider> = ({title, data}) => {
       scrollTrigger: {
         trigger: ContentWrapRef.current,
         start: "top-=10 bottom",
-        end: "bottom bottom",
+        end: "bottom-=10 bottom",
         scrub: 1,
         toggleActions: "restart none none reverse",
       },
@@ -49,7 +49,6 @@ const ContentSlider: FC<IContentSlider> = ({title, data}) => {
       );
 
     gsap.to(sections, {
-      xPercent: -51 * (sections.length - 1),
       opacity: (self) => (sections.length - self + 1) / 2,
       ease: Linear.easeNone,
       scrollTrigger: {
@@ -59,6 +58,24 @@ const ContentSlider: FC<IContentSlider> = ({title, data}) => {
         end: "bottom+=100% bottom",
       },
     })
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: FirstSceneRef.current,
+        scrub: 1,
+        start: "top bottom",
+        end: "bottom+=100% bottom",
+      },
+    }).fromTo(SliderRef.current || "",
+      {
+        x: 0,
+        ease: Linear.easeNone
+      },
+      {
+        x: SliderRef?.current && (window.innerWidth - SliderRef.current.clientWidth - 20) || 0,
+        ease: Linear.easeNone
+      }
+    )
 
     gsap.timeline({
       scrollTrigger: {

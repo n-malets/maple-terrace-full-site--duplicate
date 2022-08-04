@@ -40,7 +40,7 @@ export const ContentContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    margin-left: 20%;
+    padding-left: 20%;
     margin-top: 24px;
     ${mediaMax.phoneXL`
       grid-template-columns: repeat(2, 1fr);
@@ -54,8 +54,8 @@ export const ContentContainer = styled.div`
     `}
   }
   .img {
-    width: 30vw;
-    height: 30vw;
+    width: 50vh;
+    height: 50vh;
     position: relative;
     ${mediaMax.phoneXL`
       width: 100%;
