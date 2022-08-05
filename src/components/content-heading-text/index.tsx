@@ -13,12 +13,19 @@ interface IContentHeadingText {
   textWidth?: string
   textHeight?: string
 }
-const ContentHeadingText: FC<IContentHeadingText> = ({ heading, text, textWidth, headingWidth, textHeight }) => {
+const ContentHeadingText: FC<IContentHeadingText> = ({
+  heading,
+  text,
+  textWidth,
+  headingWidth,
+  textHeight,
+}) => {
   const wrapperRef = useRef(null)
   const headingRef = useRef(null)
   const textRef = useRef(null)
 
   useEffect(() => {
+    console.log(window.screen.width, sizes.phoneXL)
     if (window.screen.width < sizes.phoneXL) return
     gsap
       .timeline({
@@ -44,7 +51,7 @@ const ContentHeadingText: FC<IContentHeadingText> = ({ heading, text, textWidth,
         { opacity: 1, y: 0 },
         "1"
       )
-  })
+  }, [])
 
   return (
     <Wrapper ref={wrapperRef}>

@@ -48,6 +48,7 @@ const NeighborhoodPage = () => {
         <ContentIntro
           imgName={"neighborhood_1.jpg"}
           objPosition={"center 35% !important"}
+          mobileFullScreen
         />
       </section>
       <section className="panel">

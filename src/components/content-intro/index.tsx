@@ -9,9 +9,14 @@ import { sizes } from "../../helpers/MediaQueries"
 interface IContentIntro {
   imgName: string
   objPosition?: string
+  mobileFullScreen?: boolean
 }
 
-const ContentIntro: FC<IContentIntro> = ({ imgName, objPosition }) => {
+const ContentIntro: FC<IContentIntro> = ({
+  imgName,
+  objPosition,
+  mobileFullScreen,
+}) => {
   const contentWrapRef = useRef(null)
   const introImgRef = useRef(null)
   const { setIsMenuDark } = useContext(Context)
@@ -52,7 +57,11 @@ const ContentIntro: FC<IContentIntro> = ({ imgName, objPosition }) => {
     })
   }, [])
   return (
-    <Wrapper ref={contentWrapRef} objPosition={objPosition}>
+    <Wrapper
+      ref={contentWrapRef}
+      objPosition={objPosition}
+      mobileFullScreen={mobileFullScreen}
+    >
       <div className="intro-img" ref={introImgRef}>
         <div className="img">
           <Image imageName={imgName} />

@@ -3,6 +3,7 @@ import { mediaMax } from "../../helpers/MediaQueries"
 
 interface IStyledProps {
   objPosition?: string
+  mobileFullScreen?: boolean
 }
 
 export const Wrapper = styled.div<IStyledProps>`
@@ -11,14 +12,16 @@ export const Wrapper = styled.div<IStyledProps>`
   overflow: hidden;
   background-color: #151515;
   ${mediaMax.phoneXL`
-      height: 390px;
+      height: ${(props: IStyledProps) =>
+        props.mobileFullScreen ? "100vh" : "390px"};
   `}
   .img {
     width: 100%;
     height: 100vh;
     ${mediaMax.phoneXL`
-      height: 390px;
-    `}
+      height: ${(props: IStyledProps) =>
+        props.mobileFullScreen ? "100vh" : "390px"};
+  `}
   }
   .gatsby-image-wrapper {
     height: 100%;
