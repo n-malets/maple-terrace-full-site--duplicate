@@ -14,7 +14,7 @@ export const Wrapper = styled.div<IStyledProps>`
     width: 100%;
     height: 100vh;
     ${mediaMax.phoneXL`
-      height: 390px;
+      height: 100vh;
     `}
   }
   .gatsby-image-wrapper {

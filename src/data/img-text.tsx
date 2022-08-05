@@ -26,7 +26,7 @@ export const ImgTextData = {
     text: "Two-star Michelin chef, Danny Grant, brings his flagship Maple & Ash steakhouse to the site, as well as Café Sophie and a bar lounge, all of which makes Maple Terrace the ideal spot to close a deal, unwind, gather or celebrate.",
     withPadding: true,
     reversed: true,
-    infoWidth: '323px'
+    infoWidth: "323px",
   },
   building4: {
     img: "building_10.jpg",
@@ -89,7 +89,7 @@ export const ImgTextData = {
     bigHeading: true,
     infoPadding: true,
     reversed: true,
-    infoWidth: "95%",
-    fontWeight: "300"
+    infoWidth: "150px",
+    fontWeight: "300",
   },
 }

@@ -23,6 +23,7 @@ export const Wrapper = styled.div<IStyleProps>`
   ${mediaMax.phoneXL`
     flex-direction: column;
     justify-content: flex-start;
+    height: auto;
   `}
 `
 export const Img = styled.div<IStyleProps>`
@@ -30,11 +31,17 @@ export const Img = styled.div<IStyleProps>`
   width: ${props => (props.withPadding ? "52.5%" : "57.2%")};
   position: relative;
   max-width: ${props => props.imgMaxWidth || "100%"};
-
+  ${mediaMax.phoneXL`
+    width: 100%;
+  `}
   .gatsby-image-wrapper {
     height: ${props => (props.imgHeight ? props.imgHeight : "75vh")};
     object-fit: cover;
     object-position: top;
+    ${mediaMax.phoneXL`
+      width: 100%;
+      height: auto;
+    `}
   }
 `
 export const Info = styled.div<IStyleProps>`
@@ -59,5 +66,12 @@ export const Info = styled.div<IStyleProps>`
   }
   p {
     padding-top: 4vh;
+  }
+  .title {
+    min-width: auto;
+    width: 200px;
+    ${mediaMax.phoneXL`
+      width: 290px;
+    `}
   }
 `
