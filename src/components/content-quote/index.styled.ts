@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   background-color: #151515;
   ${mediaMax.phoneXL`
     height: auto;
-    padding: 130px 0;
+    padding: 180px 0;
   `}
   img {
     margin-bottom: 36px;

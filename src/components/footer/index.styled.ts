@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   height: 100vh;
   z-index: 11;
   pointer-events: none;
+  ${mediaMax.phoneXL`
+    height: auto;
+    margin-top: 150px;
+  `}
 `
 export const FooterContent = styled.div`
   width: 100%;

@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import Link from "gatsby-link"
+import { mediaMax } from "../../helpers/MediaQueries"
+
 export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -11,6 +13,10 @@ export const Wrapper = styled.div`
   top: 0;
   z-index: 10;
   background-color: #151515;
+  ${mediaMax.phoneXL`
+    height: auto;
+    padding: 120px 5%;
+  `}
 `
 export const Headings = styled.div`
   position: relative;
