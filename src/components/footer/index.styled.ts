@@ -1,3 +1,4 @@
+import { mediaMax } from "../../helpers/MediaQueries"
 import styled from "styled-components"
 
 export const Wrapper = styled.div`
@@ -17,6 +18,10 @@ export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
   pointer-events: all;
+  ${mediaMax.phoneXL`
+     max-width: 100vw;
+     overflow: hidden;
+  `}
   .col {
     width: 33.33%;
     display: flex;
