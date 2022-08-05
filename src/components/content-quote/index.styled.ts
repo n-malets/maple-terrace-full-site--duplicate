@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { mediaMax } from "../../helpers/MediaQueries"
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -8,6 +9,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   overflow: hidden;
   background-color: #151515;
+  ${mediaMax.phoneXL`
+    height: auto;
+    padding: 130px 0;
+  `}
   img {
     margin-bottom: 36px;
   }
