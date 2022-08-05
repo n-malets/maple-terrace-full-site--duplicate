@@ -69,7 +69,6 @@ export const Info = styled.div<IStyleProps>`
   }
   .title {
     min-width: auto;
-    width: 200px;
     ${mediaMax.phoneXL`
       width: 290px;
     `}

@@ -25,6 +25,7 @@ export const ContentContainer = styled.div`
   align-items: flex-start;
   opacity: 0;
   ${mediaMax.phoneXL`
+    opacity: 1;
     padding-left: 5%;
     padding-right: 5%;
     height: 90vh;
@@ -45,7 +46,9 @@ export const ContentContainer = styled.div`
     margin-top: 24px;
     ${mediaMax.phoneXL`
       grid-template-columns: repeat(2, 1fr);
-      margin: 0
+      margin: 0;
+      padding:0;
+      width: 100%;
     `}
   }
   .slide:nth-child(n + 2) {
@@ -88,4 +91,3 @@ export const ContentContainer = styled.div`
     `}
   }
 `
-
